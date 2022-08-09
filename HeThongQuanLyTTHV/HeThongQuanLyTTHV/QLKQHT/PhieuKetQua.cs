@@ -8,5 +8,6 @@ namespace HeThongQuanLyTTHV
 {
     internal class PhieuKetQua
     {
+        private int maPhieu;
     }
 }
