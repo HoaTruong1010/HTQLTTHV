@@ -9,5 +9,6 @@ namespace HeThongQuanLyTTHV
     internal class PhieuKetQua
     {
         private int maPhieu;
+        private int diem;
     }
 }
