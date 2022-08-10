@@ -20,12 +20,13 @@ namespace HeThongQuanLyTTHV
 
         private void ThemTKB_Load(object sender, EventArgs e)
         {
-            //ComboBox chọn chương trình đạo tạo
+            //ComboBox chọn chương trình đạo tạo/tên khoá học
+            cbbCTDT.Items.Add("----Chọn----");
             cbbCTDT.Items.Add("Tiếng Anh tổng quát thiếu nhi");
             cbbCTDT.Items.Add("Tiếng Anh tổng quát người lớn");
             cbbCTDT.Items.Add("Tiếng Anh giao tiếp");
-            cbbCTDT.Items.Add("LUYỆN THI TOEIC");
-            cbbCTDT.Items.Add("LUYỆN THI IELTS");
+            cbbCTDT.Items.Add("Luyện thi TOEIC");
+            cbbCTDT.Items.Add("Luyện thi IELTS");
 
             //ListView - xem để thêm các khoá học vào danh sách tkb
             lvDSKH.View = View.Details;
@@ -39,33 +40,69 @@ namespace HeThongQuanLyTTHV
             lvDSKH.Columns.Add("Số lượng", 25);
             lvDSKH.Columns.Add("Còn lại", 25);
             lvDSKH.Columns.Add("Thời khoá biểu", 200);
-
-            //ListView - xem các khoá học đã thêm vào danh sách tkb
-            lvDSKHThemTC.View = View.Details;
-            lvDSKHThemTC.GridLines = true;
-            lvDSKHThemTC.FullRowSelect = true;
-            //Tiêu đề các cột trong lvDSKHThemTC
-            lvDSKHThemTC.Columns.Add("Xoá", 20);
-            lvDSKHThemTC.Columns.Add("Cấp lớp", 50);
-            lvDSKHThemTC.Columns.Add("Lớp", 35);
-            lvDSKHThemTC.Columns.Add("Số buổi", 25);
-            lvDSKHThemTC.Columns.Add("Ngày đăng ký", 50);
-            lvDSKHThemTC.Columns.Add("Thời khoá biểu", 200);
+            //Hiển thị danh sách từ trong file
+           
         }
 
-        private void cbbChon_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbbCTDT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //ComboBox chọn cấp học
+            string chonCap = cbbCTDT.Text;
+            switch (chonCap)
+            {
+                case "Tiếng Anh tổng quát thiếu nhi":
+                    cbbCapLop.Items.Add("----Chọn----");
+                    cbbCapLop.Items.Add("Căn Bản");
+                    cbbCapLop.Items.Add("Sơ Cấp");
+                    cbbCapLop.Items.Add("Trung Cấp");
+                    cbbCapLop.Items.Add("Cao Cấp");
+                    break;
+                case "Tiếng Anh tổng quát người lớn":
+                    cbbCapLop.Items.Add("----Chọn----");
+                    cbbCapLop.Items.Add("Căn Bản");
+                    cbbCapLop.Items.Add("Sơ Cấp");
+                    cbbCapLop.Items.Add("Trung Cấp");
+                    cbbCapLop.Items.Add("Cao Cấp");
+                    break;
+                case "Tiếng Anh giao tiếp":
+                    cbbCapLop.Items.Add("----Chọn----");
+                    cbbCapLop.Items.Add("Căn Bản");
+                    cbbCapLop.Items.Add("Sơ Cấp");
+                    cbbCapLop.Items.Add("Trung Cấp");
+                    cbbCapLop.Items.Add("Cao Cấp");
+                    break;
+                case "Luyện thi TOEIC":
+                    cbbCapLop.Items.Add("----Chọn----");
+                    cbbCapLop.Items.Add("TOEIC 100-200");
+                    cbbCapLop.Items.Add("TOEIC 200-400");
+                    cbbCapLop.Items.Add("TOEIC 400-600");
+                    cbbCapLop.Items.Add("TOEIC 600-750");
+                    break;
+                case "Luyện thi IELTS":
+                    cbbCapLop.Items.Add("----Chọn----");
+                    cbbCapLop.Items.Add("Pre-IELTS");
+                    cbbCapLop.Items.Add("IELTS 4.0-5.0");
+                    cbbCapLop.Items.Add("IELTS 5.0-6.5");
+                    cbbCapLop.Items.Add("IELTS 6.5-7.5");
+                    cbbCapLop.Items.Add("Luyện giải đề IELTS");
+                    break;
+            }
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lvDSKH_SelectedIndexChanged(object sender, EventArgs e)
+        private void btLuu_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void btBack_Click(object sender, EventArgs e)
         {
-
+            Close();
+            QLLH.frmQLLH.Show();
         }
     }
 }

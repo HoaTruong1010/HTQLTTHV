@@ -16,5 +16,10 @@ namespace HeThongQuanLyTTHV
         {
             InitializeComponent();
         }
+
+        private void ChinhSuaTKB_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

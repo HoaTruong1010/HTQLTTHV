@@ -52,7 +52,6 @@
     <Compile Include="ChinhSuaTKB.Designer.cs">
       <DependentUpon>ChinhSuaTKB.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLTKB\LichThi.cs" />
     <Compile Include="QLTKB\ThoiKhoaBieu.cs" />
     <Compile Include="SapXepTKB.cs">
       <SubType>Form</SubType>
@@ -74,7 +73,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLTKB\Lich.cs" />
     <Compile Include="ThongBaoLichNghi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +133,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DSTKB\DSLopIELTS.txt" />
+    <Content Include="DSTKB\DSLopTAGiaoTiep.txt" />
+    <Content Include="DSTKB\DSLopTATQNguoiLon.txt" />
+    <Content Include="DSTKB\DSLopTATQThieuNhi.txt" />
+    <Content Include="DSTKB\DSLopTOEIC.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

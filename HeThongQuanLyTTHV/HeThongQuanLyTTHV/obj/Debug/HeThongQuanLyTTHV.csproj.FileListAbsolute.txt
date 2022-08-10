@@ -1,0 +1,17 @@
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV.exe.config
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV.exe
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV.pdb
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.AssemblyReference.cache
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.SuggestedBindingRedirects.cache
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ChinhSuaTKB.resources
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.SapXepTKB.resources
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ThemTKB.resources
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.Properties.Resources.resources
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLLH.resources
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ThongBaoLichNghi.resources
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ThongBaoTKB.resources
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.XemTKB.resources
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.GenerateResource.cache
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.CoreCompileInputs.cache
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.exe
+D:\OneDrive-ThienAn\OneDrive - Spiderum Academy\Desktop\CNTT\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.pdb
