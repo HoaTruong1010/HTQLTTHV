@@ -8,7 +8,10 @@ namespace HeThongQuanLyTTHV
 {
     internal class PhieuKetQua
     {
-        private int maPhieu;
-        private int diem;
+        private char maPhieu;
+        private double diem;
+
+        public char MaPhieu { get => maPhieu; set => maPhieu = value; }
+        public double Diem { get => diem; set => diem = value; }
     }
 }
