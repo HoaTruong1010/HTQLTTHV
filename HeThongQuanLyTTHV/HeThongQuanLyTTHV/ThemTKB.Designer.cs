@@ -110,46 +110,55 @@
             // colTenKH
             // 
             this.colTenKH.Text = "Tên Khoá Học";
+            this.colTenKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colTenKH.Width = 300;
             // 
             // colCap
             // 
             this.colCap.Text = "Cấp Lớp";
+            this.colCap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colCap.Width = 100;
             // 
             // colLop
             // 
             this.colLop.Text = "Lớp";
+            this.colLop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colLop.Width = 80;
             // 
             // colSoBuoiHoc
             // 
             this.colSoBuoiHoc.Text = "Số Buổi Học";
-            this.colSoBuoiHoc.Width = 100;
+            this.colSoBuoiHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colSoBuoiHoc.Width = 150;
             // 
             // colSLHV
             // 
             this.colSLHV.Text = "Số Lượng Học Viên";
-            this.colSLHV.Width = 120;
+            this.colSLHV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colSLHV.Width = 180;
             // 
             // colThu
             // 
             this.colThu.Text = "Thứ";
+            this.colThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colThu.Width = 250;
             // 
             // colKhungGioHoc
             // 
             this.colKhungGioHoc.Text = "Khung Giờ Học";
+            this.colKhungGioHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colKhungGioHoc.Width = 250;
             // 
             // colPhong
             // 
-            this.colPhong.Text = "Phòng Học";
+            this.colPhong.Text = "Phòng";
+            this.colPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colPhong.Width = 100;
             // 
             // colGV
             // 
             this.colGV.Text = "Giảng Viên";
+            this.colGV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colGV.Width = 250;
             // 
             // lbContent1
