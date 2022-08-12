@@ -44,10 +44,10 @@ namespace HeThongQuanLyTTHV
             // 
             this.lbTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbTieuDe.Enabled = false;
-            this.lbTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTieuDe.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTieuDe.Location = new System.Drawing.Point(0, 0);
             this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.Size = new System.Drawing.Size(802, 90);
+            this.lbTieuDe.Size = new System.Drawing.Size(1073, 111);
             this.lbTieuDe.TabIndex = 0;
             this.lbTieuDe.Text = "QUẢN LÝ LỊCH HỌC";
             this.lbTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,9 +60,11 @@ namespace HeThongQuanLyTTHV
             this.gbChucNang.Controls.Add(this.btXemTKB);
             this.gbChucNang.Controls.Add(this.btThemTKB);
             this.gbChucNang.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbChucNang.Location = new System.Drawing.Point(11, 96);
+            this.gbChucNang.Location = new System.Drawing.Point(13, 118);
+            this.gbChucNang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbChucNang.Name = "gbChucNang";
-            this.gbChucNang.Size = new System.Drawing.Size(784, 190);
+            this.gbChucNang.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbChucNang.Size = new System.Drawing.Size(1045, 234);
             this.gbChucNang.TabIndex = 1;
             this.gbChucNang.TabStop = false;
             this.gbChucNang.Text = "Chọn Chức Năng";
@@ -71,9 +73,10 @@ namespace HeThongQuanLyTTHV
             // 
             this.btThongBaoLichNghi.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btThongBaoLichNghi.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThongBaoLichNghi.Location = new System.Drawing.Point(629, 60);
+            this.btThongBaoLichNghi.Location = new System.Drawing.Point(840, 74);
+            this.btThongBaoLichNghi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btThongBaoLichNghi.Name = "btThongBaoLichNghi";
-            this.btThongBaoLichNghi.Size = new System.Drawing.Size(141, 86);
+            this.btThongBaoLichNghi.Size = new System.Drawing.Size(189, 106);
             this.btThongBaoLichNghi.TabIndex = 0;
             this.btThongBaoLichNghi.Text = "Thông báo lịch nghỉ";
             this.btThongBaoLichNghi.UseVisualStyleBackColor = false;
@@ -83,9 +86,10 @@ namespace HeThongQuanLyTTHV
             // 
             this.btThongBaoTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btThongBaoTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThongBaoTKB.Location = new System.Drawing.Point(475, 60);
+            this.btThongBaoTKB.Location = new System.Drawing.Point(632, 74);
+            this.btThongBaoTKB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btThongBaoTKB.Name = "btThongBaoTKB";
-            this.btThongBaoTKB.Size = new System.Drawing.Size(141, 86);
+            this.btThongBaoTKB.Size = new System.Drawing.Size(189, 106);
             this.btThongBaoTKB.TabIndex = 0;
             this.btThongBaoTKB.Text = "Thông báo TKB";
             this.btThongBaoTKB.UseVisualStyleBackColor = false;
@@ -95,9 +99,10 @@ namespace HeThongQuanLyTTHV
             // 
             this.btChinhTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btChinhTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btChinhTKB.Location = new System.Drawing.Point(317, 60);
+            this.btChinhTKB.Location = new System.Drawing.Point(424, 74);
+            this.btChinhTKB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btChinhTKB.Name = "btChinhTKB";
-            this.btChinhTKB.Size = new System.Drawing.Size(141, 86);
+            this.btChinhTKB.Size = new System.Drawing.Size(189, 106);
             this.btChinhTKB.TabIndex = 0;
             this.btChinhTKB.Text = "Chỉnh sửa TKB";
             this.btChinhTKB.UseVisualStyleBackColor = false;
@@ -107,9 +112,10 @@ namespace HeThongQuanLyTTHV
             // 
             this.btXemTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btXemTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXemTKB.Location = new System.Drawing.Point(161, 60);
+            this.btXemTKB.Location = new System.Drawing.Point(216, 74);
+            this.btXemTKB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btXemTKB.Name = "btXemTKB";
-            this.btXemTKB.Size = new System.Drawing.Size(141, 86);
+            this.btXemTKB.Size = new System.Drawing.Size(189, 106);
             this.btXemTKB.TabIndex = 0;
             this.btXemTKB.Text = "Xem TKB";
             this.btXemTKB.UseVisualStyleBackColor = false;
@@ -119,9 +125,10 @@ namespace HeThongQuanLyTTHV
             // 
             this.btThemTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btThemTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThemTKB.Location = new System.Drawing.Point(6, 60);
+            this.btThemTKB.Location = new System.Drawing.Point(8, 74);
+            this.btThemTKB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btThemTKB.Name = "btThemTKB";
-            this.btThemTKB.Size = new System.Drawing.Size(141, 86);
+            this.btThemTKB.Size = new System.Drawing.Size(189, 106);
             this.btThemTKB.TabIndex = 0;
             this.btThemTKB.Text = "Thêm TKB";
             this.btThemTKB.UseVisualStyleBackColor = false;
@@ -130,21 +137,25 @@ namespace HeThongQuanLyTTHV
             // btThoat
             // 
             this.btThoat.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.Location = new System.Drawing.Point(680, 293);
+            this.btThoat.Location = new System.Drawing.Point(907, 359);
+            this.btThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(101, 51);
+            this.btThoat.Size = new System.Drawing.Size(136, 63);
             this.btThoat.TabIndex = 3;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = true;
             // 
             // QLLH
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 356);
+            this.ClientSize = new System.Drawing.Size(1073, 450);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gbChucNang);
             this.Controls.Add(this.lbTieuDe);
+            this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Brown;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QLLH";
             this.Text = "Quản lý lịch học";
             this.gbChucNang.ResumeLayout(false);
