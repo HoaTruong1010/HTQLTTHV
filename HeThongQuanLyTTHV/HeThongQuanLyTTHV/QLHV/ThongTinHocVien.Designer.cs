@@ -55,6 +55,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbKhoaHoc = new System.Windows.Forms.Label();
             this.btExit = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
+            this.btDel = new System.Windows.Forms.Button();
             this.gbTTHV.SuspendLayout();
             this.gbHoc.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbTitle.Location = new System.Drawing.Point(1, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(962, 90);
-            this.lbTitle.TabIndex = 0;
+            this.lbTitle.TabIndex = 4;
             this.lbTitle.Text = "THÔNG TIN HỌC VIÊN";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -92,7 +93,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.gbTTHV.Location = new System.Drawing.Point(72, 97);
             this.gbTTHV.Name = "gbTTHV";
             this.gbTTHV.Size = new System.Drawing.Size(816, 355);
-            this.gbTTHV.TabIndex = 2;
+            this.gbTTHV.TabIndex = 0;
             this.gbTTHV.TabStop = false;
             this.gbTTHV.Text = "Thông tin cá nhân";
             // 
@@ -103,7 +104,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.dtpDOB.Location = new System.Drawing.Point(232, 135);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(191, 32);
-            this.dtpDOB.TabIndex = 4;
+            this.dtpDOB.TabIndex = 2;
             // 
             // rdFemale
             // 
@@ -112,7 +113,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.rdFemale.Location = new System.Drawing.Point(707, 137);
             this.rdFemale.Name = "rdFemale";
             this.rdFemale.Size = new System.Drawing.Size(57, 28);
-            this.rdFemale.TabIndex = 3;
+            this.rdFemale.TabIndex = 4;
             this.rdFemale.TabStop = true;
             this.rdFemale.Text = "Nữ";
             this.rdFemale.UseVisualStyleBackColor = true;
@@ -135,9 +136,8 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtAdress.Location = new System.Drawing.Point(232, 293);
             this.txtAdress.Name = "txtAdress";
             this.txtAdress.Size = new System.Drawing.Size(529, 32);
-            this.txtAdress.TabIndex = 2;
+            this.txtAdress.TabIndex = 7;
             this.txtAdress.TabStop = false;
-            this.txtAdress.Click += new System.EventHandler(this.txtEmail_Click);
             // 
             // txtPhone
             // 
@@ -145,9 +145,9 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtPhone.Location = new System.Drawing.Point(232, 241);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(529, 32);
-            this.txtPhone.TabIndex = 2;
+            this.txtPhone.TabIndex = 6;
             this.txtPhone.TabStop = false;
-            this.txtPhone.Click += new System.EventHandler(this.txtEmail_Click);
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtName
             // 
@@ -155,9 +155,9 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtName.Location = new System.Drawing.Point(232, 88);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(529, 32);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 1;
             this.txtName.TabStop = false;
-            this.txtName.Click += new System.EventHandler(this.txtEmail_Click);
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             // 
             // lbName
             // 
@@ -166,7 +166,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbName.Location = new System.Drawing.Point(35, 94);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(140, 24);
-            this.lbName.TabIndex = 1;
+            this.lbName.TabIndex = 11;
             this.lbName.Text = "Họ và tên:";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -176,9 +176,8 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtEmail.Location = new System.Drawing.Point(232, 190);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(529, 32);
-            this.txtEmail.TabIndex = 2;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.TabStop = false;
-            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
             // 
             // txtID
             // 
@@ -186,8 +185,8 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtID.Location = new System.Drawing.Point(232, 41);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(529, 32);
-            this.txtID.TabIndex = 2;
-            this.txtID.Click += new System.EventHandler(this.txtEmail_Click);
+            this.txtID.TabIndex = 0;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // lbPhone
             // 
@@ -196,7 +195,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbPhone.Location = new System.Drawing.Point(35, 247);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(192, 24);
-            this.lbPhone.TabIndex = 1;
+            this.lbPhone.TabIndex = 14;
             this.lbPhone.Text = "Số điện thoại:";
             this.lbPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -207,7 +206,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbGender.Location = new System.Drawing.Point(474, 139);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(140, 24);
-            this.lbGender.TabIndex = 1;
+            this.lbGender.TabIndex = 10;
             this.lbGender.Text = "Giới tính:";
             // 
             // lbEmail
@@ -217,7 +216,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbEmail.Location = new System.Drawing.Point(35, 196);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(88, 24);
-            this.lbEmail.TabIndex = 1;
+            this.lbEmail.TabIndex = 13;
             this.lbEmail.Text = "Email:";
             this.lbEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -228,7 +227,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbAdress.Location = new System.Drawing.Point(35, 297);
             this.lbAdress.Name = "lbAdress";
             this.lbAdress.Size = new System.Drawing.Size(114, 24);
-            this.lbAdress.TabIndex = 1;
+            this.lbAdress.TabIndex = 14;
             this.lbAdress.Text = "Địa chỉ:";
             this.lbAdress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -239,7 +238,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbID.Location = new System.Drawing.Point(35, 47);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(140, 24);
-            this.lbID.TabIndex = 1;
+            this.lbID.TabIndex = 10;
             this.lbID.Text = "CMND/CCCD:";
             this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -250,7 +249,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbDOB.Location = new System.Drawing.Point(35, 141);
             this.lbDOB.Name = "lbDOB";
             this.lbDOB.Size = new System.Drawing.Size(140, 24);
-            this.lbDOB.TabIndex = 1;
+            this.lbDOB.TabIndex = 12;
             this.lbDOB.Text = "Ngày sinh:";
             this.lbDOB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -267,7 +266,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.gbHoc.Location = new System.Drawing.Point(72, 473);
             this.gbHoc.Name = "gbHoc";
             this.gbHoc.Size = new System.Drawing.Size(559, 205);
-            this.gbHoc.TabIndex = 3;
+            this.gbHoc.TabIndex = 1;
             this.gbHoc.TabStop = false;
             this.gbHoc.Text = "Thông tin khóa học";
             // 
@@ -280,6 +279,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbLop.FormattingEnabled = true;
             this.cbLop.IntegralHeight = false;
             this.cbLop.Items.AddRange(new object[] {
+            "No selected item",
             "K20C1L1",
             "K20C1L2",
             "K20C2L1",
@@ -312,6 +312,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbCapHoc.FormattingEnabled = true;
             this.cbCapHoc.IntegralHeight = false;
             this.cbCapHoc.Items.AddRange(new object[] {
+            "No selected item",
             "K20C1",
             "K20C2",
             "K20C3",
@@ -322,7 +323,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbCapHoc.Location = new System.Drawing.Point(223, 98);
             this.cbCapHoc.Name = "cbCapHoc";
             this.cbCapHoc.Size = new System.Drawing.Size(244, 32);
-            this.cbCapHoc.TabIndex = 2;
+            this.cbCapHoc.TabIndex = 1;
             // 
             // cbKhoaHoc
             // 
@@ -333,13 +334,14 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbKhoaHoc.FormattingEnabled = true;
             this.cbKhoaHoc.IntegralHeight = false;
             this.cbKhoaHoc.Items.AddRange(new object[] {
+            "No selected item",
             "Khóa 2020",
             "Khóa 2021",
             "Khóa 2022"});
             this.cbKhoaHoc.Location = new System.Drawing.Point(223, 49);
             this.cbKhoaHoc.Name = "cbKhoaHoc";
             this.cbKhoaHoc.Size = new System.Drawing.Size(244, 32);
-            this.cbKhoaHoc.TabIndex = 2;
+            this.cbKhoaHoc.TabIndex = 0;
             // 
             // lbLop
             // 
@@ -378,7 +380,7 @@ namespace HeThongQuanLyTTHV.QLHV
             // 
             this.btExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btExit.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExit.Location = new System.Drawing.Point(339, 716);
+            this.btExit.Location = new System.Drawing.Point(304, 716);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(107, 55);
             this.btExit.TabIndex = 4;
@@ -390,7 +392,7 @@ namespace HeThongQuanLyTTHV.QLHV
             // 
             this.btSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btSave.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSave.Location = new System.Drawing.Point(522, 716);
+            this.btSave.Location = new System.Drawing.Point(524, 716);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(107, 55);
             this.btSave.TabIndex = 4;
@@ -398,12 +400,25 @@ namespace HeThongQuanLyTTHV.QLHV
             this.btSave.UseVisualStyleBackColor = true;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
+            // btDel
+            // 
+            this.btDel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDel.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDel.Location = new System.Drawing.Point(524, 716);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(107, 55);
+            this.btDel.TabIndex = 4;
+            this.btDel.Text = "Xóa";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
             // ThongTinHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(962, 810);
+            this.Controls.Add(this.btDel);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.gbHoc);
@@ -415,7 +430,8 @@ namespace HeThongQuanLyTTHV.QLHV
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin học viên";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.ThemHocVien_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ThongTinHocVien_FormClosing);
+            this.Load += new System.EventHandler(this.ThongTinHocVien_Load);
             this.gbTTHV.ResumeLayout(false);
             this.gbTTHV.PerformLayout();
             this.gbHoc.ResumeLayout(false);
@@ -452,5 +468,6 @@ namespace HeThongQuanLyTTHV.QLHV
         private System.Windows.Forms.Label lbKhoaHoc;
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.Button btDel;
     }
 }

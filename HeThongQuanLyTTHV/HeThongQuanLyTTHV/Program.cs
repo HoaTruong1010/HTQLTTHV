@@ -16,11 +16,7 @@ namespace HeThongQuanLyTTHV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< Updated upstream
-            Application.Run(new Form1());
-=======
             Application.Run(new QLHV.Main_QLHV());
->>>>>>> Stashed changes
         }
     }
 }

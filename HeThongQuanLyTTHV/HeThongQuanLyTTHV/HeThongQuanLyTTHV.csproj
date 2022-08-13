@@ -52,12 +52,6 @@
     <Compile Include="QLHV\DanhSachHocVien.Designer.cs">
       <DependentUpon>DanhSachHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLHV\frmXoaHV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLHV\frmXoaHV.Designer.cs">
-      <DependentUpon>frmXoaHV.cs</DependentUpon>
-    </Compile>
     <Compile Include="QLHV\HocVien.cs" />
     <Compile Include="QLHV\Main_QLHV.cs">
       <SubType>Form</SubType>
@@ -65,6 +59,7 @@
     <Compile Include="QLHV\Main_QLHV.Designer.cs">
       <DependentUpon>Main_QLHV.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLHV\PhuongThuc.cs" />
     <Compile Include="QLHV\ThongTinHocVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +79,6 @@
     </Compile>
     <EmbeddedResource Include="QLHV\DanhSachHocVien.resx">
       <DependentUpon>DanhSachHocVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QLHV\frmXoaHV.resx">
-      <DependentUpon>frmXoaHV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLHV\Main_QLHV.resx">
       <DependentUpon>Main_QLHV.cs</DependentUpon>

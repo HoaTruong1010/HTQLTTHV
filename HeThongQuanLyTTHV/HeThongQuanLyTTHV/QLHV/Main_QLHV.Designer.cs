@@ -32,11 +32,11 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbTitle = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmThôngTinHọcViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemDanhSáchThôngTinHọcViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chỉnhSửaThôngTinHọcViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaThôngTinHọcViênKhỏiDanhSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,17 +78,10 @@ namespace HeThongQuanLyTTHV.QLHV
             this.menu.Size = new System.Drawing.Size(68, 25);
             this.menu.Text = "Menu";
             // 
-            // thoátToolStripMenuItem
-            // 
-            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(79, 25);
-            this.thoátToolStripMenuItem.Text = "Thoát";
-            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
-            // 
             // thêmThôngTinHọcViênToolStripMenuItem
             // 
             this.thêmThôngTinHọcViênToolStripMenuItem.Name = "thêmThôngTinHọcViênToolStripMenuItem";
-            this.thêmThôngTinHọcViênToolStripMenuItem.Size = new System.Drawing.Size(358, 26);
+            this.thêmThôngTinHọcViênToolStripMenuItem.Size = new System.Drawing.Size(534, 26);
             this.thêmThôngTinHọcViênToolStripMenuItem.Text = "1. Thêm thông tin học viên";
             this.thêmThôngTinHọcViênToolStripMenuItem.Click += new System.EventHandler(this.thêmThôngTinHọcViênToolStripMenuItem_Click);
             // 
@@ -113,6 +106,13 @@ namespace HeThongQuanLyTTHV.QLHV
             this.xóaThôngTinHọcViênKhỏiDanhSáchToolStripMenuItem.Text = "4. Xóa thông tin học viên khỏi danh sách";
             this.xóaThôngTinHọcViênKhỏiDanhSáchToolStripMenuItem.Click += new System.EventHandler(this.xóaThôngTinHọcViênKhỏiDanhSáchToolStripMenuItem_Click);
             // 
+            // thoátToolStripMenuItem
+            // 
+            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(79, 25);
+            this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
+            // 
             // Main_QLHV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
@@ -124,12 +124,14 @@ namespace HeThongQuanLyTTHV.QLHV
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "Main_QLHV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý học viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_QLHV_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

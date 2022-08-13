@@ -30,3 +30,15 @@ D:\Phân tích thiết kế hệ thống\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanL
 D:\Phân tích thiết kế hệ thống\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLHV.ThongTinHocVien.resources
 D:\Phân tích thiết kế hệ thống\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLHV.frmXoaHV.resources
 D:\Phân tích thiết kế hệ thống\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLHV.Main_QLHV.resources
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV.exe.config
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV.exe
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV.pdb
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.AssemblyReference.cache
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.Properties.Resources.resources
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLHV.DanhSachHocVien.resources
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLHV.Main_QLHV.resources
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLHV.ThongTinHocVien.resources
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.GenerateResource.cache
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.CoreCompileInputs.cache
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.exe
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.pdb

@@ -39,15 +39,30 @@ namespace HeThongQuanLyTTHV.QLHV
 
         private void xóaThôngTinHọcViênKhỏiDanhSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLHV.frmXoaHV frmXoa = new frmXoaHV();
-            frmXoa.Show();
+            QLHV.ThongTinHocVien frmTTHV = new ThongTinHocVien();
+            frmTTHV.ChucNang = "Delete";
+            frmTTHV.Show();
         }
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
+        }
 
-        
+        private void Main_QLHV_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Question",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                e.Cancel = true;
+        }
     }
 }

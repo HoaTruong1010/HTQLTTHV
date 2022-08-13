@@ -29,9 +29,8 @@ namespace HeThongQuanLyTTHV.QLHV
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.lbTitle = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listHV = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,6 +40,8 @@ namespace HeThongQuanLyTTHV.QLHV
             this.adress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btSort = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
+            this.lbSum = new System.Windows.Forms.Label();
+            this.txtSum = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -55,9 +56,9 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbTitle.Text = "DANH SÁCH HỌC VIÊN";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // listView1
+            // listHV
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listHV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.name,
             this.DOB,
@@ -65,21 +66,19 @@ namespace HeThongQuanLyTTHV.QLHV
             this.email,
             this.phoneNumber,
             this.adress});
-            this.listView1.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(10, 85);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1775, 624);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listHV.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listHV.HideSelection = false;
+            this.listHV.Location = new System.Drawing.Point(-1, 85);
+            this.listHV.Name = "listHV";
+            this.listHV.Size = new System.Drawing.Size(1786, 624);
+            this.listHV.TabIndex = 1;
+            this.listHV.UseCompatibleStateImageBehavior = false;
+            this.listHV.View = System.Windows.Forms.View.Details;
             // 
             // ID
             // 
             this.ID.Text = "Số CCCD";
-            this.ID.Width = 170;
+            this.ID.Width = 147;
             // 
             // name
             // 
@@ -115,18 +114,19 @@ namespace HeThongQuanLyTTHV.QLHV
             // 
             this.btSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btSort.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSort.Location = new System.Drawing.Point(904, 724);
+            this.btSort.Location = new System.Drawing.Point(1135, 745);
             this.btSort.Name = "btSort";
             this.btSort.Size = new System.Drawing.Size(221, 55);
             this.btSort.TabIndex = 5;
             this.btSort.Text = "Sắp xếp (A-Z)";
             this.btSort.UseVisualStyleBackColor = true;
+            this.btSort.Click += new System.EventHandler(this.btSort_Click);
             // 
             // btExit
             // 
             this.btExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btExit.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExit.Location = new System.Drawing.Point(721, 724);
+            this.btExit.Location = new System.Drawing.Point(952, 745);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(107, 55);
             this.btExit.TabIndex = 6;
@@ -134,15 +134,37 @@ namespace HeThongQuanLyTTHV.QLHV
             this.btExit.UseVisualStyleBackColor = true;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
+            // lbSum
+            // 
+            this.lbSum.AutoSize = true;
+            this.lbSum.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSum.Location = new System.Drawing.Point(153, 760);
+            this.lbSum.Name = "lbSum";
+            this.lbSum.Size = new System.Drawing.Size(348, 25);
+            this.lbSum.TabIndex = 7;
+            this.lbSum.Text = "Tổng số lượng học viên: ";
+            // 
+            // txtSum
+            // 
+            this.txtSum.BackColor = System.Drawing.Color.White;
+            this.txtSum.Enabled = false;
+            this.txtSum.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSum.Location = new System.Drawing.Point(494, 757);
+            this.txtSum.Name = "txtSum";
+            this.txtSum.Size = new System.Drawing.Size(100, 32);
+            this.txtSum.TabIndex = 8;
+            // 
             // DanhSachHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1786, 800);
+            this.Controls.Add(this.txtSum);
+            this.Controls.Add(this.lbSum);
             this.Controls.Add(this.btSort);
             this.Controls.Add(this.btExit);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listHV);
             this.Controls.Add(this.lbTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -150,15 +172,18 @@ namespace HeThongQuanLyTTHV.QLHV
             this.Name = "DanhSachHocVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Học Viên";
-            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DanhSachHocVien_FormClosing);
+            this.Load += new System.EventHandler(this.DanhSachHocVien_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listHV;
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader name;
         private System.Windows.Forms.ColumnHeader DOB;
@@ -168,5 +193,7 @@ namespace HeThongQuanLyTTHV.QLHV
         private System.Windows.Forms.ColumnHeader adress;
         private System.Windows.Forms.Button btSort;
         private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.Label lbSum;
+        private System.Windows.Forms.TextBox txtSum;
     }
 }
