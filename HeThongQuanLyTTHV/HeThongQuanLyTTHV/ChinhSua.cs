@@ -12,22 +12,13 @@ namespace HeThongQuanLyTTHV
 {
     public partial class ChinhSua : Form
     {
-        //public static string[] maPhieu;
-        //public static string[] hoTen;
-        //public static int[] cCCD;
-        //public static string[] capHoc;
-        //public static string[] khoaHoc;
-        //public static string[] lop;
-        //public static int[] sDT;
-        //public static string[] ngaySinh;
-        //public static int[] diem;
-        //public static string[] gioiTinh;
-        //public static string[] ghiChu;
+        
         public ChinhSua()
         {
             InitializeComponent();
         }
 
+        List<PhieuKetQua> list = new List<PhieuKetQua>();
          private void ChinhSua_Load(object sender, EventArgs e)
         {
             
@@ -48,21 +39,7 @@ namespace HeThongQuanLyTTHV
             listView1.Columns[9].Width = (int)(listView1.Width * 0.1);
             listView1.Columns[10].Width = (int)(listView1.Width * 0.1);
            
-            //truyền dữ liệu
-            //for (int i = 0; i < maPhieu[].Length; i++)
-            //{
-            //    listView1.Items[i].SubItems[0].Text = maPhieu[i];
-            //    listView1.Items[i].SubItems[1].Text = hoTen[i];
-            //    listView1.Items[i].SubItems[2].Text = cCCD[i].ToString();
-            //    listView1.Items[i].SubItems[3].Text = capHoc[i];
-            //    listView1.Items[i].SubItems[4].Text = khoaHoc[i];
-            //    listView1.Items[i].SubItems[5].Text = lop[i];
-            //    listView1.Items[i].SubItems[6].Text = sDT[i].ToString();
-            //    listView1.Items[i].SubItems[7].Text = ngaySinh[i].ToString();
-            //    listView1.Items[i].SubItems[8].Text = diem[i].ToString();
-            //    listView1.Items[i].SubItems[9].Text = gioiTinh[i].ToString();
-            //    listView1.Items[i].SubItems[10].Text = gioiTinh[i];  
-            //}
+            
 
         }
 
@@ -217,16 +194,16 @@ namespace HeThongQuanLyTTHV
         }
 
         private void btSapXep_Click(object sender, EventArgs e)
-        //{
-        //    for (i = 1; i < listView1.Items.Count; i++)
-        //        for (j = 0; j < int.Parse(listView1.Items.Count)-i; j++)
+        {
+            //    for (i = 1; i < listView1.Items.Count; i++)
+            //        for (j = 0; j < int.Parse(listView1.Items.Count)-i; j++)
 
-        //            if (arr1[j] > arr1[j + 1])
-        //            {
-        //                ch = arr1[j];
-        //                arr1[j] = arr1[j + 1];
-        //                arr1[j + 1] = ch;
-        //            }
+            //            if (arr1[j] > arr1[j + 1])
+            //            {
+            //                ch = arr1[j];
+            //                arr1[j] = arr1[j + 1];
+            //                arr1[j + 1] = ch;
+            //            }
         }
 
         private void btTroLai_Click(object sender, EventArgs e)
