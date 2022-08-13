@@ -116,8 +116,10 @@ namespace HeThongQuanLyTTHV.QLHV
             cbKhoaHoc.SelectedIndex = 0;
             cbCapHoc.Items.Clear();
             cbCapHoc.Items.Add("No selected item");
+            cbCapHoc.SelectedIndex = 0;
             cbLop.Items.Clear();
             cbLop.Items.Add("No selected item");
+            cbLop.SelectedIndex = 0;
         }
 
         private void ThongTinHocVien_Load(object sender, EventArgs e)
@@ -205,11 +207,9 @@ namespace HeThongQuanLyTTHV.QLHV
                 {
                     if(chucNang == "Add")
                     {
-                        MessageBox.Show("Học viên đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa",
+                        MessageBox.Show("Học viên đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        String id = txtID.Text;
                         Reset();
-                        txtID.Text = id;
                     }    
 
                     if (chucNang == "Edit" || chucNang == "Delete")
