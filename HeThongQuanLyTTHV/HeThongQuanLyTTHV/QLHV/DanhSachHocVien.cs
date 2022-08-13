@@ -44,12 +44,17 @@ namespace HeThongQuanLyTTHV.QLHV
 
         private void DanhSachHocVien_Load(object sender, EventArgs e)
         {
-            string listHVPath = Application.StartupPath + @"StudentList.txt";
+            string path = Application.StartupPath + @"\Data\StudentList.txt";
             try
             {
-                if (File.Exists(listHVPath))
+                listHV.Width = lbTitle.Width = Screen.PrimaryScreen.WorkingArea.Width;
+                foreach (ColumnHeader item in listHV.Columns)
                 {
-                    using (StreamReader s = new StreamReader(listHVPath))
+                    item.Width = (int)(listHV.Width * (0.1));
+                }
+                if (File.Exists(path))
+                {
+                    using (StreamReader s = new StreamReader(path))
                     {
                         string line;
                         string[] attributes;

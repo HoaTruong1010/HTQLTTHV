@@ -105,6 +105,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(191, 32);
             this.dtpDOB.TabIndex = 2;
+            this.dtpDOB.ValueChanged += new System.EventHandler(this.txtName_Click);
             // 
             // rdFemale
             // 
@@ -117,6 +118,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.rdFemale.TabStop = true;
             this.rdFemale.Text = "Nữ";
             this.rdFemale.UseVisualStyleBackColor = true;
+            this.rdFemale.CheckedChanged += new System.EventHandler(this.txtName_Click);
             // 
             // rdMale
             // 
@@ -129,6 +131,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.rdMale.TabStop = true;
             this.rdMale.Text = "Nam";
             this.rdMale.UseVisualStyleBackColor = true;
+            this.rdMale.CheckedChanged += new System.EventHandler(this.txtName_Click);
             // 
             // txtAdress
             // 
@@ -138,6 +141,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtAdress.Size = new System.Drawing.Size(529, 32);
             this.txtAdress.TabIndex = 7;
             this.txtAdress.TabStop = false;
+            this.txtAdress.Click += new System.EventHandler(this.txtName_Click);
             // 
             // txtPhone
             // 
@@ -147,6 +151,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtPhone.Size = new System.Drawing.Size(529, 32);
             this.txtPhone.TabIndex = 6;
             this.txtPhone.TabStop = false;
+            this.txtPhone.Click += new System.EventHandler(this.txtName_Click);
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtName
@@ -178,6 +183,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtEmail.Size = new System.Drawing.Size(529, 32);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TabStop = false;
+            this.txtEmail.Click += new System.EventHandler(this.txtName_Click);
             // 
             // txtID
             // 
@@ -278,31 +284,10 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbLop.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLop.FormattingEnabled = true;
             this.cbLop.IntegralHeight = false;
-            this.cbLop.Items.AddRange(new object[] {
-            "No selected item",
-            "K20C1L1",
-            "K20C1L2",
-            "K20C2L1",
-            "K20C2L2",
-            "K20C3L1",
-            "K20C3L2",
-            "K21C1L1",
-            "K21C1L2",
-            "K21C2L1",
-            "K21C2L2",
-            "K21C3L1",
-            "K21C3L2",
-            "K22C1L1",
-            "K22C1L2",
-            "K22C2L1",
-            "K22C2L2",
-            "K22C3L1",
-            "K22C3L2"});
             this.cbLop.Location = new System.Drawing.Point(223, 149);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(244, 32);
             this.cbLop.TabIndex = 2;
-            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbCapHoc_SelectedIndexChanged);
             // 
             // cbCapHoc
             // 
@@ -312,15 +297,6 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbCapHoc.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCapHoc.FormattingEnabled = true;
             this.cbCapHoc.IntegralHeight = false;
-            this.cbCapHoc.Items.AddRange(new object[] {
-            "No selected item",
-            "K20C1",
-            "K20C2",
-            "K20C3",
-            "K21C1",
-            "K21C2",
-            "K22C1",
-            "K22C2"});
             this.cbCapHoc.Location = new System.Drawing.Point(223, 98);
             this.cbCapHoc.Name = "cbCapHoc";
             this.cbCapHoc.Size = new System.Drawing.Size(244, 32);
@@ -335,15 +311,11 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbKhoaHoc.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoaHoc.FormattingEnabled = true;
             this.cbKhoaHoc.IntegralHeight = false;
-            this.cbKhoaHoc.Items.AddRange(new object[] {
-            "No selected item",
-            "Khóa 2020",
-            "Khóa 2021",
-            "Khóa 2022"});
             this.cbKhoaHoc.Location = new System.Drawing.Point(223, 49);
             this.cbKhoaHoc.Name = "cbKhoaHoc";
             this.cbKhoaHoc.Size = new System.Drawing.Size(244, 32);
             this.cbKhoaHoc.TabIndex = 0;
+            this.cbKhoaHoc.SelectedIndexChanged += new System.EventHandler(this.cbKhoaHoc_SelectedIndexChanged);
             // 
             // lbLop
             // 
