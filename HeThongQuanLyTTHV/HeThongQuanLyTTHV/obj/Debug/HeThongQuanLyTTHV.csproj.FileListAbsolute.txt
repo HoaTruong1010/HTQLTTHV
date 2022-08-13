@@ -10,6 +10,7 @@ D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Deb
 D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.pdb
 D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.DSKQHT.resources
 D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ChinhSua.resources
+<<<<<<< HEAD
 D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.Form1.resources
 D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.Them.resources
 D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ThongBao.resources
@@ -42,3 +43,7 @@ D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug
 D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.CoreCompileInputs.cache
 D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.exe
 D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.pdb
+=======
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.Them.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ThongBao.resources
+>>>>>>> ea8baeaac415933346fb2b1bdb24c42c01648e77
