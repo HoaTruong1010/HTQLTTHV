@@ -216,6 +216,19 @@ namespace HeThongQuanLyTTHV
             }    
         }
 
+        private void btSapXep_Click(object sender, EventArgs e)
+        //{
+        //    for (i = 1; i < listView1.Items.Count; i++)
+        //        for (j = 0; j < int.Parse(listView1.Items.Count)-i; j++)
+
+        //            if (arr1[j] > arr1[j + 1])
+        //            {
+        //                ch = arr1[j];
+        //                arr1[j] = arr1[j + 1];
+        //                arr1[j + 1] = ch;
+        //            }
+        }
+
         private void btTroLai_Click(object sender, EventArgs e)
         {
             DSKQHT f = new DSKQHT();

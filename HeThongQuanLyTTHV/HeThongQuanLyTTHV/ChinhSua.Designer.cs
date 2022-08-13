@@ -541,21 +541,22 @@
             // btSapXep
             // 
             this.btSapXep.BackColor = System.Drawing.Color.LightCyan;
-            this.btSapXep.Location = new System.Drawing.Point(128, 92);
+            this.btSapXep.Location = new System.Drawing.Point(120, 92);
             this.btSapXep.Margin = new System.Windows.Forms.Padding(2);
             this.btSapXep.Name = "btSapXep";
-            this.btSapXep.Size = new System.Drawing.Size(84, 30);
+            this.btSapXep.Size = new System.Drawing.Size(93, 30);
             this.btSapXep.TabIndex = 52;
             this.btSapXep.Text = "Sắp xếp";
             this.btSapXep.UseVisualStyleBackColor = false;
+            this.btSapXep.Click += new System.EventHandler(this.btSapXep_Click);
             // 
             // btXoa
             // 
             this.btXoa.BackColor = System.Drawing.Color.LightCyan;
-            this.btXoa.Location = new System.Drawing.Point(128, 42);
+            this.btXoa.Location = new System.Drawing.Point(120, 42);
             this.btXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(84, 30);
+            this.btXoa.Size = new System.Drawing.Size(92, 30);
             this.btXoa.TabIndex = 52;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = false;

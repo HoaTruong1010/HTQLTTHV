@@ -91,7 +91,7 @@ namespace HeThongQuanLyTTHV
         
         private void btLuu_Click(object sender, EventArgs e)
         {
-            
+            MaPhieu = new PhieuKetQua(); 
             //for (int i = 0; i < listView1.Items.Count; i++)
             //{
             //    ChinhSua.maPhieu[i] = listView1.Items[i].SubItems[0].Text;
