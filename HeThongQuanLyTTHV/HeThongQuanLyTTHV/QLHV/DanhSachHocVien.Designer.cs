@@ -38,13 +38,13 @@ namespace HeThongQuanLyTTHV.QLHV
             this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.phoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.adress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.khoaHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.capHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btSort = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.lbSum = new System.Windows.Forms.Label();
             this.txtSum = new System.Windows.Forms.TextBox();
-            this.khoaHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.capHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lbTitle
@@ -54,7 +54,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbTitle.Location = new System.Drawing.Point(3, 1);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(1782, 81);
+            this.lbTitle.Size = new System.Drawing.Size(1372, 81);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "DANH SÁCH HỌC VIÊN";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,9 +74,9 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lop});
             this.listHV.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listHV.HideSelection = false;
-            this.listHV.Location = new System.Drawing.Point(-1, 85);
+            this.listHV.Location = new System.Drawing.Point(4, 87);
             this.listHV.Name = "listHV";
-            this.listHV.Size = new System.Drawing.Size(1786, 624);
+            this.listHV.Size = new System.Drawing.Size(1365, 624);
             this.listHV.TabIndex = 1;
             this.listHV.UseCompatibleStateImageBehavior = false;
             this.listHV.View = System.Windows.Forms.View.Details;
@@ -104,7 +104,7 @@ namespace HeThongQuanLyTTHV.QLHV
             // email
             // 
             this.email.Text = "Email";
-            this.email.Width = 254;
+            this.email.Width = 196;
             // 
             // phoneNumber
             // 
@@ -114,7 +114,22 @@ namespace HeThongQuanLyTTHV.QLHV
             // adress
             // 
             this.adress.Text = "Địa chỉ";
-            this.adress.Width = 385;
+            this.adress.Width = 265;
+            // 
+            // khoaHoc
+            // 
+            this.khoaHoc.Text = "Khóa học";
+            this.khoaHoc.Width = 120;
+            // 
+            // capHoc
+            // 
+            this.capHoc.Text = "Cấp học";
+            this.capHoc.Width = 112;
+            // 
+            // lop
+            // 
+            this.lop.Text = "Lớp";
+            this.lop.Width = 116;
             // 
             // btSort
             // 
@@ -160,27 +175,12 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtSum.Size = new System.Drawing.Size(100, 32);
             this.txtSum.TabIndex = 8;
             // 
-            // khoaHoc
-            // 
-            this.khoaHoc.Text = "Khóa học";
-            this.khoaHoc.Width = 120;
-            // 
-            // capHoc
-            // 
-            this.capHoc.Text = "Cấp học";
-            this.capHoc.Width = 112;
-            // 
-            // lop
-            // 
-            this.lop.Text = "Lớp";
-            this.lop.Width = 116;
-            // 
             // DanhSachHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1786, 800);
+            this.ClientSize = new System.Drawing.Size(1373, 800);
             this.Controls.Add(this.txtSum);
             this.Controls.Add(this.lbSum);
             this.Controls.Add(this.btSort);

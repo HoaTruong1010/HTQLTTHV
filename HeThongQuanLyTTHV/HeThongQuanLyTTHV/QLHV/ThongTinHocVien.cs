@@ -18,48 +18,35 @@ namespace HeThongQuanLyTTHV.QLHV
             InitializeComponent();
         }
 
-        string listHVPath = Application.StartupPath + @"\Data\StudentList.txt";
-        string listKHPath = Application.StartupPath + @"\Data\SubjectList.txt";
-        string listCHPath = Application.StartupPath + @"\Data\LevelList.txt";
-        string listLPath = Application.StartupPath + @"\Data\ClassList.txt";
+        string path;
         int index = -1, idTemp;
         string selectedText;
 
         private void GhiFileStudentList(string path, List<HocVien> ts)
         {
-            if (!File.Exists(path))
-            {
-                using (StreamWriter s = new StreamWriter(path))
-                {
-                    foreach (HocVien h in ts)
-                    {
-                        s.WriteLine("{0}#{1}#{2}#{3}#{4}#{5}#{6}#{7}#{8}#{9}",
-                        h.Id, h.Name, h.Dob, h.Gender, h.Email, h.PhoneNumber, h.Adress,
-                        h.KhoaHoc, h.CapHoc, h.CapHoc);
-                    }
-                }
-            }
-            else
-            {
+            if(File.Exists(path))
                 File.Delete(path);
+            if (listHV.Count > 0)
                 using (StreamWriter s = new StreamWriter(path))
                 {
                     foreach (HocVien h in ts)
                     {
                         s.WriteLine("{0}#{1}#{2}#{3}#{4}#{5}#{6}#{7}#{8}#{9}",
                         h.Id, h.Name, h.Dob, h.Gender, h.Email, h.PhoneNumber, h.Adress,
-                        h.KhoaHoc, h.CapHoc, h.CapHoc);
+                        h.KhoaHoc, h.CapHoc, h.Lop);
                     }
                 }
-            }
+            else
+                return;
         }
 
         private void StudentListFromFile()
         {
             try
             {
-                if (File.Exists(listHVPath))
-                    using (StreamReader s = new StreamReader(listHVPath))
+                path = Application.StartupPath + @"\Data\StudentList.txt";
+                if (File.Exists(path))
+                    using (StreamReader s = new StreamReader(path))
                     {
                         string line;
                         string[] attributes;
@@ -91,11 +78,13 @@ namespace HeThongQuanLyTTHV.QLHV
                         string line;
                         while (s.Peek() >= 0)
                         {
-                            line = s.ReadLine();
-                            if(line.StartsWith("K"+keys))
+                            line = s.ReadLine();                            
+                            if (line.StartsWith(keys))
                                 box.Items.Add(line);
                         }
                     }
+                else
+                    MessageBox.Show("Không có dữ liệu cho khóa học", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -115,8 +104,8 @@ namespace HeThongQuanLyTTHV.QLHV
                 }
                 return -1;
             }
-            else
-                return -1;
+                
+            return -1;
         }
 
         private void Reset()
@@ -124,15 +113,28 @@ namespace HeThongQuanLyTTHV.QLHV
             txtID.Text = txtName.Text = txtEmail.Text = txtPhone.Text = txtAdress.Text = "";
             dtpDOB.Value = DateTime.Now;
             rdFemale.Checked = rdMale.Checked = false;
-            cbKhoaHoc.SelectedIndex = cbCapHoc.SelectedIndex = cbLop.SelectedIndex = 0;
+            cbKhoaHoc.SelectedIndex = 0;
+            cbCapHoc.Items.Clear();
+            cbCapHoc.Items.Add("No selected item");
+            cbLop.Items.Clear();
+            cbLop.Items.Add("No selected item");
         }
 
         private void ThongTinHocVien_Load(object sender, EventArgs e)
         {
             txtID.Focus();
             StudentListFromFile();
-            SubInfoItemsFromFile(listKHPath, cbKhoaHoc, "Khóa");
-            cbKhoaHoc.SelectedIndex = cbCapHoc.SelectedIndex = cbLop.SelectedIndex = 0;
+
+            path = Application.StartupPath + @"\Data\SubjectList.txt";
+
+            cbKhoaHoc.Items.Clear();
+            SubInfoItemsFromFile(path, cbKhoaHoc, "");
+            cbKhoaHoc.SelectedIndex = 0;
+            cbCapHoc.Items.Add("No selected item");
+            cbCapHoc.SelectedIndex = 0;
+            cbLop.Items.Add("No selected item");
+            cbLop.SelectedIndex = 0;
+
             if (chucNang != "Delete")
             {
                 btDel.Visible = false;
@@ -148,7 +150,8 @@ namespace HeThongQuanLyTTHV.QLHV
 
         private void btExit_Click(object sender, EventArgs e)
         {
-            GhiFileStudentList(listHVPath, ListHV);
+            path = Application.StartupPath + @"\Data\StudentList.txt";
+            GhiFileStudentList(path, ListHV);
             this.Close();
         }
 
@@ -158,7 +161,7 @@ namespace HeThongQuanLyTTHV.QLHV
             try
             {
                 if (txtID.Text == "" || txtEmail.Text == "" || txtPhone.Text == "" || txtAdress.Text == "" ||
-                    txtName.Text == "" || cbKhoaHoc.SelectedIndex == 0 || cbCapHoc.SelectedIndex == 0 ||
+                    txtName.Text == "" || cbKhoaHoc.SelectedIndex == 0|| cbCapHoc.SelectedIndex == 0 ||
                     cbLop.SelectedIndex == 0 || (!rdFemale.Checked && !rdMale.Checked))
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 else
@@ -200,39 +203,37 @@ namespace HeThongQuanLyTTHV.QLHV
             {
                 if (index != -1)
                 {
-                    txtName.Text = ListHV[index].Name;
-                    txtEmail.Text = ListHV[index].Email;
-                    txtPhone.Text = ListHV[index].PhoneNumber;
-                    txtAdress.Text = ListHV[index].Adress;
-                    dtpDOB.Value = DateTime.Parse(ListHV[index].Dob);
-                    cbKhoaHoc.SelectedItem = ListHV[index].KhoaHoc;
-                    cbCapHoc.SelectedItem = ListHV[index].CapHoc;
-                    cbLop.SelectedItem = ListHV[index].Lop;
-                    if (ListHV[index].Gender == "Nam")
+                    if(chucNang == "Add")
                     {
-                        rdMale.Checked = true;
-                        rdFemale.Checked = false;
-                    }
-                    else
-                    {
-                        rdMale.Checked = false;
-                        rdFemale.Checked = true;
-                    }
-
-                    txtName.SelectionStart = txtName.Text.Length;
-
-                    if (chucNang == "Edit")
-                    {
-                        idTemp = index;
-                    }
-                }
-                else
-                {
-                    if (chucNang == "Add")
-                    {
+                        MessageBox.Show("Học viên đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         String id = txtID.Text;
                         Reset();
                         txtID.Text = id;
+                    }    
+
+                    if (chucNang == "Edit" || chucNang == "Delete")
+                    {
+                        idTemp = index;
+                        txtName.Text = ListHV[index].Name;
+                        txtEmail.Text = ListHV[index].Email;
+                        txtPhone.Text = ListHV[index].PhoneNumber;
+                        txtAdress.Text = ListHV[index].Adress;
+                        dtpDOB.Value = DateTime.Parse(ListHV[index].Dob);
+                        txtName.SelectionStart = txtName.Text.Length;
+                        cbKhoaHoc.SelectedItem = ListHV[idTemp].KhoaHoc;
+                        cbCapHoc.SelectedItem = ListHV[idTemp].CapHoc;
+                        cbLop.SelectedItem = ListHV[idTemp].Lop;
+                        if (ListHV[index].Gender == "Nam")
+                        {
+                            rdMale.Checked = true;
+                            rdFemale.Checked = false;
+                        }
+                        else
+                        {
+                            rdMale.Checked = false;
+                            rdFemale.Checked = true;
+                        }
                     }
                 }
                 
@@ -261,27 +262,25 @@ namespace HeThongQuanLyTTHV.QLHV
 
         }
 
+        private void cbKhoaHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbKhoaHoc.SelectedIndex != 0)            
+            {
+                selectedText = cbKhoaHoc.Text;
+                selectedText = "K" + selectedText.Substring(selectedText.Length - 2, 2);
+                path = Application.StartupPath + @"\Data\LevelList.txt";
+                SubInfoItemsFromFile(path, cbCapHoc, selectedText);
+            }
+        }
+
         private void cbCapHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbKhoaHoc.SelectedIndex == 0)
+            if (cbCapHoc.SelectedIndex != 0)
             {
-                cbCapHoc.Items.Clear();
-                cbCapHoc.Items.Add("No selected item");
-
-                cbLop.Items.Clear();
-                cbLop.Items.Add("No selected item");
-            }
-            else
-            {
-                selectedText = cbKhoaHoc.SelectedItem.ToString();
-                selectedText = selectedText.Substring(selectedText.Length - 2, 2);
-                SubInfoItemsFromFile(listCHPath, cbCapHoc, selectedText);
-                if(cbCapHoc.SelectedIndex != 0)
-                {
-                    selectedText = cbCapHoc.SelectedItem.ToString();
-                    selectedText = selectedText.Substring(selectedText.Length - 2, 2);
-                    SubInfoItemsFromFile(listLPath, cbLop, selectedText);
-                }
+                selectedText = cbCapHoc.SelectedItem.ToString();
+                selectedText = selectedText.Substring(0, 5);
+                path = Application.StartupPath + @"\Data\ClassList.txt";
+                SubInfoItemsFromFile(path, cbLop, selectedText);
             }
         }
 
