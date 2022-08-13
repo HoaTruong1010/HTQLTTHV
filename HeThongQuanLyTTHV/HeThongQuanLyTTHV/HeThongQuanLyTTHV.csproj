@@ -66,31 +66,31 @@
     <Compile Include="QLHV\ThongTinHocVien.Designer.cs">
       <DependentUpon>ThongTinHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChinhSua.cs">
+    <Compile Include="QLKQHT\ChinhSua.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChinhSua.Designer.cs">
+    <Compile Include="QLKQHT\ChinhSua.Designer.cs">
       <DependentUpon>ChinhSua.cs</DependentUpon>
     </Compile>
-    <Compile Include="DSKQHT.cs">
+    <Compile Include="QLKQHT\DSKQHT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DSKQHT.Designer.cs">
+    <Compile Include="QLKQHT\DSKQHT.Designer.cs">
       <DependentUpon>DSKQHT.cs</DependentUpon>
     </Compile>
     <Compile Include="QLKQHT\PhieuKetQua.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Them.cs">
+    <Compile Include="QLKQHT\Them.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Them.Designer.cs">
+    <Compile Include="QLKQHT\Them.Designer.cs">
       <DependentUpon>Them.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChinhSua.resx">
+    <EmbeddedResource Include="QLKQHT\ChinhSua.resx">
       <DependentUpon>ChinhSua.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DSKQHT.resx">
+    <EmbeddedResource Include="QLKQHT\DSKQHT.resx">
       <DependentUpon>DSKQHT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -111,7 +111,7 @@
     <EmbeddedResource Include="QLHV\ThongTinHocVien.resx">
       <DependentUpon>ThongTinHocVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Them.resx">
+    <EmbeddedResource Include="QLKQHT\Them.resx">
       <DependentUpon>Them.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

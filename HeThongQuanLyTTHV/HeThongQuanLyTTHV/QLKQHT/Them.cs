@@ -11,7 +11,7 @@ using System.IO;
 using HeThongQuanLyTTHV;
 
 
-namespace HeThongQuanLyTTHV
+namespace HeThongQuanLyTTHV.QLKQHT
 {
     public partial class Them : Form
     {

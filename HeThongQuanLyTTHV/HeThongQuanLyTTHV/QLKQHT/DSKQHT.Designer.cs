@@ -1,4 +1,4 @@
-﻿namespace HeThongQuanLyTTHV
+﻿namespace HeThongQuanLyTTHV.QLKQHT
 {
     partial class DSKQHT
     {
@@ -74,7 +74,6 @@
             this.btThongBao.TabIndex = 76;
             this.btThongBao.Text = "Thông Báo";
             this.btThongBao.UseVisualStyleBackColor = false;
-            this.btThongBao.Click += new System.EventHandler(this.btThongBao_Click);
             // 
             // groupBox1
             // 

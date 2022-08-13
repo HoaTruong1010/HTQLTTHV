@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeThongQuanLyTTHV;
 
-namespace HeThongQuanLyTTHV
+namespace HeThongQuanLyTTHV.QLKQHT
 {
     public partial class DSKQHT : Form
     {
@@ -27,12 +27,6 @@ namespace HeThongQuanLyTTHV
         private void btChinh_Click(object sender, EventArgs e)
         {
             ChinhSua f = new ChinhSua();    
-            f.ShowDialog();
-        }
-
-        private void btThongBao_Click(object sender, EventArgs e)
-        {
-            ThongBao f = new ThongBao();
             f.ShowDialog();
         }
 

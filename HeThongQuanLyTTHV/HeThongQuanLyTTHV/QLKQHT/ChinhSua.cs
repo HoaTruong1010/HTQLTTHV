@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HeThongQuanLyTTHV
+namespace HeThongQuanLyTTHV.QLKQHT
 {
     public partial class ChinhSua : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace HeThongQuanLyTTHV
+﻿namespace HeThongQuanLyTTHV.QLKQHT
 {
     partial class ChinhSua
     {
