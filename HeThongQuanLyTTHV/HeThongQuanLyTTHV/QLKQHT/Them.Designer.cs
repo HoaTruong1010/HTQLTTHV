@@ -1,4 +1,4 @@
-﻿namespace HeThongQuanLyTTHV
+﻿namespace HeThongQuanLyTTHV.QLKQHT
 {
     partial class Them
     {
@@ -55,7 +55,7 @@
             this.txtCap = new System.Windows.Forms.TextBox();
             this.txtKhoa = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.MaPhieu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HoTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CCCD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CapHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -355,7 +355,7 @@
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.MaPhieu,
+            this.ma,
             this.HoTen,
             this.CCCD,
             this.CapHoc,
@@ -378,7 +378,7 @@
             // 
             // MaPhieu
             // 
-            this.MaPhieu.Text = "Mã Phiếu";
+            this.ma.Text = "Mã Phiếu";
             // 
             // HoTen
             // 
@@ -540,7 +540,7 @@
         private System.Windows.Forms.DateTimePicker dtNgaySinh;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btThem;
-        private System.Windows.Forms.ColumnHeader MaPhieu;
+        private System.Windows.Forms.ColumnHeader ma;
         private System.Windows.Forms.ColumnHeader HoTen;
         private System.Windows.Forms.ColumnHeader CCCD;
         private System.Windows.Forms.ColumnHeader CapHoc;

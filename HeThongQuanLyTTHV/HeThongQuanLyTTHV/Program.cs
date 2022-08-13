@@ -18,7 +18,7 @@ namespace HeThongQuanLyTTHV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QLHV.Main_QLHV());
+            Application.Run(new QLKQHT.DSKQHT());
         }
     }
 }
