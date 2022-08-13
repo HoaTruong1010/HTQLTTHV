@@ -50,6 +50,9 @@ namespace HeThongQuanLyTTHV
             //Xử lý không điền đủ thông tin
             try
             {
+                cccd = int.Parse(txtCCCD.Text);
+                diem = int.Parse(txtDiem.Text);
+                sdt = int.Parse(txtSDT.Text);
                 if (string.IsNullOrEmpty(txtMaPhieu.Text) || string.IsNullOrEmpty(txtHoTen.Text)
                        || string.IsNullOrEmpty(txtCCCD.Text) || string.IsNullOrEmpty(txtDiem.Text)
                        || string.IsNullOrEmpty(txtSDT.Text) || string.IsNullOrEmpty(txtLop.Text)
@@ -61,11 +64,8 @@ namespace HeThongQuanLyTTHV
                 {
                     // Thêm Items
 
-                    if (txtMaPhieu.Text != "")
+                    if (listView1.Items.Count == 0)
                     {
-                        cccd = int.Parse(txtCCCD.Text);
-                        diem = int.Parse(txtDiem.Text);
-                        sdt = int.Parse(txtSDT.Text);
                         item = new ListViewItem(txtMaPhieu.Text);
                         item.SubItems.Add(txtHoTen.Text);
                         item.SubItems.Add(txtCCCD.Text);
@@ -83,6 +83,25 @@ namespace HeThongQuanLyTTHV
                         txtCCCD.Text = "";
                         txtMaPhieu.Focus();
                     }
+                    else
+                    {
+                        item = new ListViewItem(txtMaPhieu.Text);
+                        item.SubItems.Add(txtHoTen.Text);
+                        item.SubItems.Add(txtCCCD.Text);
+                        item.SubItems.Add(txtCap.Text);
+                        item.SubItems.Add(txtKhoa.Text);
+                        item.SubItems.Add(txtLop.Text);
+                        item.SubItems.Add(txtSDT.Text);
+                        item.SubItems.Add(dtNgaySinh.Value.ToShortDateString());
+                        item.SubItems.Add(txtDiem.Text);
+                        item.SubItems.Add(rbNam.Checked ? "Nam" : "Nữ");
+                        item.SubItems.Add(txtGhiChu.Text);
+
+                        listView1.Items.Add(item);
+                        txtMaPhieu.Text = "";
+                        txtCCCD.Text = "";
+                        txtMaPhieu.Focus();
+                    }    
                 }
             }
             catch (FormatException)
