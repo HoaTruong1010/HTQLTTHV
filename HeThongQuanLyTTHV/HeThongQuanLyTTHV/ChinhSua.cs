@@ -12,6 +12,17 @@ namespace HeThongQuanLyTTHV
 {
     public partial class ChinhSua : Form
     {
+        //public static string[] maPhieu;
+        //public static string[] hoTen;
+        //public static int[] cCCD;
+        //public static string[] capHoc;
+        //public static string[] khoaHoc;
+        //public static string[] lop;
+        //public static int[] sDT;
+        //public static string[] ngaySinh;
+        //public static int[] diem;
+        //public static string[] gioiTinh;
+        //public static string[] ghiChu;
         public ChinhSua()
         {
             InitializeComponent();
@@ -19,21 +30,39 @@ namespace HeThongQuanLyTTHV
 
          private void ChinhSua_Load(object sender, EventArgs e)
         {
+            
             //ĐN columns listview
+            listView1.View = View.Details;
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
 
-            listView1.Columns[0].Width = (int)(listView1.Width * 0.09);
+            listView1.Columns[0].Width = (int)(listView1.Width * 0.1);
             listView1.Columns[1].Width = (int)(listView1.Width * 0.12);
             listView1.Columns[2].Width = (int)(listView1.Width * 0.1);
             listView1.Columns[3].Width = (int)(listView1.Width * 0.1);
             listView1.Columns[4].Width = (int)(listView1.Width * 0.1);
             listView1.Columns[5].Width = (int)(listView1.Width * 0.1);
             listView1.Columns[6].Width = (int)(listView1.Width * 0.1);
-            listView1.Columns[7].Width = (int)(listView1.Width * 0.1);
+            listView1.Columns[7].Width = (int)(listView1.Width * 0.12);
             listView1.Columns[8].Width = (int)(listView1.Width * 0.08);
             listView1.Columns[9].Width = (int)(listView1.Width * 0.1);
             listView1.Columns[10].Width = (int)(listView1.Width * 0.1);
+           
+            //truyền dữ liệu
+            //for (int i = 0; i < maPhieu[].Length; i++)
+            //{
+            //    listView1.Items[i].SubItems[0].Text = maPhieu[i];
+            //    listView1.Items[i].SubItems[1].Text = hoTen[i];
+            //    listView1.Items[i].SubItems[2].Text = cCCD[i].ToString();
+            //    listView1.Items[i].SubItems[3].Text = capHoc[i];
+            //    listView1.Items[i].SubItems[4].Text = khoaHoc[i];
+            //    listView1.Items[i].SubItems[5].Text = lop[i];
+            //    listView1.Items[i].SubItems[6].Text = sDT[i].ToString();
+            //    listView1.Items[i].SubItems[7].Text = ngaySinh[i].ToString();
+            //    listView1.Items[i].SubItems[8].Text = diem[i].ToString();
+            //    listView1.Items[i].SubItems[9].Text = gioiTinh[i].ToString();
+            //    listView1.Items[i].SubItems[10].Text = gioiTinh[i];  
+            //}
 
         }
 
@@ -46,7 +75,7 @@ namespace HeThongQuanLyTTHV
         private void btTimKiem_Click(object sender, EventArgs e)
         {
             int kt=0;
-            for (int i = 0; i <= listView1.Items.Count; i++)
+            for (int i = 0; i < listView1.Items.Count; i++)
             {
                 if (listView1.Items[i].SubItems[2].Text == txt.Text)
                 {
@@ -71,6 +100,7 @@ namespace HeThongQuanLyTTHV
                     txtGC.Text = listView1.Items[i].SubItems[10].Text;
                     kt += 1;
                     kTra = true;
+                    txt.Text = "";
                     break;
                 }
             }
@@ -78,6 +108,7 @@ namespace HeThongQuanLyTTHV
             {
                 MessageBox.Show("Không tồn tại học viên có CCCD này\n " +
                     "Bạn hãy điền lại");
+                txt.Text = "";
             }
         }
 
@@ -183,6 +214,13 @@ namespace HeThongQuanLyTTHV
                 MessageBox.Show("Không có dữ liệu để sửa");
 
             }    
+        }
+
+        private void btTroLai_Click(object sender, EventArgs e)
+        {
+            DSKQHT f = new DSKQHT();
+            f.ShowDialog();
+            Application.Exit();
         }
     }
 }
