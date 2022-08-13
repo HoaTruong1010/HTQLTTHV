@@ -42,6 +42,9 @@ namespace HeThongQuanLyTTHV.QLHV
             this.btExit = new System.Windows.Forms.Button();
             this.lbSum = new System.Windows.Forms.Label();
             this.txtSum = new System.Windows.Forms.TextBox();
+            this.khoaHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.capHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lbTitle
@@ -65,7 +68,10 @@ namespace HeThongQuanLyTTHV.QLHV
             this.gender,
             this.email,
             this.phoneNumber,
-            this.adress});
+            this.adress,
+            this.khoaHoc,
+            this.capHoc,
+            this.lop});
             this.listHV.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listHV.HideSelection = false;
             this.listHV.Location = new System.Drawing.Point(-1, 85);
@@ -78,27 +84,27 @@ namespace HeThongQuanLyTTHV.QLHV
             // ID
             // 
             this.ID.Text = "Số CCCD";
-            this.ID.Width = 147;
+            this.ID.Width = 104;
             // 
             // name
             // 
             this.name.Text = "Họ và tên";
-            this.name.Width = 289;
+            this.name.Width = 230;
             // 
             // DOB
             // 
             this.DOB.Text = "Ngày sinh";
-            this.DOB.Width = 153;
+            this.DOB.Width = 147;
             // 
             // gender
             // 
             this.gender.Text = "Giới tính";
-            this.gender.Width = 136;
+            this.gender.Width = 129;
             // 
             // email
             // 
             this.email.Text = "Email";
-            this.email.Width = 264;
+            this.email.Width = 254;
             // 
             // phoneNumber
             // 
@@ -108,7 +114,7 @@ namespace HeThongQuanLyTTHV.QLHV
             // adress
             // 
             this.adress.Text = "Địa chỉ";
-            this.adress.Width = 579;
+            this.adress.Width = 385;
             // 
             // btSort
             // 
@@ -140,7 +146,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbSum.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSum.Location = new System.Drawing.Point(153, 760);
             this.lbSum.Name = "lbSum";
-            this.lbSum.Size = new System.Drawing.Size(348, 25);
+            this.lbSum.Size = new System.Drawing.Size(322, 24);
             this.lbSum.TabIndex = 7;
             this.lbSum.Text = "Tổng số lượng học viên: ";
             // 
@@ -153,6 +159,21 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtSum.Name = "txtSum";
             this.txtSum.Size = new System.Drawing.Size(100, 32);
             this.txtSum.TabIndex = 8;
+            // 
+            // khoaHoc
+            // 
+            this.khoaHoc.Text = "Khóa học";
+            this.khoaHoc.Width = 120;
+            // 
+            // capHoc
+            // 
+            this.capHoc.Text = "Cấp học";
+            this.capHoc.Width = 112;
+            // 
+            // lop
+            // 
+            this.lop.Text = "Lớp";
+            this.lop.Width = 116;
             // 
             // DanhSachHocVien
             // 
@@ -195,5 +216,8 @@ namespace HeThongQuanLyTTHV.QLHV
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Label lbSum;
         private System.Windows.Forms.TextBox txtSum;
+        private System.Windows.Forms.ColumnHeader khoaHoc;
+        private System.Windows.Forms.ColumnHeader capHoc;
+        private System.Windows.Forms.ColumnHeader lop;
     }
 }

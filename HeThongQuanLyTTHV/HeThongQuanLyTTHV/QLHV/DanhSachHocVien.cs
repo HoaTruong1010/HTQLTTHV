@@ -61,7 +61,8 @@ namespace HeThongQuanLyTTHV.QLHV
                             item = new ListViewItem(attributes);
                             listHV.Items.Add(item);
                             HocVien h = new HocVien(attributes[0], attributes[1], attributes[2],
-                            attributes[3], attributes[4], attributes[5], attributes[6]);
+                            attributes[3], attributes[4], attributes[5], attributes[6], attributes[7],
+                            attributes[8], attributes[9]);
                             hocViens.Add(h);
                         }
                     }
@@ -91,7 +92,8 @@ namespace HeThongQuanLyTTHV.QLHV
             }
             foreach (HocVien h in hocViens)
             {
-                attributes = new string[] { h.Id, h.Name, h.Dob, h.Gender, h.Email, h.PhoneNumber, h.Adress };
+                attributes = new string[] { h.Id, h.Name, h.Dob, h.Gender, h.Email, h.PhoneNumber,
+                    h.Adress, h.KhoaHoc, h.CapHoc, h.Lop };
                 item = new ListViewItem(attributes);
                 listHV.Items.Add(item);
             }

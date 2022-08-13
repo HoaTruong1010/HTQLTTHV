@@ -52,22 +52,20 @@
     <Compile Include="QLHV\DanhSachHocVien.Designer.cs">
       <DependentUpon>DanhSachHocVien.cs</DependentUpon>
     </Compile>
-	  <Compile Include="QLHV\HocVien.cs">
-	  </Compile>
+    <Compile Include="QLHV\HocVien.cs">
+    </Compile>
     <Compile Include="QLHV\Main_QLHV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QLHV\Main_QLHV.Designer.cs">
       <DependentUpon>Main_QLHV.cs</DependentUpon>
     </Compile>
-	  <Compile Include="QLHV\PhuongThuc.cs">
-	  </Compile>
     <Compile Include="QLHV\ThongTinHocVien.cs">
       <SubType>Form</SubType>
     </Compile>
-	  <Compile Include="QLHV\ThongTinHocVien.Designer.cs">
-		  <DependentUpon>ThongTinHocVien.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="QLHV\ThongTinHocVien.Designer.cs">
+      <DependentUpon>ThongTinHocVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChinhSua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,9 +114,9 @@
     <EmbeddedResource Include="QLHV\Main_QLHV.resx">
       <DependentUpon>Main_QLHV.cs</DependentUpon>
     </EmbeddedResource>
-	  <EmbeddedResource Include="QLHV\ThongTinHocVien.resx">
-		  <DependentUpon>ThongTinHocVien.cs</DependentUpon>
-	  </EmbeddedResource>
+    <EmbeddedResource Include="QLHV\ThongTinHocVien.resx">
+      <DependentUpon>ThongTinHocVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Them.resx">
       <DependentUpon>Them.cs</DependentUpon>
     </EmbeddedResource>

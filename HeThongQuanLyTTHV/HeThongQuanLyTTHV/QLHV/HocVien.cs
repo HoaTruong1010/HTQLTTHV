@@ -8,14 +8,16 @@ namespace HeThongQuanLyTTHV.QLHV
 {
     class HocVien
     {
-        private string id, name, dob, gender, email, phoneNumber, adress;
+        private string id, name, dob, gender, email, phoneNumber, adress, khoaHoc, capHoc, lop;
 
         public HocVien()
         {
             id = name = dob = gender = email = phoneNumber = adress = null;
+            khoaHoc = capHoc = lop = null;
         }
 
-        public HocVien(String id, String name, String dob, String gender, String email, String phoneNumber, String adress)
+        public HocVien(string id, string name, string dob, string gender, string email, 
+            string phoneNumber, string adress, string khoaHoc, string capHoc, string lop)
         {
             this.id = id;
             this.name = name;
@@ -24,6 +26,9 @@ namespace HeThongQuanLyTTHV.QLHV
             this.email = email;
             this.phoneNumber = phoneNumber;
             this.adress = adress;
+            this.khoaHoc = khoaHoc;
+            this.capHoc = capHoc;
+            this.lop = lop;
         }
 
         public HocVien(HocVien h)
@@ -35,6 +40,9 @@ namespace HeThongQuanLyTTHV.QLHV
             this.email = h.email;
             this.phoneNumber = h.phoneNumber;
             this.adress = h.adress;
+            this.khoaHoc = h.khoaHoc;
+            this.capHoc = h.capHoc;
+            this.lop = h.lop;
         }
 
         public string Id { get => id; set => id = value; }
@@ -44,5 +52,8 @@ namespace HeThongQuanLyTTHV.QLHV
         public string Email { get => email; set => email = value; }
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Adress { get => adress; set => adress = value; }
+        public string KhoaHoc { get => khoaHoc; set => khoaHoc = value; }
+        public string CapHoc { get => capHoc; set => capHoc = value; }
+        public string Lop { get => lop; set => lop = value; }
     }
 }

@@ -44,6 +44,8 @@ D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug
 D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.exe
 D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.pdb
 =======
-D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.Them.resources
-D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ThongBao.resources
 >>>>>>> ea8baeaac415933346fb2b1bdb24c42c01648e77
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ChinhSua.resources
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.DSKQHT.resources
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.Them.resources
+D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.ThongBao.resources
