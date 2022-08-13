@@ -302,6 +302,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(244, 32);
             this.cbLop.TabIndex = 2;
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbCapHoc_SelectedIndexChanged);
             // 
             // cbCapHoc
             // 
@@ -324,6 +325,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbCapHoc.Name = "cbCapHoc";
             this.cbCapHoc.Size = new System.Drawing.Size(244, 32);
             this.cbCapHoc.TabIndex = 1;
+            this.cbCapHoc.SelectedIndexChanged += new System.EventHandler(this.cbCapHoc_SelectedIndexChanged);
             // 
             // cbKhoaHoc
             // 

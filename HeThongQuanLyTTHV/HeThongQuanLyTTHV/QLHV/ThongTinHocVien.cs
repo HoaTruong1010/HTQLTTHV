@@ -8,7 +8,7 @@ namespace HeThongQuanLyTTHV.QLHV
     public partial class ThongTinHocVien : Form
     {
         private string chucNang;
-        private List<HocVien> listHV;
+        private List<HocVien> listHV = new List<HocVien>(1000);
 
         public string ChucNang { get => chucNang; set => chucNang = value; }
         internal List<HocVien> ListHV { get => listHV; set => listHV = value; }
@@ -18,47 +18,84 @@ namespace HeThongQuanLyTTHV.QLHV
             InitializeComponent();
         }
 
-        string listHVPath = Application.StartupPath + @"StudentList.txt";
-        string listHocPath = Application.StartupPath + @"HocVien_MonHoc.txt";
+        string listHVPath = Application.StartupPath + @"\Data\StudentList.txt";
+        string listKHPath = Application.StartupPath + @"\Data\SubjectList.txt";
+        string listCHPath = Application.StartupPath + @"\Data\LevelList.txt";
+        string listLPath = Application.StartupPath + @"\Data\ClassList.txt";
         int index = -1, idTemp;
+        string selectedText;
 
-        private void ThongTinHocVien_Load(object sender, EventArgs e)
+        private void GhiFileStudentList(string path, List<HocVien> ts)
         {
-            txtID.Focus();
-            ListHV = new List<HocVien>(1000);
-            StudentListFromFile();
-            cbKhoaHoc.SelectedIndex = cbCapHoc.SelectedIndex = cbLop.SelectedIndex = 0;
-            if (chucNang != "Delete")
+            if (!File.Exists(path))
             {
-                btDel.Visible = false;
-                btSave.Visible = true;
+                using (StreamWriter s = new StreamWriter(path))
+                {
+                    foreach (HocVien h in ts)
+                    {
+                        s.WriteLine("{0}#{1}#{2}#{3}#{4}#{5}#{6}#{7}#{8}#{9}",
+                        h.Id, h.Name, h.Dob, h.Gender, h.Email, h.PhoneNumber, h.Adress,
+                        h.KhoaHoc, h.CapHoc, h.CapHoc);
+                    }
+                }
             }
             else
             {
-                btDel.Visible = true;
-                btSave.Visible = false;
-            }    
-                
+                File.Delete(path);
+                using (StreamWriter s = new StreamWriter(path))
+                {
+                    foreach (HocVien h in ts)
+                    {
+                        s.WriteLine("{0}#{1}#{2}#{3}#{4}#{5}#{6}#{7}#{8}#{9}",
+                        h.Id, h.Name, h.Dob, h.Gender, h.Email, h.PhoneNumber, h.Adress,
+                        h.KhoaHoc, h.CapHoc, h.CapHoc);
+                    }
+                }
+            }
         }
 
         private void StudentListFromFile()
         {
             try
             {
-                if(File.Exists(listHVPath))
-                using (StreamReader s = new StreamReader(listHVPath))
-                {
-                    string line;
-                    string[] attributes;
-                    while (s.Peek() >= 0)
+                if (File.Exists(listHVPath))
+                    using (StreamReader s = new StreamReader(listHVPath))
                     {
-                        line = s.ReadLine();
-                        attributes = line.Split(new string[] { "#" }, StringSplitOptions.None);
-                        HocVien h = new HocVien(attributes[0], attributes[1], attributes[2],
-                            attributes[3], attributes[4], attributes[5], attributes[6]);
-                        ListHV.Add(h);
-                    }                    
-                }
+                        string line;
+                        string[] attributes;
+                        while (s.Peek() >= 0)
+                        {
+                            line = s.ReadLine();
+                            attributes = line.Split(new string[] { "#" }, StringSplitOptions.None);
+                            HocVien h = new HocVien(attributes[0], attributes[1], attributes[2],
+                                attributes[3], attributes[4], attributes[5], attributes[6],
+                                attributes[7], attributes[8], attributes[9]);
+                            ListHV.Add(h);
+                        }
+                    }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SubInfoItemsFromFile(string path, ComboBox box, string keys)
+        {
+            try
+            {
+                if (File.Exists(path))
+                    using (StreamReader s = new StreamReader(path))
+                    {
+                        string line;
+                        while (s.Peek() >= 0)
+                        {
+                            line = s.ReadLine();
+                            if(line.StartsWith("K"+keys))
+                                box.Items.Add(line);
+                        }
+                    }
             }
             catch (Exception ex)
             {
@@ -69,7 +106,7 @@ namespace HeThongQuanLyTTHV.QLHV
 
         private int SearchStudent(String id)
         {
-            if(ListHV.Count > 0)
+            if (ListHV.Count > 0)
             {
                 for (int i = 0; i < ListHV.Count; i++)
                 {
@@ -90,9 +127,28 @@ namespace HeThongQuanLyTTHV.QLHV
             cbKhoaHoc.SelectedIndex = cbCapHoc.SelectedIndex = cbLop.SelectedIndex = 0;
         }
 
+        private void ThongTinHocVien_Load(object sender, EventArgs e)
+        {
+            txtID.Focus();
+            StudentListFromFile();
+            SubInfoItemsFromFile(listKHPath, cbKhoaHoc, "Khóa");
+            cbKhoaHoc.SelectedIndex = cbCapHoc.SelectedIndex = cbLop.SelectedIndex = 0;
+            if (chucNang != "Delete")
+            {
+                btDel.Visible = false;
+                btSave.Visible = true;
+            }
+            else
+            {
+                btDel.Visible = true;
+                btSave.Visible = false;
+            }    
+                
+        }
+
         private void btExit_Click(object sender, EventArgs e)
         {
-            PhuongThuc.GhiFileStudentList(listHVPath, ListHV);
+            GhiFileStudentList(listHVPath, ListHV);
             this.Close();
         }
 
@@ -112,33 +168,11 @@ namespace HeThongQuanLyTTHV.QLHV
                     else
                         gender = "Nam";
                     HocVien h = new HocVien(txtID.Text, txtName.Text, dtpDOB.Value.ToString(), gender, txtEmail.Text,
-                        txtPhone.Text, txtAdress.Text);
-                    switch (chucNang)
-                    {
-                        case "Add":
-                            listHV.Add(h);
-                            break;
-                        case "Edit":
-                            listHV.RemoveAt(idTemp);
-                            listHV.Add(h);
-                            break;
-                    }
-                    if (!File.Exists(listHocPath))
-                    {
-                        using (StreamWriter s = new StreamWriter(listHocPath))
-                        {
-                            s.WriteLine("{0}#{1}#{2}#{3}",
-                                h.Id, cbKhoaHoc.SelectedItem.ToString(), cbCapHoc.SelectedItem.ToString(), cbLop.SelectedItem.ToString());
-                        }
-                    }
-                    else
-                    {
-                        using (StreamWriter s = File.AppendText(listHocPath))
-                        {
-                            s.WriteLine("{0}#{1}#{2}#{3}",
-                                h.Id, cbKhoaHoc.SelectedItem.ToString(), cbCapHoc.SelectedItem.ToString(), cbLop.SelectedItem.ToString());
-                        }
-                    }
+                        txtPhone.Text, txtAdress.Text, cbKhoaHoc.SelectedItem.ToString(), cbCapHoc.SelectedItem.ToString(),
+                         cbLop.SelectedItem.ToString());
+                    if (chucNang == "Edit")
+                        listHV.RemoveAt(idTemp);
+                    listHV.Add(h);
                     MessageBox.Show("Lưu thành công!");
                     Reset();
                 }
@@ -171,6 +205,9 @@ namespace HeThongQuanLyTTHV.QLHV
                     txtPhone.Text = ListHV[index].PhoneNumber;
                     txtAdress.Text = ListHV[index].Adress;
                     dtpDOB.Value = DateTime.Parse(ListHV[index].Dob);
+                    cbKhoaHoc.SelectedItem = ListHV[index].KhoaHoc;
+                    cbCapHoc.SelectedItem = ListHV[index].CapHoc;
+                    cbLop.SelectedItem = ListHV[index].Lop;
                     if (ListHV[index].Gender == "Nam")
                     {
                         rdMale.Checked = true;
@@ -181,7 +218,9 @@ namespace HeThongQuanLyTTHV.QLHV
                         rdMale.Checked = false;
                         rdFemale.Checked = true;
                     }
+
                     txtName.SelectionStart = txtName.Text.Length;
+
                     if (chucNang == "Edit")
                     {
                         idTemp = index;
@@ -222,9 +261,43 @@ namespace HeThongQuanLyTTHV.QLHV
 
         }
 
+        private void cbCapHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbKhoaHoc.SelectedIndex == 0)
+            {
+                cbCapHoc.Items.Clear();
+                cbCapHoc.Items.Add("No selected item");
+
+                cbLop.Items.Clear();
+                cbLop.Items.Add("No selected item");
+            }
+            else
+            {
+                selectedText = cbKhoaHoc.SelectedItem.ToString();
+                selectedText = selectedText.Substring(selectedText.Length - 2, 2);
+                SubInfoItemsFromFile(listCHPath, cbCapHoc, selectedText);
+                if(cbCapHoc.SelectedIndex != 0)
+                {
+                    selectedText = cbCapHoc.SelectedItem.ToString();
+                    selectedText = selectedText.Substring(selectedText.Length - 2, 2);
+                    SubInfoItemsFromFile(listLPath, cbLop, selectedText);
+                }
+            }
+        }
+
         private void btDel_Click(object sender, EventArgs e)
         {
-
+            if (index != -1)
+            {
+                listHV.RemoveAt(index);
+                MessageBox.Show("Xóa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                txtID.Focus();
+                txtID.SelectionStart = txtID.Text.Length;
+                MessageBox.Show("Học viên không tồn tại!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
     }
 }
