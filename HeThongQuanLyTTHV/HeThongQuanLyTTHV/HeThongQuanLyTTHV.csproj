@@ -87,12 +87,6 @@
     <Compile Include="Them.Designer.cs">
       <DependentUpon>Them.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongBao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongBao.Designer.cs">
-      <DependentUpon>ThongBao.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ChinhSua.resx">
       <DependentUpon>ChinhSua.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,9 +113,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Them.resx">
       <DependentUpon>Them.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThongBao.resx">
-      <DependentUpon>ThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

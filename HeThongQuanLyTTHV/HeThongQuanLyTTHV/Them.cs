@@ -20,7 +20,9 @@ namespace HeThongQuanLyTTHV
         {
             InitializeComponent();
         }
-        
+
+        string dsP = Application.StartupPath + @"DSP.txt";
+
         private void Them_Load(object sender, EventArgs e)
         {
             
@@ -48,6 +50,9 @@ namespace HeThongQuanLyTTHV
             //Xử lý không điền đủ thông tin
             try
             {
+                cccd = int.Parse(txtCCCD.Text);
+                diem = int.Parse(txtDiem.Text);
+                sdt = int.Parse(txtSDT.Text);
                 if (string.IsNullOrEmpty(txtMaPhieu.Text) || string.IsNullOrEmpty(txtHoTen.Text)
                        || string.IsNullOrEmpty(txtCCCD.Text) || string.IsNullOrEmpty(txtDiem.Text)
                        || string.IsNullOrEmpty(txtSDT.Text) || string.IsNullOrEmpty(txtLop.Text)
@@ -59,11 +64,8 @@ namespace HeThongQuanLyTTHV
                 {
                     // Thêm Items
 
-                    if (txtMaPhieu.Text != "")
+                    if (listView1.Items.Count == 0)
                     {
-                        cccd = int.Parse(txtCCCD.Text);
-                        diem = int.Parse(txtDiem.Text);
-                        sdt = int.Parse(txtSDT.Text);
                         item = new ListViewItem(txtMaPhieu.Text);
                         item.SubItems.Add(txtHoTen.Text);
                         item.SubItems.Add(txtCCCD.Text);
@@ -81,6 +83,25 @@ namespace HeThongQuanLyTTHV
                         txtCCCD.Text = "";
                         txtMaPhieu.Focus();
                     }
+                    else
+                    {
+                        item = new ListViewItem(txtMaPhieu.Text);
+                        item.SubItems.Add(txtHoTen.Text);
+                        item.SubItems.Add(txtCCCD.Text);
+                        item.SubItems.Add(txtCap.Text);
+                        item.SubItems.Add(txtKhoa.Text);
+                        item.SubItems.Add(txtLop.Text);
+                        item.SubItems.Add(txtSDT.Text);
+                        item.SubItems.Add(dtNgaySinh.Value.ToShortDateString());
+                        item.SubItems.Add(txtDiem.Text);
+                        item.SubItems.Add(rbNam.Checked ? "Nam" : "Nữ");
+                        item.SubItems.Add(txtGhiChu.Text);
+
+                        listView1.Items.Add(item);
+                        txtMaPhieu.Text = "";
+                        txtCCCD.Text = "";
+                        txtMaPhieu.Focus();
+                    }    
                 }
             }
             catch (FormatException)
@@ -88,24 +109,10 @@ namespace HeThongQuanLyTTHV
                 MessageBox.Show("CCCD, SĐT, Điểm nhập số!");
             }
         }
-        
+
         private void btLuu_Click(object sender, EventArgs e)
         {
             
-            //for (int i = 0; i < listView1.Items.Count; i++)
-            //{
-            //    ChinhSua.maPhieu[i] = listView1.Items[i].SubItems[0].Text;
-            //    ChinhSua.hoTen[i] = listView1.Items[i].SubItems[1].Text;
-            //    ChinhSua.cCCD[i] = int.Parse(listView1.Items[i].SubItems[2].Text);
-            //    ChinhSua.capHoc[i] = listView1.Items[i].SubItems[3].Text;
-            //    ChinhSua.khoaHoc[i] = listView1.Items[i].SubItems[4].Text;
-            //    ChinhSua.lop[i] = listView1.Items[i].SubItems[5].Text;
-            //    ChinhSua.sDT[i] = int.Parse(listView1.Items[i].SubItems[6].Text);
-            //    ChinhSua.ngaySinh[i] = listView1.Items[i].SubItems[7].Text;
-            //    ChinhSua.diem[i]= int.Parse(listView1.Items[i].SubItems[8].Text);
-            //    ChinhSua.gioiTinh[i] = listView1.Items[i].SubItems[9].Text;
-            //    ChinhSua.ghiChu[i] = listView1.Items[i].SubItems[10].Text;
-            //}
         }
 
         private void btTroLai_Click(object sender, EventArgs e)
