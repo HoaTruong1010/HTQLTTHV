@@ -266,7 +266,10 @@ namespace HeThongQuanLyTTHV.QLHV
         {
             if(cbKhoaHoc.SelectedIndex != 0)            
             {
-                selectedText = cbKhoaHoc.Text;
+                cbCapHoc.Items.Clear();
+                cbCapHoc.Items.Add("No selected item");
+                cbCapHoc.SelectedIndex = 0;
+                selectedText = cbKhoaHoc.SelectedItem.ToString();
                 selectedText = "K" + selectedText.Substring(selectedText.Length - 2, 2);
                 path = Application.StartupPath + @"\Data\LevelList.txt";
                 SubInfoItemsFromFile(path, cbCapHoc, selectedText);
@@ -277,6 +280,9 @@ namespace HeThongQuanLyTTHV.QLHV
         {
             if (cbCapHoc.SelectedIndex != 0)
             {
+                cbLop.Items.Clear();
+                cbLop.Items.Add("No selected item");
+                cbLop.SelectedIndex = 0;
                 selectedText = cbCapHoc.SelectedItem.ToString();
                 selectedText = selectedText.Substring(0, 5);
                 path = Application.StartupPath + @"\Data\ClassList.txt";
