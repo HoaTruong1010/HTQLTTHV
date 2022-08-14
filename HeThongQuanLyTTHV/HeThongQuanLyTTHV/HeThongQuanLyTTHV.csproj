@@ -200,12 +200,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="DSTKB\DSLopIELTS.txt" />
-    <Content Include="DSTKB\DSLopTAGiaoTiep.txt" />
-    <Content Include="DSTKB\DSLopTATQNguoiLon.txt" />
-    <Content Include="DSTKB\DSLopTATQThieuNhi.txt" />
-    <Content Include="DSTKB\DSLopTOEIC.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
