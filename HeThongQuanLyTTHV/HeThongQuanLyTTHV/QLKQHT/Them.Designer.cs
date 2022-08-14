@@ -100,6 +100,7 @@
             this.rbNu.TabStop = true;
             this.rbNu.Text = "Nữ";
             this.rbNu.UseVisualStyleBackColor = true;
+            this.rbNu.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // rbNam
             // 
@@ -113,6 +114,7 @@
             this.rbNam.TabStop = true;
             this.rbNam.Text = "Nam";
             this.rbNam.UseVisualStyleBackColor = true;
+            this.rbNam.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // lbSDT
             // 
@@ -171,7 +173,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(211, 27);
             this.txtSDT.TabIndex = 33;
-            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
+            this.txtSDT.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
             // txtCCCD
@@ -181,7 +183,7 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(209, 27);
             this.txtCCCD.TabIndex = 29;
-            this.txtCCCD.TextChanged += new System.EventHandler(this.txtCCCD_TextChanged);
+            this.txtCCCD.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
             // txtHoTen
@@ -192,7 +194,6 @@
             this.txtHoTen.Size = new System.Drawing.Size(241, 27);
             this.txtHoTen.TabIndex = 34;
             this.txtHoTen.Click += new System.EventHandler(this.txtHoTen_Click);
-            this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtMaPhieu
             // 
@@ -201,7 +202,6 @@
             this.txtMaPhieu.Name = "txtMaPhieu";
             this.txtMaPhieu.Size = new System.Drawing.Size(219, 27);
             this.txtMaPhieu.TabIndex = 28;
-            this.txtMaPhieu.TextChanged += new System.EventHandler(this.txtMaPhieu_TextChanged);
             // 
             // txtGhiChu
             // 
@@ -211,6 +211,7 @@
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(1118, 120);
             this.txtGhiChu.TabIndex = 30;
+            this.txtGhiChu.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtDiem
             // 
@@ -219,7 +220,8 @@
             this.txtDiem.Name = "txtDiem";
             this.txtDiem.Size = new System.Drawing.Size(97, 27);
             this.txtDiem.TabIndex = 31;
-            this.txtDiem.TextChanged += new System.EventHandler(this.txtDiem_TextChanged);
+            this.txtDiem.Click += new System.EventHandler(this.txtHoTen_Click);
+            this.txtDiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiem_KeyPress);
             // 
             // lbGhiChu
             // 
@@ -341,6 +343,7 @@
             this.txtLop.Name = "txtLop";
             this.txtLop.Size = new System.Drawing.Size(211, 27);
             this.txtLop.TabIndex = 28;
+            this.txtLop.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtCap
             // 
@@ -349,6 +352,7 @@
             this.txtCap.Name = "txtCap";
             this.txtCap.Size = new System.Drawing.Size(211, 27);
             this.txtCap.TabIndex = 28;
+            this.txtCap.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtKhoa
             // 
@@ -357,6 +361,7 @@
             this.txtKhoa.Name = "txtKhoa";
             this.txtKhoa.Size = new System.Drawing.Size(229, 27);
             this.txtKhoa.TabIndex = 28;
+            this.txtKhoa.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // listView1
             // 
@@ -453,7 +458,7 @@
             // btXoa
             // 
             this.btXoa.BackColor = System.Drawing.Color.LightCyan;
-            this.btXoa.Location = new System.Drawing.Point(943, 707);
+            this.btXoa.Location = new System.Drawing.Point(974, 707);
             this.btXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(122, 69);
@@ -465,7 +470,7 @@
             // btLuu
             // 
             this.btLuu.BackColor = System.Drawing.Color.LightCyan;
-            this.btLuu.Location = new System.Drawing.Point(943, 707);
+            this.btLuu.Location = new System.Drawing.Point(833, 707);
             this.btLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(122, 69);

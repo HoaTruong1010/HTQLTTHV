@@ -33,7 +33,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             foreach (PhieuKetQua p in listDS)
             {
                 att = new string[] { p.MaPhieu, p.HoTen, p.Cccd, p.CapHoc, p.KhoaHoc, p.Lop,
-                    p.Sdt, p.Ngaysinh, p.Score, p.GioiTinh, p.GhiChu};
+                    p.Sdt, p.Ngaysinh, p.Diem.ToString(), p.GioiTinh, p.GhiChu};
                 item = new ListViewItem(att);
                 listView1.Items.Add(item);
             }
@@ -81,6 +81,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 }
                 else
                     MessageBox.Show("Danh sách rỗng!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // danh sách rỗng khi list.count > 0. nếu file chưa tồn tại thì báo chưa tồn tại chứ
             }
             catch (Exception ex)
             {

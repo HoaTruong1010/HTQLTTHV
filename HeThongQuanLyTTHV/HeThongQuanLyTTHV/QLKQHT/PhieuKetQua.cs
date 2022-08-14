@@ -10,7 +10,7 @@ namespace HeThongQuanLyTTHV
     internal class PhieuKetQua
     {
         
-        private string maPhieu, hoTen, capHoc, khoaHoc, lop, ngaysinh, score, gioiTinh, ghiChu, cccd, sdt;
+        private string maPhieu, hoTen, capHoc, khoaHoc, lop, ngaysinh, gioiTinh, ghiChu, cccd, sdt;
         private double  diem;// cccd vs sđt là kiểu string nha, điểm là double
 
         public string MaPhieu { get => maPhieu; set => maPhieu = value; }
@@ -23,28 +23,37 @@ namespace HeThongQuanLyTTHV
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
         public string Cccd { get => cccd; set => cccd = value; }
         public string Sdt { get => sdt; set => sdt = value; }
-        public string Score { get => score; set => score = value; }
         public double Diem { get => diem; set => diem = value; }
 
         public PhieuKetQua()
         {
-            MaPhieu = HoTen = CapHoc = KhoaHoc = Lop = Ngaysinh = GioiTinh = GhiChu = Cccd = Sdt = Score = null;
+            MaPhieu = HoTen = CapHoc = KhoaHoc = Lop = Ngaysinh = GioiTinh = GhiChu = Cccd = Sdt = null;
             Diem=0;    
         }
-        public PhieuKetQua(string maPhieu, string hoTen, string capHoc, string khoaHoc, string lop, string ngaysinh,
-            string gioiTinh, string ghiChu, string cccd, string sdt, string score)
+        public PhieuKetQua(string maPhieu, string hoTen, string cccd, string capHoc, string khoaHoc, string lop,
+            string sdt, string ngaySinh, string diem, string gioiTinh, string ghiChu)
         {
+            //p.MaPhieu, p.HoTen, p.Cccd, p.CapHoc, p.KhoaHoc, p.Lop, p.Sdt, p.Ngaysinh,
+            //p.Diem, p.GioiTinh, p.GhiChu
             this.MaPhieu = maPhieu;
             this.HoTen = hoTen;
+            this.Cccd = cccd;
             this.CapHoc = capHoc;
             this.KhoaHoc = khoaHoc;
             this.Lop = lop;
-            this.Ngaysinh = ngaysinh;
+            this.Sdt = sdt;
+            this.Ngaysinh = ngaySinh;
             this.GioiTinh = gioiTinh;
+
+            try
+            {
+                this.diem = double.Parse(diem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             this.GhiChu = ghiChu;
-            this.Cccd = cccd;
-            this.Sdt= sdt;
-            this.Score = score; 
         }  
         public PhieuKetQua(double diem)
         {
@@ -54,17 +63,20 @@ namespace HeThongQuanLyTTHV
         public PhieuKetQua(PhieuKetQua p)
         {
             this.MaPhieu = p.MaPhieu;
-            this.HoTen=p.HoTen; 
+            this.HoTen=p.HoTen;
+            this.Cccd = p.Cccd;
             this.CapHoc=p.CapHoc;   
             this.KhoaHoc=p.KhoaHoc; 
             this.Lop=p.Lop;
+            this.Sdt = p.Sdt;
             this.Ngaysinh=p.Ngaysinh;   
-            this.GioiTinh=p.GioiTinh;   
-            this.GhiChu=p.GhiChu;   
-            this.Cccd=p.Cccd;   
-            this.Sdt=p.Sdt; 
-            this.Diem=p.Diem;
-            this.Score=p.Score; 
+            this.GioiTinh=p.GioiTinh;
+            this.Diem = p.Diem;
+              
+               
+           
+            this.GhiChu = p.GhiChu;
+
         }
     }
 }
