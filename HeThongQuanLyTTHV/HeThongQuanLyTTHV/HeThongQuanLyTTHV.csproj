@@ -46,31 +46,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChinhSua.cs">
+    <Compile Include="QLHV\DanhSachHocVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChinhSua.Designer.cs">
-      <DependentUpon>ChinhSua.cs</DependentUpon>
+    <Compile Include="QLHV\DanhSachHocVien.Designer.cs">
+      <DependentUpon>DanhSachHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="DSKQHT.cs">
+    <Compile Include="QLHV\HocVien.cs">
+    </Compile>
+    <Compile Include="QLHV\Main_QLHV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DSKQHT.Designer.cs">
+    <Compile Include="QLHV\Main_QLHV.Designer.cs">
+      <DependentUpon>Main_QLHV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLHV\ThongTinHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLHV\ThongTinHocVien.Designer.cs">
+      <DependentUpon>ThongTinHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLKQHT\DSKQHT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLKQHT\DSKQHT.Designer.cs">
       <DependentUpon>DSKQHT.cs</DependentUpon>
     </Compile>
     <Compile Include="QLKQHT\PhieuKetQua.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Them.cs">
+    <Compile Include="QLKQHT\Them.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Them.Designer.cs">
+    <Compile Include="QLKQHT\Them.Designer.cs">
       <DependentUpon>Them.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChinhSua.resx">
-      <DependentUpon>ChinhSua.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DSKQHT.resx">
+    <Compile Include="QLKQHT\XemDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLKQHT\XemDS.Designer.cs">
+      <DependentUpon>XemDS.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QLKQHT\DSKQHT.resx">
       <DependentUpon>DSKQHT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -82,8 +99,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Them.resx">
+    <EmbeddedResource Include="QLHV\DanhSachHocVien.resx">
+      <DependentUpon>DanhSachHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLHV\Main_QLHV.resx">
+      <DependentUpon>Main_QLHV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLHV\ThongTinHocVien.resx">
+      <DependentUpon>ThongTinHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLKQHT\Them.resx">
       <DependentUpon>Them.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLKQHT\XemDS.resx">
+      <DependentUpon>XemDS.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
