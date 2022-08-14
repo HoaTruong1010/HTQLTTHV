@@ -1,4 +1,4 @@
-﻿namespace HeThongQuanLyTTHV
+﻿namespace HeThongQuanLyTTHV.QLTKB
 {
     partial class XemTKB
     {

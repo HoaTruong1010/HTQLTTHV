@@ -46,38 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="ChinhSuaTKB.cs">
+    <Compile Include="QLTKB\ChinhSuaTKB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChinhSuaTKB.Designer.cs">
+    <Compile Include="QLTKB\ChinhSuaTKB.Designer.cs">
       <DependentUpon>ChinhSuaTKB.cs</DependentUpon>
     </Compile>
     <Compile Include="QLTKB\ThoiKhoaBieu.cs" />
-    <Compile Include="SapXepTKB.cs">
+    <Compile Include="QLTKB\SapXepTKB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SapXepTKB.Designer.cs">
+    <Compile Include="QLTKB\SapXepTKB.Designer.cs">
       <DependentUpon>SapXepTKB.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemTKB.cs">
+    <Compile Include="QLTKB\ThemTKB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemTKB.Designer.cs">
+    <Compile Include="QLTKB\ThemTKB.Designer.cs">
       <DependentUpon>ThemTKB.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLLH.cs">
+    <Compile Include="QLTKB\QLLH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLLH.Designer.cs">
+    <Compile Include="QLTKB\QLLH.Designer.cs">
       <DependentUpon>QLLH.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
->>>>>>> main
     </Compile>
     <Compile Include="QLHV\DanhSachHocVien.cs">
       <SubType>Form</SubType>
@@ -108,34 +106,33 @@
     <Compile Include="QLKQHT\PhieuKetQua.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="ThongBaoLichNghi.cs">
+    <Compile Include="QLTKB\ThongBaoLichNghi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongBaoLichNghi.Designer.cs">
+    <Compile Include="QLTKB\ThongBaoLichNghi.Designer.cs">
       <DependentUpon>ThongBaoLichNghi.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongBaoTKB.cs">
+    <Compile Include="QLTKB\ThongBaoTKB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongBaoTKB.Designer.cs">
+    <Compile Include="QLTKB\ThongBaoTKB.Designer.cs">
       <DependentUpon>ThongBaoTKB.cs</DependentUpon>
     </Compile>
-    <Compile Include="XemTKB.cs">
+    <Compile Include="QLTKB\XemTKB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="XemTKB.Designer.cs">
+    <Compile Include="QLTKB\XemTKB.Designer.cs">
       <DependentUpon>XemTKB.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChinhSuaTKB.resx">
+    <EmbeddedResource Include="QLTKB\ChinhSuaTKB.resx">
       <DependentUpon>ChinhSuaTKB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SapXepTKB.resx">
+    <EmbeddedResource Include="QLTKB\SapXepTKB.resx">
       <DependentUpon>SapXepTKB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemTKB.resx">
+    <EmbeddedResource Include="QLTKB\ThemTKB.resx">
       <DependentUpon>ThemTKB.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <Compile Include="QLKQHT\Them.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,7 +150,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLKQHT\DSKQHT.resx">
       <DependentUpon>DSKQHT.cs</DependentUpon>
->>>>>>> main
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -164,19 +160,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <EmbeddedResource Include="QLLH.resx">
+    <EmbeddedResource Include="QLTKB\QLLH.resx">
       <DependentUpon>QLLH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongBaoLichNghi.resx">
+    <EmbeddedResource Include="QLTKB\ThongBaoLichNghi.resx">
       <DependentUpon>ThongBaoLichNghi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongBaoTKB.resx">
+    <EmbeddedResource Include="QLTKB\ThongBaoTKB.resx">
       <DependentUpon>ThongBaoTKB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XemTKB.resx">
+    <EmbeddedResource Include="QLTKB\XemTKB.resx">
       <DependentUpon>XemTKB.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="QLHV\DanhSachHocVien.resx">
       <DependentUpon>DanhSachHocVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,7 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLKQHT\XemDS.resx">
       <DependentUpon>XemDS.cs</DependentUpon>
->>>>>>> main
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

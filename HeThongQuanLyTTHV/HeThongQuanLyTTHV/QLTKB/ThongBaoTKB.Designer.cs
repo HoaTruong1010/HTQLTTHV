@@ -1,6 +1,6 @@
-﻿namespace HeThongQuanLyTTHV
+﻿namespace HeThongQuanLyTTHV.QLTKB
 {
-    partial class ThongBaoLichNghi
+    partial class ThongBaoTKB
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // ThongBaoLichNghi
+            // ThongBaoTKB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 337);
+            this.ClientSize = new System.Drawing.Size(531, 342);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.Name = "ThongBaoLichNghi";
-            this.Text = "Thông Báo Lịch Nghỉ";
+            this.Name = "ThongBaoTKB";
+            this.Text = "Thông Báo TKB";
             this.ResumeLayout(false);
 
         }

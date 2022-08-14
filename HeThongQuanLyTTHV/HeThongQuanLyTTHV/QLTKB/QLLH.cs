@@ -1,15 +1,8 @@
-﻿using HeThongQuanLyTTHV.QLTKB;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HeThongQuanLyTTHV
+namespace HeThongQuanLyTTHV.QLTKB
 {
     public partial class QLLH : Form
     {
@@ -25,10 +18,10 @@ namespace HeThongQuanLyTTHV
         {
             frmQLLH = this;
             frmQLLH.Hide();
-            
+
             Button bt = (Button)sender;
             string chon = bt.Text;
-            switch(chon)
+            switch (chon)
             {
                 case "Thêm TKB":
                     ThemTKB frmThemTKB = new ThemTKB();
@@ -50,7 +43,7 @@ namespace HeThongQuanLyTTHV
                     ThongBaoLichNghi frmThongBaoLichNghi = new ThongBaoLichNghi();
                     frmThongBaoLichNghi.ShowDialog();
                     break;
-            }    
+            }
         }
 
         private void btThoat_Click(object sender, EventArgs e)
