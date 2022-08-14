@@ -40,5 +40,11 @@ namespace HeThongQuanLyTTHV
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 e.Cancel = true;
         }
+
+        private void quanLyTKB_Click(object sender, EventArgs e)
+        {
+            QLTKB.QLLH main = new QLTKB.QLLH();
+            main.Show();
+        }
     }
 }
