@@ -51,7 +51,7 @@ namespace HeThongQuanLyTTHV.QLHV
             // 
             this.lbTitle.Font = new System.Drawing.Font("Courier New", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.Brown;
-            this.lbTitle.Location = new System.Drawing.Point(3, 1);
+            this.lbTitle.Location = new System.Drawing.Point(-41, 3);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(1372, 81);
