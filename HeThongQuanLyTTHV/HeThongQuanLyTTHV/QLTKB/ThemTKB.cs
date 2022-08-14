@@ -11,7 +11,7 @@ using System.IO;
 using HeThongQuanLyTTHV.QLTKB;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace HeThongQuanLyTTHV
+namespace HeThongQuanLyTTHV.QLTKB
 {
     public partial class ThemTKB : Form
     {

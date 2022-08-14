@@ -49,7 +49,7 @@ namespace HeThongQuanLyTTHV
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.Name = "menuMain";
             this.menuMain.Padding = new System.Windows.Forms.Padding(13, 3, 0, 3);
-            this.menuMain.Size = new System.Drawing.Size(644, 31);
+            this.menuMain.Size = new System.Drawing.Size(644, 27);
             this.menuMain.TabIndex = 0;
             this.menuMain.Text = "Menu";
             // 
@@ -60,33 +60,34 @@ namespace HeThongQuanLyTTHV
             this.quanLyKQHT,
             this.quanLyTKB});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(68, 25);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // quanLyTTHV
             // 
             this.quanLyTTHV.Name = "quanLyTTHV";
-            this.quanLyTTHV.Size = new System.Drawing.Size(380, 26);
+            this.quanLyTTHV.Size = new System.Drawing.Size(310, 22);
             this.quanLyTTHV.Text = "Quản lý thông tin học viên";
             this.quanLyTTHV.Click += new System.EventHandler(this.quanLyTTHV_Click);
             // 
             // quanLyKQHT
             // 
             this.quanLyKQHT.Name = "quanLyKQHT";
-            this.quanLyKQHT.Size = new System.Drawing.Size(380, 26);
+            this.quanLyKQHT.Size = new System.Drawing.Size(310, 22);
             this.quanLyKQHT.Text = "Quản lý kết quả học tập";
             this.quanLyKQHT.Click += new System.EventHandler(this.quanLyKQHT_Click);
             // 
             // quanLyTKB
             // 
             this.quanLyTKB.Name = "quanLyTKB";
-            this.quanLyTKB.Size = new System.Drawing.Size(380, 26);
+            this.quanLyTKB.Size = new System.Drawing.Size(310, 22);
             this.quanLyTKB.Text = "Quản lý thời khóa biểu";
+            this.quanLyTKB.Click += new System.EventHandler(this.quanLyTKB_Click);
             // 
             // exit
             // 
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(79, 25);
+            this.exit.Size = new System.Drawing.Size(65, 21);
             this.exit.Text = "Thoát";
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
@@ -104,7 +105,7 @@ namespace HeThongQuanLyTTHV
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 471);
             this.Controls.Add(this.labelTitle);

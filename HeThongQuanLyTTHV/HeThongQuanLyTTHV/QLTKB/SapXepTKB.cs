@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HeThongQuanLyTTHV
+namespace HeThongQuanLyTTHV.QLTKB
 {
-    public partial class ThongBaoTKB : Form
+    public partial class SapXepTKB : Form
     {
-        public ThongBaoTKB()
+        public SapXepTKB()
         {
             InitializeComponent();
         }
