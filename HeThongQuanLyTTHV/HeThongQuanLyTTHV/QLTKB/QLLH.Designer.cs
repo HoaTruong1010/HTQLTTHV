@@ -31,7 +31,6 @@ namespace HeThongQuanLyTTHV.QLTKB
         {
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.gbChucNang = new System.Windows.Forms.GroupBox();
-            this.btThongBaoLichNghi = new System.Windows.Forms.Button();
             this.btThongBaoTKB = new System.Windows.Forms.Button();
             this.btChinhTKB = new System.Windows.Forms.Button();
             this.btXemTKB = new System.Windows.Forms.Button();
@@ -47,14 +46,13 @@ namespace HeThongQuanLyTTHV.QLTKB
             this.lbTieuDe.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTieuDe.Location = new System.Drawing.Point(0, 0);
             this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.Size = new System.Drawing.Size(1073, 111);
+            this.lbTieuDe.Size = new System.Drawing.Size(868, 111);
             this.lbTieuDe.TabIndex = 0;
             this.lbTieuDe.Text = "QUẢN LÝ LỊCH HỌC";
             this.lbTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gbChucNang
             // 
-            this.gbChucNang.Controls.Add(this.btThongBaoLichNghi);
             this.gbChucNang.Controls.Add(this.btThongBaoTKB);
             this.gbChucNang.Controls.Add(this.btChinhTKB);
             this.gbChucNang.Controls.Add(this.btXemTKB);
@@ -64,23 +62,10 @@ namespace HeThongQuanLyTTHV.QLTKB
             this.gbChucNang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbChucNang.Name = "gbChucNang";
             this.gbChucNang.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbChucNang.Size = new System.Drawing.Size(1045, 234);
+            this.gbChucNang.Size = new System.Drawing.Size(838, 234);
             this.gbChucNang.TabIndex = 1;
             this.gbChucNang.TabStop = false;
             this.gbChucNang.Text = "Chọn Chức Năng";
-            // 
-            // btThongBaoLichNghi
-            // 
-            this.btThongBaoLichNghi.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btThongBaoLichNghi.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThongBaoLichNghi.Location = new System.Drawing.Point(840, 74);
-            this.btThongBaoLichNghi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btThongBaoLichNghi.Name = "btThongBaoLichNghi";
-            this.btThongBaoLichNghi.Size = new System.Drawing.Size(189, 106);
-            this.btThongBaoLichNghi.TabIndex = 0;
-            this.btThongBaoLichNghi.Text = "Thông báo lịch nghỉ";
-            this.btThongBaoLichNghi.UseVisualStyleBackColor = false;
-            this.btThongBaoLichNghi.Click += new System.EventHandler(this.btThemTKB_Click);
             // 
             // btThongBaoTKB
             // 
@@ -124,6 +109,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             // btThemTKB
             // 
             this.btThemTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btThemTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btThemTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThemTKB.Location = new System.Drawing.Point(8, 74);
             this.btThemTKB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -137,7 +123,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             // btThoat
             // 
             this.btThoat.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.Location = new System.Drawing.Point(907, 359);
+            this.btThoat.Location = new System.Drawing.Point(715, 374);
             this.btThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(136, 63);
@@ -150,7 +136,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1073, 450);
+            this.ClientSize = new System.Drawing.Size(868, 450);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gbChucNang);
             this.Controls.Add(this.lbTieuDe);
@@ -171,7 +157,6 @@ namespace HeThongQuanLyTTHV.QLTKB
         private System.Windows.Forms.Button btChinhTKB;
         private System.Windows.Forms.Button btXemTKB;
         private System.Windows.Forms.Button btThemTKB;
-        private System.Windows.Forms.Button btThongBaoLichNghi;
         private System.Windows.Forms.Button btThongBaoTKB;
         private System.Windows.Forms.Button btThoat;
     }
