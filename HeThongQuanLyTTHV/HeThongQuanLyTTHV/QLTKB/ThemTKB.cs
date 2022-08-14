@@ -87,9 +87,9 @@ namespace HeThongQuanLyTTHV.QLTKB
             cbbCTDT.Items.Clear();
             CheckDataKH(path, cbbCTDT, "");
             cbbCTDT.SelectedIndex = 0;
-            cbbCapLop.Items.Add("No selected item");
+            cbbCapLop.Items.Add("----Chọn----");
             cbbCapLop.SelectedIndex = 0;
-            cbbLop.Items.Add("No selected item");
+            cbbLop.Items.Add("----Chọn----");
             cbbLop.SelectedIndex = 0;
 
             //ComboBox chọn thứ
@@ -98,6 +98,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             cbbThu.Items.Add("Thứ 3-5");
             cbbThu.Items.Add("Thứ 4-6");
             cbbThu.Items.Add("Thứ 7-CN");
+            cbbThu.SelectedIndex = 0;
 
             //ComboBox chọn khung giờ học
             cbbKhungGioHoc.Items.Add("----Chọn----");
@@ -105,6 +106,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             cbbKhungGioHoc.Items.Add("Từ 8:30 - 10:30");
             cbbKhungGioHoc.Items.Add("Từ 17:15 - 19:15");
             cbbKhungGioHoc.Items.Add("Từ 19:15 - 21:15");
+            cbbKhungGioHoc.SelectedIndex = 0;
 
             //ListView - xem danh sách tkb
             lvDSKH.View = View.Details;
@@ -143,7 +145,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             if (cbbCTDT.SelectedIndex != 0)
             {
                 cbbCTDT.Items.Clear();
-                cbbCTDT.Items.Add("No selected item");
+                cbbCTDT.Items.Add("----Chọn----");
                 cbbCTDT.SelectedIndex = 0;
                 text = cbbCTDT.SelectedItem.ToString();
                 text = "K" + text.Substring(text.Length - 2, 2);
@@ -157,7 +159,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             if (cbbCapLop.SelectedIndex != 0)
             {
                 cbbCapLop.Items.Clear();
-                cbbCapLop.Items.Add("No selected item");
+                cbbCapLop.Items.Add("----Chọn----");
                 cbbCapLop.SelectedIndex = 0;
                 text = cbbCapLop.SelectedItem.ToString();
                 text = text.Substring(0, 5);
@@ -240,7 +242,7 @@ namespace HeThongQuanLyTTHV.QLTKB
         {
             path = Application.StartupPath + @"\Data\DSTKB.txt";
             GhiFileDSTKB(path, listTKB);
-            this.Close();
+            this.Close();            
         }
     }
 }
