@@ -27,7 +27,6 @@ namespace HeThongQuanLyTTHV.QLTKB
         internal List<ThoiKhoaBieu> ListTKB { get => listTKB; set => listTKB = value; }
 
         string path;
-        int viTri = -1, idVT;
         string text;
 
         private void GhiFileDSTKB(string path, List<ThoiKhoaBieu> tkb)
@@ -87,9 +86,9 @@ namespace HeThongQuanLyTTHV.QLTKB
             cbbCTDT.Items.Clear();
             CheckDataKH(path, cbbCTDT, "");
             cbbCTDT.SelectedIndex = 0;
-            cbbCapLop.Items.Add("----Chọn----");
+            cbbCapLop.Items.Add("---Chọn---");
             cbbCapLop.SelectedIndex = 0;
-            cbbLop.Items.Add("----Chọn----");
+            cbbLop.Items.Add("-Chọn-");
             cbbLop.SelectedIndex = 0;
 
             //ComboBox chọn thứ
@@ -144,9 +143,9 @@ namespace HeThongQuanLyTTHV.QLTKB
         {
             if (cbbCTDT.SelectedIndex != 0)
             {
-                cbbCTDT.Items.Clear();
-                cbbCTDT.Items.Add("----Chọn----");
-                cbbCTDT.SelectedIndex = 0;
+                cbbCapLop.Items.Clear();
+                cbbCapLop.Items.Add("---Chọn---");
+                cbbCapLop.SelectedIndex = 0;
                 text = cbbCTDT.SelectedItem.ToString();
                 text = "K" + text.Substring(text.Length - 2, 2);
                 path = Application.StartupPath + @"\Data\LevelList.txt";
@@ -158,22 +157,22 @@ namespace HeThongQuanLyTTHV.QLTKB
         {
             if (cbbCapLop.SelectedIndex != 0)
             {
-                cbbCapLop.Items.Clear();
-                cbbCapLop.Items.Add("----Chọn----");
-                cbbCapLop.SelectedIndex = 0;
+                cbbLop.Items.Clear();
+                cbbLop.Items.Add("-Chọn-");
+                cbbLop.SelectedIndex = 0;
                 text = cbbCapLop.SelectedItem.ToString();
                 text = text.Substring(0, 5);
                 path = Application.StartupPath + @"\Data\ClassList.txt";
                 CheckDataKH(path, cbbLop, text);
             }
-        }
+        }        
 
         private void btThem_Click(object sender, EventArgs e)
         {
             if (cbbCTDT.Text!="")
             {
                 ListViewItem item = new ListViewItem();
-                ThoiKhoaBieu tkb = new ThoiKhoaBieu();
+                ThoiKhoaBieu tkb = new ThoiKhoaBieu();                
                 tkb.MaLich = txtMaLich.Text;
                 tkb.TenKH = cbbCTDT.Text;
                 tkb.TenGV = txtTenGV.Text;
@@ -185,21 +184,48 @@ namespace HeThongQuanLyTTHV.QLTKB
                 tkb.KhungGioHoc = cbbKhungGioHoc.Text;
                 tkb.Phong = txtPhong.Text;
 
-                item = new ListViewItem(txtMaLich.Text);
-                item.SubItems.Add(tkb.TenKH);
-                item.SubItems.Add(tkb.CapLop);
-                item.SubItems.Add(tkb.Lop);
-                item.SubItems.Add(tkb.SoBuoi.ToString());
-                item.SubItems.Add(tkb.SoLuongHV.ToString());
-                item.SubItems.Add(tkb.Thu);
-                item.SubItems.Add(tkb.KhungGioHoc);
-                item.SubItems.Add(tkb.Phong);
-                item.SubItems.Add(tkb.TenGV);
+                try
+                {
+                    if (txtMaLich.Text == "" || txtTenGV.Text == "" || txtSoBuoiHoc.Text == ""
+                        || txtSLHV.Text == "" || txtPhong.Text == "" || cbbCTDT.SelectedIndex == 0
+                        || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
+                        || cbbKhungGioHoc.SelectedIndex == 0)
+                    {
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                    }
+                    else
+                    {
+                        item = new ListViewItem(txtMaLich.Text);
+                        item.SubItems.Add(tkb.TenKH);
+                        item.SubItems.Add(tkb.CapLop);
+                        item.SubItems.Add(tkb.Lop);
+                        item.SubItems.Add(tkb.SoBuoi.ToString());
+                        item.SubItems.Add(tkb.SoLuongHV.ToString());
+                        item.SubItems.Add(tkb.Thu);
+                        item.SubItems.Add(tkb.KhungGioHoc);
+                        item.SubItems.Add(tkb.Phong);
+                        item.SubItems.Add(tkb.TenGV);
 
-                lvDSKH.Items.Add(item);
-                txtMaLich.Text = "";
-                txtMaLich.Focus();
+                        lvDSKH.Items.Add(item);
+                        txtMaLich.Text = "";
+                        txtMaLich.Focus();
+                    } 
+                        
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }                                
             }    
+        }
+
+        private void txtSoBuoiHoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Vui lòng nhập vào 1 số!");
+            }
         }
 
         private void btLuu_Click(object sender, EventArgs e)

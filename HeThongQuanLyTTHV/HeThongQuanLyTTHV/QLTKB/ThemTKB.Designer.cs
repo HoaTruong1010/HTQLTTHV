@@ -107,7 +107,7 @@
             // colMaLich
             // 
             this.colMaLich.Text = "Mã Lịch";
-            this.colMaLich.Width = 300;
+            this.colMaLich.Width = 100;
             // 
             // colTenKH
             // 
@@ -119,25 +119,25 @@
             // 
             this.colCap.Text = "Cấp Lớp";
             this.colCap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colCap.Width = 100;
+            this.colCap.Width = 200;
             // 
             // colLop
             // 
             this.colLop.Text = "Lớp";
             this.colLop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colLop.Width = 80;
+            this.colLop.Width = 200;
             // 
             // colSoBuoiHoc
             // 
             this.colSoBuoiHoc.Text = "Số Buổi Học";
             this.colSoBuoiHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSoBuoiHoc.Width = 150;
+            this.colSoBuoiHoc.Width = 250;
             // 
             // colSLHV
             // 
             this.colSLHV.Text = "Số Lượng Học Viên";
             this.colSLHV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSLHV.Width = 180;
+            this.colSLHV.Width = 250;
             // 
             // colThu
             // 
@@ -155,7 +155,7 @@
             // 
             this.colPhong.Text = "Phòng";
             this.colPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colPhong.Width = 100;
+            this.colPhong.Width = 150;
             // 
             // colGV
             // 
@@ -352,6 +352,7 @@
             this.txtSLHV.Name = "txtSLHV";
             this.txtSLHV.Size = new System.Drawing.Size(128, 26);
             this.txtSLHV.TabIndex = 12;
+            this.txtSLHV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoBuoiHoc_KeyPress);
             // 
             // txtSoBuoiHoc
             // 
@@ -360,6 +361,7 @@
             this.txtSoBuoiHoc.Name = "txtSoBuoiHoc";
             this.txtSoBuoiHoc.Size = new System.Drawing.Size(108, 26);
             this.txtSoBuoiHoc.TabIndex = 11;
+            this.txtSoBuoiHoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoBuoiHoc_KeyPress);
             // 
             // lbSLHV
             // 
