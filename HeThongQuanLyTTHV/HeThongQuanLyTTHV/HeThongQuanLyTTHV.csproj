@@ -66,12 +66,6 @@
     <Compile Include="QLHV\ThongTinHocVien.Designer.cs">
       <DependentUpon>ThongTinHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLKQHT\ChinhSua.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLKQHT\ChinhSua.Designer.cs">
-      <DependentUpon>ChinhSua.cs</DependentUpon>
-    </Compile>
     <Compile Include="QLKQHT\DSKQHT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,9 +81,12 @@
     <Compile Include="QLKQHT\Them.Designer.cs">
       <DependentUpon>Them.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QLKQHT\ChinhSua.resx">
-      <DependentUpon>ChinhSua.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="QLKQHT\XemDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLKQHT\XemDS.Designer.cs">
+      <DependentUpon>XemDS.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="QLKQHT\DSKQHT.resx">
       <DependentUpon>DSKQHT.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLKQHT\Them.resx">
       <DependentUpon>Them.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLKQHT\XemDS.resx">
+      <DependentUpon>XemDS.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -7,7 +7,9 @@ namespace HeThongQuanLyTTHV.QLHV
 {
     public partial class ThongTinHocVien : Form
     {
+        //Tạo 1 biến chức năng để lưu người dùng chọn chức năng nào
         private string chucNang;
+        //Tạo danh sách học viên để làm việc với chương trình
         private List<HocVien> listHV = new List<HocVien>(1000);
 
         public string ChucNang { get => chucNang; set => chucNang = value; }
@@ -22,6 +24,7 @@ namespace HeThongQuanLyTTHV.QLHV
         int index = -1, idTemp;
         string selectedText;
 
+        //ghi đối tượng học viên vào file từ listhv, mỗi học viên 1 dòng, các thuộc tính cách nhau bằng dấu #
         private void GhiFileStudentList(string path, List<HocVien> ts)
         {
             if(File.Exists(path))
@@ -40,6 +43,7 @@ namespace HeThongQuanLyTTHV.QLHV
                 return;
         }
 
+        //lấy thông tin học viên từ file gán vào list hv
         private void StudentListFromFile()
         {
             try
@@ -68,6 +72,7 @@ namespace HeThongQuanLyTTHV.QLHV
             }
         }
 
+        //Lấy thông tin khóa học từ file gán vào combobox
         private void SubInfoItemsFromFile(string path, ComboBox box, string keys)
         {
             try
@@ -93,6 +98,7 @@ namespace HeThongQuanLyTTHV.QLHV
             }
         }
 
+        //Hàm tìm kiếm học viên trong list hv bằng id 
         private int SearchStudent(String id)
         {
             if (ListHV.Count > 0)
@@ -108,6 +114,7 @@ namespace HeThongQuanLyTTHV.QLHV
             return -1;
         }
 
+        //Hàm reset các controls
         private void Reset()
         {
             txtID.Text = txtName.Text = txtEmail.Text = txtPhone.Text = txtAdress.Text = "";
@@ -175,7 +182,8 @@ namespace HeThongQuanLyTTHV.QLHV
                     HocVien h = new HocVien(txtID.Text, txtName.Text, dtpDOB.Value.ToString(), gender, txtEmail.Text,
                         txtPhone.Text, txtAdress.Text, cbKhoaHoc.SelectedItem.ToString(), cbCapHoc.SelectedItem.ToString(),
                          cbLop.SelectedItem.ToString());
-                    if (chucNang == "Edit")
+                    if (chucNang == "Edit")//nếu chỉnh sửa 1 học viên thì lấy thông tin gán lại cho thuộc tính
+                        //đây t làm xóa r mới add lại nên đoạn này m có thể làm theo ý m
                         listHV.RemoveAt(idTemp);
                     listHV.Add(h);
                     MessageBox.Show("Lưu thành công!");
@@ -189,6 +197,7 @@ namespace HeThongQuanLyTTHV.QLHV
 
         }
 
+        //ràng buộc giá trị cccd vs sđt chỉ được nhập bằng phím số
         private void txtID_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
@@ -198,21 +207,22 @@ namespace HeThongQuanLyTTHV.QLHV
             }    
         }
 
+        //Hàm này được gọi sau khi giá trị ở ô cccd được nhập xong
         private void txtName_Click(object sender, EventArgs e)
         {
-            index = SearchStudent(txtID.Text);
+            index = SearchStudent(txtID.Text);//lấy vị trí của đối tượng tìm thấy trong list
             try
             {
                 if (index != -1)
                 {
-                    if(chucNang == "Add")
+                    if(chucNang == "Add")//nếu là chức năng thêm mà vị trí khác -1 thì tức là tồn tại rồi nên k cho thêm
                     {
                         MessageBox.Show("Học viên đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Reset();
+                        Reset();//có reset
                     }    
 
-                    if (chucNang == "Edit" || chucNang == "Delete")
+                    if (chucNang == "Edit" || chucNang == "Delete")//nếu tìm thấy tồn tại trong list thì 2 chức năng này sẽ show lên tthv tìm được
                     {
                         idTemp = index;
                         txtName.Text = ListHV[index].Name;
@@ -244,6 +254,7 @@ namespace HeThongQuanLyTTHV.QLHV
             }
         }
 
+        //nhấn esc để thoát form
         protected override bool ProcessDialogKey(Keys keyData)
         {
             if (keyData == Keys.Escape)
@@ -254,6 +265,7 @@ namespace HeThongQuanLyTTHV.QLHV
             return base.ProcessDialogKey(keyData);
         }
 
+        //hỏi bạn có muốn thoát k?
         private void ThongTinHocVien_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Question",
@@ -262,6 +274,8 @@ namespace HeThongQuanLyTTHV.QLHV
 
         }
 
+        //2 hàm này là ràng buộc về mặt dữ liệu cho giá trị của combobox cấp học, lớp
+        //Nếu giá trị ở combobox khóa học bằng 2020 thì sẽ có những cấp học liên quan đến khóa 2020 được hiển thị, ngược lại thì k
         private void cbKhoaHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cbKhoaHoc.SelectedIndex != 0)            
