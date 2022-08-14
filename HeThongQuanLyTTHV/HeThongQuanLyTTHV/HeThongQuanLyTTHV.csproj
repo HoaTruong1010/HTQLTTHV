@@ -46,11 +46,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="ChinhSuaTKB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChinhSuaTKB.Designer.cs">
+      <DependentUpon>ChinhSuaTKB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTKB\ThoiKhoaBieu.cs" />
+    <Compile Include="SapXepTKB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SapXepTKB.Designer.cs">
+      <DependentUpon>SapXepTKB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemTKB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemTKB.Designer.cs">
+      <DependentUpon>ThemTKB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLLH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLLH.Designer.cs">
+      <DependentUpon>QLLH.cs</DependentUpon>
+=======
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+>>>>>>> main
     </Compile>
     <Compile Include="QLHV\DanhSachHocVien.cs">
       <SubType>Form</SubType>
@@ -81,6 +108,34 @@
     <Compile Include="QLKQHT\PhieuKetQua.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+    <Compile Include="ThongBaoLichNghi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongBaoLichNghi.Designer.cs">
+      <DependentUpon>ThongBaoLichNghi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongBaoTKB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongBaoTKB.Designer.cs">
+      <DependentUpon>ThongBaoTKB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XemTKB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemTKB.Designer.cs">
+      <DependentUpon>XemTKB.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChinhSuaTKB.resx">
+      <DependentUpon>ChinhSuaTKB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SapXepTKB.resx">
+      <DependentUpon>SapXepTKB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemTKB.resx">
+      <DependentUpon>ThemTKB.cs</DependentUpon>
+=======
     <Compile Include="QLKQHT\Them.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +153,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLKQHT\DSKQHT.resx">
       <DependentUpon>DSKQHT.cs</DependentUpon>
+>>>>>>> main
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,6 +164,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <EmbeddedResource Include="QLLH.resx">
+      <DependentUpon>QLLH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongBaoLichNghi.resx">
+      <DependentUpon>ThongBaoLichNghi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongBaoTKB.resx">
+      <DependentUpon>ThongBaoTKB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemTKB.resx">
+      <DependentUpon>XemTKB.cs</DependentUpon>
+=======
     <EmbeddedResource Include="QLHV\DanhSachHocVien.resx">
       <DependentUpon>DanhSachHocVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +191,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLKQHT\XemDS.resx">
       <DependentUpon>XemDS.cs</DependentUpon>
+>>>>>>> main
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -135,6 +205,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DSTKB\DSLopIELTS.txt" />
+    <Content Include="DSTKB\DSLopTAGiaoTiep.txt" />
+    <Content Include="DSTKB\DSLopTATQNguoiLon.txt" />
+    <Content Include="DSTKB\DSLopTATQThieuNhi.txt" />
+    <Content Include="DSTKB\DSLopTOEIC.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
