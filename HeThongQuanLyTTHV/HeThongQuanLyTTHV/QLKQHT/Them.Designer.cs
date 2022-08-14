@@ -163,7 +163,7 @@
             this.lbMaPhieu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaPhieu.Name = "lbMaPhieu";
             this.lbMaPhieu.Size = new System.Drawing.Size(99, 20);
-            this.lbMaPhieu.TabIndex = 35;
+            this.lbMaPhieu.TabIndex = 9;
             this.lbMaPhieu.Text = "Mã phiếu:";
             // 
             // txtSDT
@@ -172,7 +172,7 @@
             this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(211, 27);
-            this.txtSDT.TabIndex = 33;
+            this.txtSDT.TabIndex = 6;
             this.txtSDT.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
@@ -182,7 +182,7 @@
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(2);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(209, 27);
-            this.txtCCCD.TabIndex = 29;
+            this.txtCCCD.TabIndex = 5;
             this.txtCCCD.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
@@ -192,7 +192,7 @@
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(241, 27);
-            this.txtHoTen.TabIndex = 34;
+            this.txtHoTen.TabIndex = 4;
             this.txtHoTen.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtMaPhieu
@@ -201,7 +201,7 @@
             this.txtMaPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaPhieu.Name = "txtMaPhieu";
             this.txtMaPhieu.Size = new System.Drawing.Size(219, 27);
-            this.txtMaPhieu.TabIndex = 28;
+            this.txtMaPhieu.TabIndex = 3;
             // 
             // txtGhiChu
             // 
@@ -210,7 +210,7 @@
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(1118, 120);
-            this.txtGhiChu.TabIndex = 30;
+            this.txtGhiChu.TabIndex = 1;
             this.txtGhiChu.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtDiem
@@ -219,7 +219,7 @@
             this.txtDiem.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiem.Name = "txtDiem";
             this.txtDiem.Size = new System.Drawing.Size(97, 27);
-            this.txtDiem.TabIndex = 31;
+            this.txtDiem.TabIndex = 8;
             this.txtDiem.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtDiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiem_KeyPress);
             // 
@@ -306,7 +306,7 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(1118, 163);
-            this.groupBox2.TabIndex = 71;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin học viên";
             // 
@@ -316,7 +316,7 @@
             this.dtNgaySinh.Location = new System.Drawing.Point(84, 114);
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(367, 27);
-            this.dtNgaySinh.TabIndex = 75;
+            this.dtNgaySinh.TabIndex = 7;
             // 
             // groupBox3
             // 
@@ -342,7 +342,7 @@
             this.txtLop.Margin = new System.Windows.Forms.Padding(2);
             this.txtLop.Name = "txtLop";
             this.txtLop.Size = new System.Drawing.Size(211, 27);
-            this.txtLop.TabIndex = 28;
+            this.txtLop.TabIndex = 4;
             this.txtLop.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtCap
@@ -351,7 +351,7 @@
             this.txtCap.Margin = new System.Windows.Forms.Padding(2);
             this.txtCap.Name = "txtCap";
             this.txtCap.Size = new System.Drawing.Size(211, 27);
-            this.txtCap.TabIndex = 28;
+            this.txtCap.TabIndex = 3;
             this.txtCap.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtKhoa
@@ -360,7 +360,7 @@
             this.txtKhoa.Margin = new System.Windows.Forms.Padding(2);
             this.txtKhoa.Name = "txtKhoa";
             this.txtKhoa.Size = new System.Drawing.Size(229, 27);
-            this.txtKhoa.TabIndex = 28;
+            this.txtKhoa.TabIndex = 2;
             this.txtKhoa.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // listView1
@@ -450,7 +450,7 @@
             this.btThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(122, 69);
-            this.btThoat.TabIndex = 49;
+            this.btThoat.TabIndex = 3;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = false;
             this.btThoat.Click += new System.EventHandler(this.btTroLai_Click);
@@ -470,11 +470,11 @@
             // btLuu
             // 
             this.btLuu.BackColor = System.Drawing.Color.LightCyan;
-            this.btLuu.Location = new System.Drawing.Point(833, 707);
+            this.btLuu.Location = new System.Drawing.Point(974, 707);
             this.btLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(122, 69);
-            this.btLuu.TabIndex = 49;
+            this.btLuu.TabIndex = 2;
             this.btLuu.Text = "Lưu";
             this.btLuu.UseVisualStyleBackColor = false;
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);

@@ -119,7 +119,7 @@
             this.btSapXep.Location = new System.Drawing.Point(850, 596);
             this.btSapXep.Name = "btSapXep";
             this.btSapXep.Size = new System.Drawing.Size(144, 49);
-            this.btSapXep.TabIndex = 75;
+            this.btSapXep.TabIndex = 0;
             this.btSapXep.Text = "Sắp Xếp";
             this.btSapXep.UseVisualStyleBackColor = true;
             this.btSapXep.Click += new System.EventHandler(this.btSapXep_Click);
@@ -140,7 +140,7 @@
             this.btThoat.Location = new System.Drawing.Point(1032, 596);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(144, 49);
-            this.btThoat.TabIndex = 75;
+            this.btThoat.TabIndex = 1;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = true;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
@@ -156,7 +156,7 @@
             this.Controls.Add(this.listView1);
             this.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "XemDS";
             this.Text = "XemDS";
             this.Load += new System.EventHandler(this.XemDS_Load);

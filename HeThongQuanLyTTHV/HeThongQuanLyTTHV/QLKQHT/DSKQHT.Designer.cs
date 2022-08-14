@@ -32,9 +32,9 @@
             this.btChinh = new System.Windows.Forms.Button();
             this.btXem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btXoa = new System.Windows.Forms.Button();
             this.btThoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btXoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             this.btThemm.Margin = new System.Windows.Forms.Padding(2);
             this.btThemm.Name = "btThemm";
             this.btThemm.Size = new System.Drawing.Size(197, 62);
-            this.btThemm.TabIndex = 76;
+            this.btThemm.TabIndex = 0;
             this.btThemm.Text = "Thêm";
             this.btThemm.UseVisualStyleBackColor = false;
             this.btThemm.Click += new System.EventHandler(this.btThemm_Click);
@@ -59,7 +59,7 @@
             this.btChinh.Margin = new System.Windows.Forms.Padding(2);
             this.btChinh.Name = "btChinh";
             this.btChinh.Size = new System.Drawing.Size(199, 62);
-            this.btChinh.TabIndex = 76;
+            this.btChinh.TabIndex = 1;
             this.btChinh.Text = "Chỉnh Sửa";
             this.btChinh.UseVisualStyleBackColor = false;
             this.btChinh.Click += new System.EventHandler(this.btChinh_Click);
@@ -72,7 +72,7 @@
             this.btXem.Margin = new System.Windows.Forms.Padding(2);
             this.btXem.Name = "btXem";
             this.btXem.Size = new System.Drawing.Size(197, 62);
-            this.btXem.TabIndex = 76;
+            this.btXem.TabIndex = 3;
             this.btXem.Text = "Xem";
             this.btXem.UseVisualStyleBackColor = false;
             this.btXem.Click += new System.EventHandler(this.btXem_Click);
@@ -91,6 +91,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
             // 
+            // btXoa
+            // 
+            this.btXoa.BackColor = System.Drawing.Color.LightCyan;
+            this.btXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btXoa.Location = new System.Drawing.Point(60, 161);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(197, 62);
+            this.btXoa.TabIndex = 2;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
             // btThoat
             // 
             this.btThoat.BackColor = System.Drawing.Color.LightCyan;
@@ -99,7 +112,7 @@
             this.btThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(199, 62);
-            this.btThoat.TabIndex = 76;
+            this.btThoat.TabIndex = 4;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = false;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
@@ -113,19 +126,6 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "Quản Lý Phiếu Kết Quả Học Tập";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btXoa
-            // 
-            this.btXoa.BackColor = System.Drawing.Color.LightCyan;
-            this.btXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btXoa.Location = new System.Drawing.Point(60, 161);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(197, 62);
-            this.btXoa.TabIndex = 76;
-            this.btXoa.Text = "Xóa";
-            this.btXoa.UseVisualStyleBackColor = false;
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // DSKQHT
             // 
