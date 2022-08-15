@@ -48,5 +48,32 @@ D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug
 D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.pdb
 =======
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.RJTextBox.resources
+<<<<<<< HEAD
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.AssemblyReference.cache
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.SuggestedBindingRedirects.cache
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.exe
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.pdb
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.ChinhSuaTKB.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.RJTextBox.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.SapXepTKB.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.ThemTKB.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.frmMain.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLKQHT.DSKQHT.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.Properties.Resources.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.QLLH.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.ThongBaoTKB.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.XemTKB.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLHV.DanhSachHocVien.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLHV.Main_QLHV.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLHV.ThongTinHocVien.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLKQHT.Them.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLKQHT.XemDS.resources
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.GenerateResource.cache
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.CoreCompileInputs.cache
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV.exe.config
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV.exe
+D:\Lập Trình Giao Diện\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV.pdb
+=======
+>>>>>>> main
 >>>>>>> main
 D:\PhanTichThietKeHeThong\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.RJTextBox.resources
