@@ -144,11 +144,21 @@ namespace HeThongQuanLyTTHV.QLKQHT
             }
         }
 
-        private void btTroLai_Click(object sender, EventArgs e)
+        private void Thoat()
         {
             path = Application.StartupPath + @"\Data\DSP.txt";
             GhiFile(path, listDSP);
             this.Close();
+        }
+
+        private void btTroLai_Click(object sender, EventArgs e)
+        {
+            Thoat();
+        }
+
+        private void Them_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Thoat();
         }
 
         private void txtCCCD_KeyPress(object sender, KeyPressEventArgs e)
@@ -218,7 +228,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             }
         }
 
-        private void btLuu_Click(object sender, EventArgs e)
+        private void Luu()
         {
             //Xử lý không điền đủ thông tin
             try
@@ -266,10 +276,10 @@ namespace HeThongQuanLyTTHV.QLKQHT
                         Reset();
                         MessageBox.Show("lưu thành công");
                     }
-                    if (chucnang=="chinh")
+                    if (chucnang == "chinh")
                     {
 
-                        listDSP.RemoveAt(idVT);  
+                        listDSP.RemoveAt(idVT);
                         listDSP.Add(p);
                         MessageBox.Show("Sửa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -279,6 +289,11 @@ namespace HeThongQuanLyTTHV.QLKQHT
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btLuu_Click(object sender, EventArgs e)
+        {
+            Luu();
         }
 
         private void txtDiem_KeyPress(object sender, KeyPressEventArgs e)
@@ -291,8 +306,12 @@ namespace HeThongQuanLyTTHV.QLKQHT
             }
         }
 
+<<<<<<< HEAD
+        private void Xoa()
+=======
 
         private void btXoa_Click(object sender, EventArgs e)
+>>>>>>> main
         {
             if (viTri != -1)
             {
@@ -306,6 +325,36 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 txtMaPhieu.SelectionStart = txtMaPhieu.Text.Length;
                 MessageBox.Show("Phiếu kết quả không tồn tại!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            switch (keyData)
+            {
+                
+                case Keys.Enter:
+                    if (chucnang=="add"||chucnang=="chinhsua")
+                    {
+                        Luu();
+                    }
+                    if (chucnang=="xoa")
+                    {
+                        Xoa();
+                    }
+                    return true;
+                case Keys.Escape:
+                    Thoat();    
+                    return true;
+                case Keys.Delete:
+                    Reset();
+                    return true;
+            }
+            return base.ProcessDialogKey(keyData);
         }
     }  
 }

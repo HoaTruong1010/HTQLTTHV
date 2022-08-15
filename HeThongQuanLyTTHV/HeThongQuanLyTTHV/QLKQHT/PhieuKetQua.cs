@@ -11,7 +11,7 @@ namespace HeThongQuanLyTTHV
     {
         
         private string maPhieu, hoTen, capHoc, khoaHoc, lop, ngaysinh, gioiTinh, ghiChu, cccd, sdt;
-        private double  diem;// cccd vs sđt là kiểu string nha, điểm là double
+        private double  diem;
 
         public string MaPhieu { get => maPhieu; set => maPhieu = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
@@ -72,11 +72,7 @@ namespace HeThongQuanLyTTHV
             this.Ngaysinh=p.Ngaysinh;   
             this.GioiTinh=p.GioiTinh;
             this.Diem = p.Diem;
-              
-               
-           
             this.GhiChu = p.GhiChu;
-
         }
     }
 }
