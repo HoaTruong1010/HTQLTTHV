@@ -22,7 +22,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
         {
             Them f = new Them();
             f.Chucnang = "add";
-            //dùng f.ChucNang để gọi thuộc tính chức năng, gán bằng giá trị Add hoặc dì cũng được
             f.Show();
         }
 
@@ -33,7 +32,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
             f.Show();
         }
 
-        //Thiếu form xem danh sách nè, form chỉnh sửa vs them có thể dùng chung thông qua thuộc tính chức năng
 
         private void btThoat_Click(object sender, EventArgs e)
         {
@@ -43,7 +41,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
         private void btXoa_Click(object sender, EventArgs e)
         {
             Them f = new Them();
-            f.Chucnang = "xoa";//Tương tự nha 
+            f.Chucnang = "xoa";
             f.Show();
         }
 
