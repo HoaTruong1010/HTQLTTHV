@@ -95,7 +95,7 @@
             this.rbNu.Location = new System.Drawing.Point(86, 28);
             this.rbNu.Margin = new System.Windows.Forms.Padding(2);
             this.rbNu.Name = "rbNu";
-            this.rbNu.Size = new System.Drawing.Size(42, 21);
+            this.rbNu.Size = new System.Drawing.Size(50, 24);
             this.rbNu.TabIndex = 1;
             this.rbNu.TabStop = true;
             this.rbNu.Text = "Nữ";
@@ -109,7 +109,7 @@
             this.rbNam.Location = new System.Drawing.Point(10, 28);
             this.rbNam.Margin = new System.Windows.Forms.Padding(2);
             this.rbNam.Name = "rbNam";
-            this.rbNam.Size = new System.Drawing.Size(50, 21);
+            this.rbNam.Size = new System.Drawing.Size(60, 24);
             this.rbNam.TabIndex = 0;
             this.rbNam.TabStop = true;
             this.rbNam.Text = "Nam";
@@ -122,7 +122,7 @@
             this.lbSDT.Location = new System.Drawing.Point(896, 31);
             this.lbSDT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSDT.Name = "lbSDT";
-            this.lbSDT.Size = new System.Drawing.Size(40, 17);
+            this.lbSDT.Size = new System.Drawing.Size(49, 20);
             this.lbSDT.TabIndex = 40;
             this.lbSDT.Text = "SĐT:";
             // 
@@ -132,7 +132,7 @@
             this.lbCCCD.Location = new System.Drawing.Point(645, 31);
             this.lbCCCD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCCCD.Name = "lbCCCD";
-            this.lbCCCD.Size = new System.Drawing.Size(48, 17);
+            this.lbCCCD.Size = new System.Drawing.Size(59, 20);
             this.lbCCCD.TabIndex = 39;
             this.lbCCCD.Text = "CCCD:";
             // 
@@ -142,7 +142,7 @@
             this.lbNgaySinh.Location = new System.Drawing.Point(80, 86);
             this.lbNgaySinh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNgaySinh.Name = "lbNgaySinh";
-            this.lbNgaySinh.Size = new System.Drawing.Size(88, 17);
+            this.lbNgaySinh.Size = new System.Drawing.Size(109, 20);
             this.lbNgaySinh.TabIndex = 37;
             this.lbNgaySinh.Text = "Ngày sinh:";
             // 
@@ -152,7 +152,7 @@
             this.lbHoTen.Location = new System.Drawing.Point(348, 31);
             this.lbHoTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHoTen.Name = "lbHoTen";
-            this.lbHoTen.Size = new System.Drawing.Size(64, 17);
+            this.lbHoTen.Size = new System.Drawing.Size(79, 20);
             this.lbHoTen.TabIndex = 36;
             this.lbHoTen.Text = "Họ Tên:";
             // 
@@ -162,13 +162,8 @@
             this.lbMaPhieu.Location = new System.Drawing.Point(82, 30);
             this.lbMaPhieu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaPhieu.Name = "lbMaPhieu";
-
             this.lbMaPhieu.Size = new System.Drawing.Size(99, 20);
-            this.lbMaPhieu.TabIndex = 9;
-
-            this.lbMaPhieu.Size = new System.Drawing.Size(80, 17);
             this.lbMaPhieu.TabIndex = 35;
-
             this.lbMaPhieu.Text = "Mã phiếu:";
             // 
             // txtSDT
@@ -176,13 +171,8 @@
             this.txtSDT.Location = new System.Drawing.Point(900, 55);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
-
             this.txtSDT.Size = new System.Drawing.Size(211, 27);
-            this.txtSDT.TabIndex = 6;
-
-            this.txtSDT.Size = new System.Drawing.Size(211, 23);
             this.txtSDT.TabIndex = 33;
-
             this.txtSDT.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
@@ -191,13 +181,8 @@
             this.txtCCCD.Location = new System.Drawing.Point(651, 55);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(2);
             this.txtCCCD.Name = "txtCCCD";
- 
             this.txtCCCD.Size = new System.Drawing.Size(209, 27);
-            this.txtCCCD.TabIndex = 5;
-
-            this.txtCCCD.Size = new System.Drawing.Size(209, 23);
             this.txtCCCD.TabIndex = 29;
-
             this.txtCCCD.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
@@ -206,13 +191,8 @@
             this.txtHoTen.Location = new System.Drawing.Point(352, 55);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoTen.Name = "txtHoTen";
-
             this.txtHoTen.Size = new System.Drawing.Size(241, 27);
-            this.txtHoTen.TabIndex = 4;
-
-            this.txtHoTen.Size = new System.Drawing.Size(241, 23);
             this.txtHoTen.TabIndex = 34;
-
             this.txtHoTen.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtMaPhieu
@@ -220,13 +200,8 @@
             this.txtMaPhieu.Location = new System.Drawing.Point(86, 55);
             this.txtMaPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaPhieu.Name = "txtMaPhieu";
-
             this.txtMaPhieu.Size = new System.Drawing.Size(219, 27);
-            this.txtMaPhieu.TabIndex = 3;
-
-            this.txtMaPhieu.Size = new System.Drawing.Size(219, 23);
             this.txtMaPhieu.TabIndex = 28;
-
             // 
             // txtGhiChu
             // 
@@ -243,13 +218,8 @@
             this.txtDiem.Location = new System.Drawing.Point(788, 117);
             this.txtDiem.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiem.Name = "txtDiem";
-
             this.txtDiem.Size = new System.Drawing.Size(97, 27);
-            this.txtDiem.TabIndex = 8;
-
-            this.txtDiem.Size = new System.Drawing.Size(97, 23);
             this.txtDiem.TabIndex = 31;
-
             this.txtDiem.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtDiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiem_KeyPress);
             // 
@@ -260,7 +230,7 @@
             this.lbGhiChu.Location = new System.Drawing.Point(91, 306);
             this.lbGhiChu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbGhiChu.Name = "lbGhiChu";
-            this.lbGhiChu.Size = new System.Drawing.Size(64, 17);
+            this.lbGhiChu.Size = new System.Drawing.Size(79, 20);
             this.lbGhiChu.TabIndex = 37;
             this.lbGhiChu.Text = "Ghi chú";
             // 
@@ -270,7 +240,7 @@
             this.lbDiem.Location = new System.Drawing.Point(790, 90);
             this.lbDiem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDiem.Name = "lbDiem";
-            this.lbDiem.Size = new System.Drawing.Size(48, 17);
+            this.lbDiem.Size = new System.Drawing.Size(59, 20);
             this.lbDiem.TabIndex = 38;
             this.lbDiem.Text = "Điểm:";
             // 
@@ -291,7 +261,7 @@
             this.lbLop.Location = new System.Drawing.Point(786, 22);
             this.lbLop.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLop.Name = "lbLop";
-            this.lbLop.Size = new System.Drawing.Size(40, 17);
+            this.lbLop.Size = new System.Drawing.Size(49, 20);
             this.lbLop.TabIndex = 67;
             this.lbLop.Text = "Lớp:";
             // 
@@ -301,7 +271,7 @@
             this.lbCapHoc.Location = new System.Drawing.Point(481, 22);
             this.lbCapHoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCapHoc.Name = "lbCapHoc";
-            this.lbCapHoc.Size = new System.Drawing.Size(72, 17);
+            this.lbCapHoc.Size = new System.Drawing.Size(89, 20);
             this.lbCapHoc.TabIndex = 66;
             this.lbCapHoc.Text = "Cấp Học:";
             // 
@@ -311,7 +281,7 @@
             this.lbKhoaHoc.Location = new System.Drawing.Point(156, 22);
             this.lbKhoaHoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbKhoaHoc.Name = "lbKhoaHoc";
-            this.lbKhoaHoc.Size = new System.Drawing.Size(80, 17);
+            this.lbKhoaHoc.Size = new System.Drawing.Size(99, 20);
             this.lbKhoaHoc.TabIndex = 65;
             this.lbKhoaHoc.Text = "Khóa học:";
             // 
@@ -345,13 +315,8 @@
             this.dtNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgaySinh.Location = new System.Drawing.Point(84, 114);
             this.dtNgaySinh.Name = "dtNgaySinh";
-
             this.dtNgaySinh.Size = new System.Drawing.Size(367, 27);
-            this.dtNgaySinh.TabIndex = 7;
-
-            this.dtNgaySinh.Size = new System.Drawing.Size(367, 23);
             this.dtNgaySinh.TabIndex = 75;
-
             // 
             // groupBox3
             // 
@@ -376,12 +341,8 @@
             this.txtLop.Location = new System.Drawing.Point(790, 44);
             this.txtLop.Margin = new System.Windows.Forms.Padding(2);
             this.txtLop.Name = "txtLop";
-
             this.txtLop.Size = new System.Drawing.Size(211, 27);
-            this.txtLop.TabIndex = 4;
-            this.txtLop.Size = new System.Drawing.Size(211, 23);
             this.txtLop.TabIndex = 28;
-
             this.txtLop.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtCap
@@ -389,12 +350,8 @@
             this.txtCap.Location = new System.Drawing.Point(488, 44);
             this.txtCap.Margin = new System.Windows.Forms.Padding(2);
             this.txtCap.Name = "txtCap";
-
             this.txtCap.Size = new System.Drawing.Size(211, 27);
-            this.txtCap.TabIndex = 3;
-            this.txtCap.Size = new System.Drawing.Size(211, 23);
             this.txtCap.TabIndex = 28;
-
             this.txtCap.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtKhoa
@@ -402,13 +359,8 @@
             this.txtKhoa.Location = new System.Drawing.Point(163, 44);
             this.txtKhoa.Margin = new System.Windows.Forms.Padding(2);
             this.txtKhoa.Name = "txtKhoa";
-
             this.txtKhoa.Size = new System.Drawing.Size(229, 27);
-            this.txtKhoa.TabIndex = 2;
-
-            this.txtKhoa.Size = new System.Drawing.Size(229, 23);
             this.txtKhoa.TabIndex = 28;
-
             this.txtKhoa.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // listView1
@@ -539,7 +491,7 @@
             // 
             // Them
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 749);
             this.Controls.Add(this.btThoat);
@@ -559,6 +511,7 @@
             this.Name = "Them";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Them";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Them_FormClosed);
             this.Load += new System.EventHandler(this.Them_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

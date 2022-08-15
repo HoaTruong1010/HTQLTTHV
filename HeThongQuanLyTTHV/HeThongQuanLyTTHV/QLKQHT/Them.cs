@@ -142,6 +142,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 listView1.Visible=false;
                 groupBox4.Visible = false;
             }
+            
         }
 
         private void Thoat()
@@ -152,11 +153,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
         }
 
         private void btTroLai_Click(object sender, EventArgs e)
-        {
-            Thoat();
-        }
-
-        private void Them_FormClosing(object sender, FormClosingEventArgs e)
         {
             Thoat();
         }
@@ -278,17 +274,10 @@ namespace HeThongQuanLyTTHV.QLKQHT
                     }
                     if (chucnang == "chinh")
                     {
-
-                        if (Keys.Enter==Keys.Select)
-                        {
                             listDSP.RemoveAt(idVT);
                             listDSP.Add(p);
-                            MessageBox.Show("Sửa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information); 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Hãy sửa thông tin!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }    
+                            MessageBox.Show("Sửa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Reset();
                     }
                 }
             }
@@ -313,7 +302,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
             }
         }
 
-
         private void Xoa()
         {
             if (viTri != -1)
@@ -335,12 +323,18 @@ namespace HeThongQuanLyTTHV.QLKQHT
             Xoa();
         }
 
+        private void Them_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            path = Application.StartupPath + @"\Data\DSP.txt";
+            GhiFile(path, listDSP);
+        }
+
         protected override bool ProcessDialogKey(Keys keyData)
         {
             switch (keyData)
             {
                 
-                case Keys.Enter:
+                case Keys.Enter: // enter là lưu file thì ở đây có rồi nè. thêm nữa để lam dì v?
                     if (chucnang=="add"||chucnang=="chinh")
                     {
                         Luu();
@@ -359,8 +353,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
             }
             return base.ProcessDialogKey(keyData);
         }
-
-       
     }  
 }
 
