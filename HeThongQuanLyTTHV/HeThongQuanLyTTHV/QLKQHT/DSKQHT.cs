@@ -56,28 +56,29 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 case Keys.Escape:
                     this.Close();
                     return true;
-                    case Keys.NumPad1:
+                    case Keys.D1:
                     Them f = new Them();
                     f.Chucnang = "add";
                     f.Show();
                     return true;
-                case Keys.NumPad2:
+                case Keys.D2:
                     Them c = new Them();
                     c.Chucnang = "chinh";
                     c.Show();
                     return true;
-                case Keys.NumPad3:
+                case Keys.D3:
                     Them x = new Them();
                     x.Chucnang = "xoa";
                     x.Show();
                     return true;
-                case Keys.NumPad4:
+                case Keys.D4:
                     XemDS d = new XemDS();
                     d.Show();
                     return true;
-                case Keys.NumPad5:
+                case Keys.D5:
                     this.Close();
                     return true;
+               
 
             }
             return base.ProcessDialogKey(keyData);
