@@ -28,11 +28,14 @@ namespace HeThongQuanLyTTHV.QLKQHT
         private void btChinh_Click(object sender, EventArgs e)
         {
             Them f = new Them();
-            f.Chucnang = "chinh";//Tương tự nha 
+            f.Chucnang = "chinh";
             f.Show();
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,14 +44,52 @@ namespace HeThongQuanLyTTHV.QLKQHT
         private void btXoa_Click(object sender, EventArgs e)
         {
             Them f = new Them();
+<<<<<<< HEAD
             f.Chucnang = "xoa";
+=======
+            f.Chucnang = "xoa"; 
+>>>>>>> main
             f.Show();
         }
 
         private void btXem_Click(object sender, EventArgs e)
         {
-            XemDS f=new XemDS();
+            XemDS f = new XemDS();
             f.Show();
+        }
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Escape:
+                    this.Close();
+                    return true;
+                    case Keys.D1:
+                    Them f = new Them();
+                    f.Chucnang = "add";
+                    f.Show();
+                    return true;
+                case Keys.D2:
+                    Them c = new Them();
+                    c.Chucnang = "chinh";
+                    c.Show();
+                    return true;
+                case Keys.D3:
+                    Them x = new Them();
+                    x.Chucnang = "xoa";
+                    x.Show();
+                    return true;
+                case Keys.D4:
+                    XemDS d = new XemDS();
+                    d.Show();
+                    return true;
+                case Keys.D5:
+                    this.Close();
+                    return true;
+               
+
+            }
+            return base.ProcessDialogKey(keyData);
         }
     }
 }

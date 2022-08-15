@@ -65,7 +65,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 104);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1198, 475);
+            this.listView1.Size = new System.Drawing.Size(1512, 551);
             this.listView1.TabIndex = 74;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -77,49 +77,59 @@
             // HoTen
             // 
             this.HoTen.Text = "Họ Tên";
+            this.HoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CCCD
             // 
             this.CCCD.Text = "CCCD";
+            this.CCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CapHoc
             // 
             this.CapHoc.Text = "Cấp Học";
+            this.CapHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // KhoaHoc
             // 
             this.KhoaHoc.Text = "Khóa Học";
+            this.KhoaHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Lop
             // 
             this.Lop.Text = "Lớp";
+            this.Lop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SDT
             // 
             this.SDT.Text = "SĐT";
+            this.SDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NgaySinh
             // 
             this.NgaySinh.Text = "Ngày Sinh";
+            this.NgaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Diem
             // 
             this.Diem.Text = "Điểm";
+            this.Diem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GioiTinh
             // 
             this.GioiTinh.Text = "Giới Tính";
+            this.GioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GhiChu
             // 
             this.GhiChu.Text = "GhiChu";
+            this.GhiChu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btSapXep
             // 
-            this.btSapXep.Location = new System.Drawing.Point(850, 596);
+            this.btSapXep.Location = new System.Drawing.Point(1198, 675);
             this.btSapXep.Name = "btSapXep";
             this.btSapXep.Size = new System.Drawing.Size(144, 49);
-            this.btSapXep.TabIndex = 75;
+            this.btSapXep.TabIndex = 0;
             this.btSapXep.Text = "Sắp Xếp";
             this.btSapXep.UseVisualStyleBackColor = true;
             this.btSapXep.Click += new System.EventHandler(this.btSapXep_Click);
@@ -129,7 +139,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(186, 18);
+            this.label1.Location = new System.Drawing.Point(248, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(890, 50);
             this.label1.TabIndex = 76;
@@ -137,10 +147,10 @@
             // 
             // btThoat
             // 
-            this.btThoat.Location = new System.Drawing.Point(1032, 596);
+            this.btThoat.Location = new System.Drawing.Point(1380, 675);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(144, 49);
-            this.btThoat.TabIndex = 75;
+            this.btThoat.TabIndex = 1;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = true;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
@@ -149,16 +159,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 657);
+            this.ClientSize = new System.Drawing.Size(1551, 752);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.btSapXep);
             this.Controls.Add(this.listView1);
             this.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "XemDS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XemDS";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.XemDS_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

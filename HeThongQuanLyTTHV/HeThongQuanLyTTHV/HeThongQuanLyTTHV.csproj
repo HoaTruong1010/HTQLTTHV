@@ -52,6 +52,15 @@
     <Compile Include="QLTKB\ChinhSuaTKB.Designer.cs">
       <DependentUpon>ChinhSuaTKB.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLTKB\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QLTKB\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QLTKB\RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLTKB\ThoiKhoaBieu.cs" />
     <Compile Include="QLTKB\SapXepTKB.cs">
       <SubType>Form</SubType>
@@ -127,6 +136,9 @@
     <EmbeddedResource Include="QLTKB\ChinhSuaTKB.resx">
       <DependentUpon>ChinhSuaTKB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLTKB\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLTKB\SapXepTKB.resx">
       <DependentUpon>SapXepTKB.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,13 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DSTKB\DSLopIELTS.txt" />
-    <Content Include="DSTKB\DSLopTAGiaoTiep.txt" />
-    <Content Include="DSTKB\DSLopTATQNguoiLon.txt" />
-    <Content Include="DSTKB\DSLopTATQThieuNhi.txt" />
-    <Content Include="DSTKB\DSLopTOEIC.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

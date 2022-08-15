@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using HeThongQuanLyTTHV.QLTKB;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using HeThongQuanLyTTHV.QLHV;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace HeThongQuanLyTTHV.QLTKB
 {
@@ -20,15 +22,74 @@ namespace HeThongQuanLyTTHV.QLTKB
             InitializeComponent();
         }
 
+        //Tạo list TKB
+        List<ThoiKhoaBieu> listTKB = new List<ThoiKhoaBieu>(1000);
+        internal List<ThoiKhoaBieu> ListTKB { get => listTKB; set => listTKB = value; }
+
+        string path;
+        string text;
+
+        private void GhiFileDSTKB(string path, List<ThoiKhoaBieu> tkb)
+        {
+            if (File.Exists(path))
+                File.Delete(path);
+            if (listTKB.Count > 0)
+                using (StreamWriter s = new StreamWriter(path))
+                {
+                    foreach (ThoiKhoaBieu t in tkb)
+                    {
+                        s.WriteLine("{0}#{1}#{2}#{3}#{4}#{5}#{6}#{7}#{8}#{9}",
+                        t.MaLich, t.TenKH, t.CapLop, t.Lop, t.SoBuoi,
+                        t.SoLuongHV, t.Thu, t.KhungGioHoc, t.TenGV);
+                    }
+                }
+            else
+                return;
+        }
+
+        private void DocFileDSTKB()
+        {
+            try
+            {
+                path = Application.StartupPath + @"\Data\DSTKB.txt";
+                if (File.Exists(path))
+                    using (StreamReader s = new StreamReader(path))
+                    {
+                        string line;
+                        string[] attributes;
+                        while (s.Peek() >= 0)
+                        {
+                            line = s.ReadLine();
+                            attributes = line.Split(new string[] { "#" }, StringSplitOptions.None);
+                            ThoiKhoaBieu t = new ThoiKhoaBieu(attributes[0], attributes[1], attributes[2],
+                                attributes[3], attributes[4], attributes[5], attributes[6],
+                                attributes[7], attributes[8], attributes[9]);
+                            listTKB.Add(t);
+                        }
+                    }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
         private void ThemTKB_Load(object sender, EventArgs e)
         {
-            //ComboBox chọn chương trình đạo tạo/tên khoá học
-            cbbCTDT.Items.Add("----Chọn----");
-            cbbCTDT.Items.Add("Tiếng Anh tổng quát thiếu nhi");
-            cbbCTDT.Items.Add("Tiếng Anh tổng quát người lớn");
-            cbbCTDT.Items.Add("Tiếng Anh giao tiếp");
-            cbbCTDT.Items.Add("Luyện thi TOEIC");
-            cbbCTDT.Items.Add("Luyện thi IELTS");
+            rjMaLich.Focus();
+            DocFileDSTKB();
+
+            path = Application.StartupPath + @"\Data\SubjectList.txt";
+
+            cbbCTDT.Items.Clear();
+            CheckDataKH(path, cbbCTDT, "");
+            cbbCTDT.SelectedIndex = 0;
+            cbbCapLop.Items.Add("---Chọn---");
+            cbbCapLop.SelectedIndex = 0;
+            cbbLop.Items.Add("-Chọn-");
+            cbbLop.SelectedIndex = 0;
 
             //ComboBox chọn thứ
             cbbThu.Items.Add("----Chọn----");
@@ -36,6 +97,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             cbbThu.Items.Add("Thứ 3-5");
             cbbThu.Items.Add("Thứ 4-6");
             cbbThu.Items.Add("Thứ 7-CN");
+            cbbThu.SelectedIndex = 0;
 
             //ComboBox chọn khung giờ học
             cbbKhungGioHoc.Items.Add("----Chọn----");
@@ -43,316 +105,170 @@ namespace HeThongQuanLyTTHV.QLTKB
             cbbKhungGioHoc.Items.Add("Từ 8:30 - 10:30");
             cbbKhungGioHoc.Items.Add("Từ 17:15 - 19:15");
             cbbKhungGioHoc.Items.Add("Từ 19:15 - 21:15");
+            cbbKhungGioHoc.SelectedIndex = 0;
 
-            //ListView - xem để thêm các khoá học vào danh sách tkb
+            //ListView - xem danh sách tkb
             lvDSKH.View = View.Details;
             lvDSKH.GridLines = true;
             lvDSKH.FullRowSelect = true;
-            //Tiêu đề các cột trong lvDSKH
-            lvDSKH.Columns[0].Width = (int)(lvDSKH.Width * 0.09);
-            //lvDSKH.Columns.Add("Chọn", 20);
-            //lvDSKH.Columns.Add("Cấp lớp", 50);
-            //lvDSKH.Columns.Add("Lớp", 35);
-            //lvDSKH.Columns.Add("Số buổi", 25);
-            //lvDSKH.Columns.Add("Số lượng", 25);
-            //lvDSKH.Columns.Add("Còn lại", 25);
-            //lvDSKH.Columns.Add("Thời khoá biểu", 200);
-            //Hiển thị danh sách từ trong file
+            //lvDSKH.Columns[0].Width = (int)(lvDSKH.Width * 0.09);
+        }
 
+        private void CheckDataKH(string path, ComboBox box, string keys)
+        {
+            try
+            {
+                if (File.Exists(path))
+                    using (StreamReader s = new StreamReader(path))
+                    {
+                        string line;
+                        while (s.Peek() >= 0)
+                        {
+                            line = s.ReadLine();
+                            if (line.StartsWith(keys))
+                                box.Items.Add(line);
+                        }
+                    }
+                else
+                    MessageBox.Show("Không có dữ liệu cho khóa học", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cbbCTDT_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //ComboBox chọn cấp học có sẵn
-            string chonCap = cbbCTDT.Text;
-            switch (chonCap)
+            if (cbbCTDT.SelectedIndex != 0)
             {
-                case "Tiếng Anh tổng quát thiếu nhi":
-                    //
-                    cbbLop.Items.Clear();
-                    cbbLop.Items.Add("----Chọn----");
-                    cbbCapLop.Items.Add("Căn Bản");
-                    cbbCapLop.Items.Add("Sơ Cấp");
-                    cbbCapLop.Items.Add("Trung Cấp");
-                    cbbCapLop.Items.Add("Cao Cấp");
-                    break;
-                case "Tiếng Anh tổng quát người lớn":
-                    cbbLop.Items.Clear();
-                    cbbLop.Items.Add("----Chọn----");
-                    cbbCapLop.Items.Add("Căn Bản");
-                    cbbCapLop.Items.Add("Sơ Cấp");
-                    cbbCapLop.Items.Add("Trung Cấp");
-                    cbbCapLop.Items.Add("Cao Cấp");
-                    break;
-                case "Tiếng Anh giao tiếp":
-                    cbbLop.Items.Clear();
-                    cbbLop.Items.Add("----Chọn----");
-                    cbbCapLop.Items.Add("Căn Bản");
-                    cbbCapLop.Items.Add("Sơ Cấp");
-                    cbbCapLop.Items.Add("Trung Cấp");
-                    cbbCapLop.Items.Add("Cao Cấp");
-                    break;
-                case "Luyện thi TOEIC":
-                    cbbLop.Items.Clear();
-                    cbbLop.Items.Add("----Chọn----");
-                    cbbCapLop.Items.Add("TOEIC 100-200");
-                    cbbCapLop.Items.Add("TOEIC 200-400");
-                    cbbCapLop.Items.Add("TOEIC 400-600");
-                    cbbCapLop.Items.Add("TOEIC 600-750");
-                    break;
-                case "Luyện thi IELTS":
-                    cbbLop.Items.Clear();
-                    cbbLop.Items.Add("----Chọn----");
-                    cbbCapLop.Items.Add("Pre-IELTS");
-                    cbbCapLop.Items.Add("IELTS 4.0-5.0");
-                    cbbCapLop.Items.Add("IELTS 5.0-6.5");
-                    cbbCapLop.Items.Add("IELTS 6.5-7.5");
-                    cbbCapLop.Items.Add("Luyện giải đề IELTS");
-                    break;
-                default:
-                    break;
+                cbbCapLop.Items.Clear();
+                cbbCapLop.Items.Add("---Chọn---");
+                cbbCapLop.SelectedIndex = 0;
+                text = cbbCTDT.SelectedItem.ToString();
+                text = "K" + text.Substring(text.Length - 2, 2);
+                path = Application.StartupPath + @"\Data\LevelList.txt";
+                CheckDataKH(path, cbbCapLop, text);
             }
         }
 
-        private void cbbCapLop_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbbCapLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Combo Box chọn lớp có sẵn
-            string chonLop = cbbCapLop.Text;
-            if (string.Compare(cbbCTDT.Text, "Tiếng Anh tổng quát thiếu nhi") == 0)
+            if (cbbCapLop.SelectedIndex != 0)
             {
-                switch (chonLop)
-                {
-                    case "Căn Bản":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("KS1");
-                        cbbLop.Items.Add("KS2");
-                        cbbLop.Items.Add("KS3");
-                        cbbLop.Items.Add("KS4");
-                        break;
-                    case "Sơ Cấp":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("KS5");
-                        cbbLop.Items.Add("KS6");
-                        cbbLop.Items.Add("KS7");
-                        cbbLop.Items.Add("KS8");
-                        break;
-                    case "Trung Cấp":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("KS9");
-                        cbbLop.Items.Add("KS10");
-                        cbbLop.Items.Add("KS11");
-                        cbbLop.Items.Add("KS12");
-                        break;
-                    case "Cao Cấp":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("KS13");
-                        cbbLop.Items.Add("KS14");
-                        cbbLop.Items.Add("KS15");
-                        cbbLop.Items.Add("KS16");
-                        break;
-                    default:
-                        break;
-                }
+                cbbLop.Items.Clear();
+                cbbLop.Items.Add("-Chọn-");
+                cbbLop.SelectedIndex = 0;
+                text = cbbCapLop.SelectedItem.ToString();
+                text = text.Substring(0, 5);
+                path = Application.StartupPath + @"\Data\ClassList.txt";
+                CheckDataKH(path, cbbLop, text);
             }
-            if (string.Compare(cbbCTDT.Text, "Tiếng Anh tổng quát người lớn") == 0)
-            {
-                switch (chonLop)
-                {
-                    case "Căn Bản":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("GE1");
-                        cbbLop.Items.Add("GE2");
-                        cbbLop.Items.Add("GE3");
-                        cbbLop.Items.Add("GE4");
-                        break;
-                    case "Sơ Cấp":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("GE5");
-                        cbbLop.Items.Add("GE6");
-                        cbbLop.Items.Add("GE7");
-                        cbbLop.Items.Add("GE8");
-                        break;
-                    case "Trung Cấp":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("GE9");
-                        cbbLop.Items.Add("GE10");
-                        cbbLop.Items.Add("GE11");
-                        cbbLop.Items.Add("GE12");
-                        break;
-                    case "Cao Cấp":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("GE13");
-                        cbbLop.Items.Add("GE14");
-                        cbbLop.Items.Add("GE15");
-                        cbbLop.Items.Add("GE16");
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (string.Compare(cbbCTDT.Text, "Tiếng Anh giao tiếp") == 0)
-            {
-                switch (chonLop)
-                {
-                    case "Căn Bản":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("CO1");
-                        cbbLop.Items.Add("CO2");
-                        cbbLop.Items.Add("CO3");
-                        cbbLop.Items.Add("CO4");
-                        break;
-                    case "Sơ Cấp":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("CO5");
-                        cbbLop.Items.Add("CO6");
-                        cbbLop.Items.Add("CO7");
-                        cbbLop.Items.Add("CO8");
-                        break;
-                    case "Trung Cấp":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("CO9");
-                        cbbLop.Items.Add("CO10");
-                        cbbLop.Items.Add("CO11");
-                        cbbLop.Items.Add("CO12");
-                        break;
-                    case "Cao Cấp":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("CO13");
-                        cbbLop.Items.Add("CO14");
-                        cbbLop.Items.Add("CO15");
-                        cbbLop.Items.Add("CO16");
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (string.Compare(cbbCTDT.Text, "Luyện thi TOEIC") == 0)
-            {
-                switch (chonLop)
-                {
-                    case "TOEIC 100-200":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("TC1");
-                        cbbLop.Items.Add("TC2");
-                        break;
-                    case "TOEIC 200-400":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("TC5");
-                        cbbLop.Items.Add("TC6");
-                        break;
-                    case "TOEIC 400-600":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("TC9");
-                        cbbLop.Items.Add("TC10");
-                        break;
-                    case "TOEIC 600-750":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("TC15");
-                        cbbLop.Items.Add("TC16");
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (string.Compare(cbbCTDT.Text, "Luyện thi IELTS") == 0)
-            {
-                switch (chonLop)
-                {
-                    case "Pre-IELTS":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("PIE1");
-                        cbbLop.Items.Add("PIE2");
-                        break;
-                    case "IELTS 4.0-5.0":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("IE1");
-                        cbbLop.Items.Add("IE2");
-                        break;
-                    case "IELTS 5.0-6.5":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("IE3");
-                        cbbLop.Items.Add("IE4");
-                        break;
-                    case "IELTS 6.5-7.5":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("IE5");
-                        cbbLop.Items.Add("IE6");
-                        break;
-                    case "Luyện giải đề IELTS":
-                        cbbLop.Items.Clear();
-                        cbbLop.Items.Add("----Chọn----");
-                        cbbLop.Items.Add("IET1");
-                        cbbLop.Items.Add("IET2");
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
+        }        
 
-        private void btThem_Click(object sender, EventArgs e)
+        private void RjThem_Click(object sender, EventArgs e)
         {
             if (cbbCTDT.Text!="")
             {
                 ListViewItem item = new ListViewItem();
-                ThoiKhoaBieu tkb = new ThoiKhoaBieu();
-                tkb.MaLich = txtMaLich.Text;
-                tkb.TenKH = cbbCTDT.Text;
-                tkb.TenGV = txtTenGV.Text;
-                tkb.CapLop = cbbCapLop.Text;
-                tkb.Lop = cbbLop.Text;
-                tkb.SoBuoi = Int32.Parse(txtSoBuoiHoc.Text);
-                tkb.SLHV1 = Int32.Parse(txtSLHV.Text);
-                tkb.Thu = cbbThu.Text;
-                tkb.KhungGioHoc = cbbKhungGioHoc.Text;
-                tkb.Phong = txtPhong.Text;
+                ThoiKhoaBieu t = new ThoiKhoaBieu();
+                t.MaLich = rjMaLich.Text;
+                t.TenGV = rjTenGV.Text;
+                t.SoBuoi = Convert.ToInt32(rjSoBuoi.Text);
+                t.SoLuongHV = Convert.ToInt32(rjSLHV.Text);
+                t.Phong = rjPhong.Text;
+                t.TenKH = cbbCTDT.Text;
+                t.CapLop = cbbCapLop.Text;
+                t.Lop = cbbLop.Text;
+                t.Thu = cbbThu.Text;
+                t.KhungGioHoc = cbbKhungGioHoc.Text;
 
-                item = new ListViewItem(txtMaLich.Text);
-                item.SubItems.Add(tkb.TenKH);
-                item.SubItems.Add(tkb.CapLop);
-                item.SubItems.Add(tkb.Lop);
-                item.SubItems.Add(tkb.SoBuoi.ToString());
-                item.SubItems.Add(tkb.SLHV1.ToString());
-                item.SubItems.Add(tkb.Thu);
-                item.SubItems.Add(tkb.KhungGioHoc);
-                item.SubItems.Add(tkb.Phong);
-                item.SubItems.Add(tkb.TenGV);
+                try
+                {
+                    if (rjMaLich.Text == "" || rjTenGV.Text == "" || rjSoBuoi.Text == ""
+                        || rjSLHV.Text == "" || rjPhong.Text == "" || cbbCTDT.SelectedIndex == 0
+                        || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
+                        || cbbKhungGioHoc.SelectedIndex == 0)
+                    {
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                    }
+                    else
+                    {
+                        item = new ListViewItem(rjMaLich.Text);
+                        item.SubItems.Add(t.TenKH);
+                        item.SubItems.Add(t.CapLop);
+                        item.SubItems.Add(t.Lop);
+                        item.SubItems.Add(t.SoBuoi.ToString());
+                        item.SubItems.Add(t.SoLuongHV.ToString());
+                        item.SubItems.Add(t.Thu);
+                        item.SubItems.Add(t.KhungGioHoc);
+                        item.SubItems.Add(t.Phong);
+                        item.SubItems.Add(t.TenGV);
 
-                lvDSKH.Items.Add(item);
-                txtMaLich.Text = "";
-                txtMaLich.Focus();
+                        lvDSKH.Items.Add(item);
+                        rjMaLich.Text = "";
+                        rjMaLich.Focus();
+                    } 
+                        
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }                                
             }    
         }
 
-        private void btLuu_Click(object sender, EventArgs e)
+        private void RjSoBuoi_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Vui lòng nhập vào 1 số!");
+            }
         }
 
-        private void btBack_Click(object sender, EventArgs e)
+        private void RjLuu_Click(object sender, EventArgs e)
         {
-            Close();
-            QLLH.frmQLLH.Show();
+            //Xử lý không điền đủ thông tin
+            try
+            {
+                if (rjMaLich.Text == "" || rjTenGV.Text == "" || rjSoBuoi.Text == ""
+                    || rjSLHV.Text == "" || rjPhong.Text == "" || cbbCTDT.SelectedIndex == 0
+                    || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
+                    || cbbKhungGioHoc.SelectedIndex == 0)
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                }
+                else
+                { 
+                    string[] item = {rjMaLich.Text, rjTenGV.Text, rjSoBuoi.Text, rjSLHV.Text,
+                            rjPhong.Text, cbbCTDT.SelectedItem.ToString(), cbbCapLop.SelectedItem.ToString(),
+                            cbbLop.SelectedItem.ToString(), cbbThu.SelectedItem.ToString(), cbbKhungGioHoc.SelectedItem.ToString()};
+                    ThoiKhoaBieu t = new ThoiKhoaBieu();
+                    t.MaLich = item[0];
+                    t.TenGV = item[1];
+                    t.SoBuoi = Int32.Parse(item[2]);
+                    t.SoLuongHV = Int32.Parse(item[3]);
+                    t.Phong = item[4];
+                    t.TenKH = item[5];
+                    t.CapLop = item[6];
+                    t.Lop = item[7];
+                    t.Thu = item[8];
+                    t.KhungGioHoc = item[9];  
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void RjBack_Click(object sender, EventArgs e)
+        {
+            path = Application.StartupPath + @"\Data\DSTKB.txt";
+            GhiFileDSTKB(path, listTKB);
+            this.Close();            
         }
     }
 }

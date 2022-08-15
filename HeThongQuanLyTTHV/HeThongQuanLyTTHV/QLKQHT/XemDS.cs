@@ -18,7 +18,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             InitializeComponent();
         }
         List<PhieuKetQua> listDS = new List<PhieuKetQua>(1000);
-        private void btSapXep_Click(object sender, EventArgs e)
+        private void SapXep()
         {
             ListViewItem item;
             string[] att;
@@ -37,6 +37,10 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 item = new ListViewItem(att);
                 listView1.Items.Add(item);
             }
+        }
+        private void btSapXep_Click(object sender, EventArgs e)
+        {
+            SapXep();   
         }
 
         private void XemDS_Load(object sender, EventArgs e)
@@ -93,6 +97,19 @@ namespace HeThongQuanLyTTHV.QLKQHT
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Enter:
+                    SapXep();
+                    return true;
+                case Keys.Escape:
+                    this.Close();
+                    return true;
+            }
+            return base.ProcessDialogKey(keyData);
         }
     }
 }
