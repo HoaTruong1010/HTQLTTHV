@@ -178,7 +178,7 @@ namespace HeThongQuanLyTTHV.QLHV
                     if (chucNang == "Edit")
                         listHV.RemoveAt(idTemp);
                     listHV.Add(h);
-                    MessageBox.Show("Lưu thành công!");
+                    MessageBox.Show("Lưu thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
                 }
             }

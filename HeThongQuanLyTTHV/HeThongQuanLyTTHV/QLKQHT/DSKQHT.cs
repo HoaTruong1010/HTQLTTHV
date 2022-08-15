@@ -32,10 +32,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
             f.Show();
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -44,11 +40,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
         private void btXoa_Click(object sender, EventArgs e)
         {
             Them f = new Them();
-<<<<<<< HEAD
             f.Chucnang = "xoa";
-=======
-            f.Chucnang = "xoa"; 
->>>>>>> main
             f.Show();
         }
 
