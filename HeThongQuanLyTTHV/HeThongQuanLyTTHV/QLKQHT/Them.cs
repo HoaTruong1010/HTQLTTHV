@@ -290,6 +290,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btLuu_Click(object sender, EventArgs e)
         {
             Luu();
@@ -326,7 +327,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
             Xoa();
         }
 
-
         protected override bool ProcessDialogKey(Keys keyData)
         {
             switch (keyData)
@@ -345,8 +345,9 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 case Keys.Escape:
                     Thoat();    
                     return true;
-
-                   
+                case Keys.Delete:
+                    Reset();
+                    return true;
             }
             return base.ProcessDialogKey(keyData);
         }

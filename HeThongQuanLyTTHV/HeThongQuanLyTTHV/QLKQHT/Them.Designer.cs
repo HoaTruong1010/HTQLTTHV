@@ -394,42 +394,52 @@
             // HoTen
             // 
             this.HoTen.Text = "Họ Tên";
+            this.HoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CCCD
             // 
             this.CCCD.Text = "CCCD";
+            this.CCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CapHoc
             // 
             this.CapHoc.Text = "Cấp Học";
+            this.CapHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // KhoaHoc
             // 
             this.KhoaHoc.Text = "Khóa Học";
+            this.KhoaHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Lop
             // 
             this.Lop.Text = "Lớp";
+            this.Lop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SDT
             // 
             this.SDT.Text = "SĐT";
+            this.SDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NgaySinh
             // 
             this.NgaySinh.Text = "Ngày Sinh";
+            this.NgaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Diem
             // 
             this.Diem.Text = "Điểm";
+            this.Diem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GioiTinh
             // 
             this.GioiTinh.Text = "Giới Tính";
+            this.GioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GhiChu
             // 
             this.GhiChu.Text = "GhiChu";
+            this.GhiChu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox4
             // 
@@ -496,6 +506,8 @@
             this.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Them";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Them";

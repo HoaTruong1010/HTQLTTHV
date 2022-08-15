@@ -72,11 +72,7 @@ namespace HeThongQuanLyTTHV
             this.Ngaysinh=p.Ngaysinh;   
             this.GioiTinh=p.GioiTinh;
             this.Diem = p.Diem;
-              
-               
-           
             this.GhiChu = p.GhiChu;
-
         }
     }
 }
