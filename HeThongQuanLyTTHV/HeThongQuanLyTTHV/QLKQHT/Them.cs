@@ -291,6 +291,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             }
         }
 
+
         private void btXoa_Click(object sender, EventArgs e)
         {
             if (viTri != -1)
