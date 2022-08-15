@@ -1,4 +1,6 @@
-﻿namespace HeThongQuanLyTTHV.QLTKB
+﻿using System.Windows.Forms;
+
+namespace HeThongQuanLyTTHV.QLTKB
 {
     partial class ThemTKB
     {
@@ -41,23 +43,22 @@
             this.colPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colGV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbContent1 = new System.Windows.Forms.Label();
-            this.btBack = new System.Windows.Forms.Button();
             this.gbThemTKB = new System.Windows.Forms.GroupBox();
+            this.rjPhong = new HeThongQuanLyTTHV.QLTKB.RJTextBox();
+            this.rjSLHV = new HeThongQuanLyTTHV.QLTKB.RJTextBox();
+            this.rjSoBuoi = new HeThongQuanLyTTHV.QLTKB.RJTextBox();
+            this.rjTenGV = new HeThongQuanLyTTHV.QLTKB.RJTextBox();
+            this.rjMaLich = new HeThongQuanLyTTHV.QLTKB.RJTextBox();
+            this.rjLuu = new HeThongQuanLyTTHV.QLTKB.RJButton();
+            this.rjThem = new HeThongQuanLyTTHV.QLTKB.RJButton();
             this.lbTenCTDT = new System.Windows.Forms.Label();
-            this.txtMaLich = new System.Windows.Forms.TextBox();
             this.lbMaLich = new System.Windows.Forms.Label();
-            this.txtTenGV = new System.Windows.Forms.TextBox();
             this.lbTenGV = new System.Windows.Forms.Label();
-            this.btLuu = new System.Windows.Forms.Button();
-            this.btThem = new System.Windows.Forms.Button();
-            this.txtPhong = new System.Windows.Forms.TextBox();
             this.lbPhong = new System.Windows.Forms.Label();
             this.cbbKhungGioHoc = new System.Windows.Forms.ComboBox();
             this.lbGioHoc = new System.Windows.Forms.Label();
             this.cbbThu = new System.Windows.Forms.ComboBox();
             this.lbThu = new System.Windows.Forms.Label();
-            this.txtSLHV = new System.Windows.Forms.TextBox();
-            this.txtSoBuoiHoc = new System.Windows.Forms.TextBox();
             this.lbSLHV = new System.Windows.Forms.Label();
             this.lbSoBuoiHoc = new System.Windows.Forms.Label();
             this.cbbLop = new System.Windows.Forms.ComboBox();
@@ -65,6 +66,7 @@
             this.cbbCapLop = new System.Windows.Forms.ComboBox();
             this.lbCapLop = new System.Windows.Forms.Label();
             this.cbbCTDT = new System.Windows.Forms.ComboBox();
+            this.rjBack = new HeThongQuanLyTTHV.QLTKB.RJButton();
             this.gbThemTKB.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             this.lbTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbTieuDe.Enabled = false;
             this.lbTieuDe.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTieuDe.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbTieuDe.ForeColor = System.Drawing.Color.Brown;
             this.lbTieuDe.Location = new System.Drawing.Point(0, 0);
             this.lbTieuDe.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTieuDe.Name = "lbTieuDe";
@@ -174,35 +176,23 @@
             this.lbContent1.TabIndex = 5;
             this.lbContent1.Text = "Danh sách các khoá học đã thêm";
             // 
-            // btBack
-            // 
-            this.btBack.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBack.ForeColor = System.Drawing.Color.Brown;
-            this.btBack.Location = new System.Drawing.Point(548, 629);
-            this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(109, 30);
-            this.btBack.TabIndex = 7;
-            this.btBack.Text = "Trở lại";
-            this.btBack.UseVisualStyleBackColor = true;
-            this.btBack.Click += new System.EventHandler(this.btBack_Click);
-            // 
             // gbThemTKB
             // 
+            this.gbThemTKB.Controls.Add(this.rjPhong);
+            this.gbThemTKB.Controls.Add(this.rjSLHV);
+            this.gbThemTKB.Controls.Add(this.rjSoBuoi);
+            this.gbThemTKB.Controls.Add(this.rjTenGV);
+            this.gbThemTKB.Controls.Add(this.rjMaLich);
+            this.gbThemTKB.Controls.Add(this.rjLuu);
+            this.gbThemTKB.Controls.Add(this.rjThem);
             this.gbThemTKB.Controls.Add(this.lbTenCTDT);
-            this.gbThemTKB.Controls.Add(this.txtMaLich);
             this.gbThemTKB.Controls.Add(this.lbMaLich);
-            this.gbThemTKB.Controls.Add(this.txtTenGV);
             this.gbThemTKB.Controls.Add(this.lbTenGV);
-            this.gbThemTKB.Controls.Add(this.btLuu);
-            this.gbThemTKB.Controls.Add(this.btThem);
-            this.gbThemTKB.Controls.Add(this.txtPhong);
             this.gbThemTKB.Controls.Add(this.lbPhong);
             this.gbThemTKB.Controls.Add(this.cbbKhungGioHoc);
             this.gbThemTKB.Controls.Add(this.lbGioHoc);
             this.gbThemTKB.Controls.Add(this.cbbThu);
             this.gbThemTKB.Controls.Add(this.lbThu);
-            this.gbThemTKB.Controls.Add(this.txtSLHV);
-            this.gbThemTKB.Controls.Add(this.txtSoBuoiHoc);
             this.gbThemTKB.Controls.Add(this.lbSLHV);
             this.gbThemTKB.Controls.Add(this.lbSoBuoiHoc);
             this.gbThemTKB.Controls.Add(this.cbbLop);
@@ -217,6 +207,128 @@
             this.gbThemTKB.TabStop = false;
             this.gbThemTKB.Text = "Thông tin về lịch học";
             // 
+            // rjPhong
+            // 
+            this.rjPhong.BackColor = System.Drawing.SystemColors.Window;
+            this.rjPhong.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjPhong.BorderSize = 1;
+            this.rjPhong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjPhong.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjPhong.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.rjPhong.Location = new System.Drawing.Point(502, 204);
+            this.rjPhong.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjPhong.Name = "rjPhong";
+            this.rjPhong.Padding = new System.Windows.Forms.Padding(7);
+            this.rjPhong.Size = new System.Drawing.Size(127, 31);
+            this.rjPhong.TabIndex = 33;
+            this.rjPhong.UnderlineStyle = false;
+            // 
+            // rjSLHV
+            // 
+            this.rjSLHV.BackColor = System.Drawing.SystemColors.Window;
+            this.rjSLHV.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjSLHV.BorderSize = 1;
+            this.rjSLHV.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjSLHV.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjSLHV.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.rjSLHV.Location = new System.Drawing.Point(503, 121);
+            this.rjSLHV.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjSLHV.Name = "rjSLHV";
+            this.rjSLHV.Padding = new System.Windows.Forms.Padding(7);
+            this.rjSLHV.Size = new System.Drawing.Size(127, 31);
+            this.rjSLHV.TabIndex = 32;
+            this.rjSLHV.UnderlineStyle = false;
+            this.rjSLHV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RjSoBuoi_KeyPress);
+            // 
+            // rjSoBuoi
+            // 
+            this.rjSoBuoi.BackColor = System.Drawing.SystemColors.Window;
+            this.rjSoBuoi.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjSoBuoi.BorderSize = 1;
+            this.rjSoBuoi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjSoBuoi.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjSoBuoi.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.rjSoBuoi.Location = new System.Drawing.Point(160, 121);
+            this.rjSoBuoi.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjSoBuoi.Name = "rjSoBuoi";
+            this.rjSoBuoi.Padding = new System.Windows.Forms.Padding(7);
+            this.rjSoBuoi.Size = new System.Drawing.Size(133, 31);
+            this.rjSoBuoi.TabIndex = 31;
+            this.rjSoBuoi.UnderlineStyle = false;
+            this.rjSoBuoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RjSoBuoi_KeyPress);
+            // 
+            // rjTenGV
+            // 
+            this.rjTenGV.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTenGV.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjTenGV.BorderSize = 1;
+            this.rjTenGV.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjTenGV.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTenGV.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.rjTenGV.Location = new System.Drawing.Point(160, 84);
+            this.rjTenGV.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjTenGV.Name = "rjTenGV";
+            this.rjTenGV.Padding = new System.Windows.Forms.Padding(7);
+            this.rjTenGV.Size = new System.Drawing.Size(281, 31);
+            this.rjTenGV.TabIndex = 30;
+            this.rjTenGV.UnderlineStyle = false;
+            // 
+            // rjMaLich
+            // 
+            this.rjMaLich.BackColor = System.Drawing.SystemColors.Window;
+            this.rjMaLich.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjMaLich.BorderSize = 1;
+            this.rjMaLich.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjMaLich.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjMaLich.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.rjMaLich.Location = new System.Drawing.Point(9, 44);
+            this.rjMaLich.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjMaLich.Name = "rjMaLich";
+            this.rjMaLich.Padding = new System.Windows.Forms.Padding(5);
+            this.rjMaLich.Size = new System.Drawing.Size(133, 29);
+            this.rjMaLich.TabIndex = 29;
+            this.rjMaLich.UnderlineStyle = false;
+            // 
+            // rjLuu
+            // 
+            this.rjLuu.BackColor = System.Drawing.Color.Gainsboro;
+            this.rjLuu.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.rjLuu.BorderColor = System.Drawing.Color.Gray;
+            this.rjLuu.BorderRadius = 30;
+            this.rjLuu.BorderSize = 1;
+            this.rjLuu.FlatAppearance.BorderSize = 0;
+            this.rjLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjLuu.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjLuu.ForeColor = System.Drawing.Color.Brown;
+            this.rjLuu.Location = new System.Drawing.Point(537, 262);
+            this.rjLuu.Name = "rjLuu";
+            this.rjLuu.Size = new System.Drawing.Size(92, 33);
+            this.rjLuu.TabIndex = 28;
+            this.rjLuu.Text = "Lưu";
+            this.rjLuu.TextColor = System.Drawing.Color.Brown;
+            this.rjLuu.UseVisualStyleBackColor = false;
+            this.rjLuu.Click += new System.EventHandler(this.RjLuu_Click);
+            // 
+            // rjThem
+            // 
+            this.rjThem.BackColor = System.Drawing.Color.Gainsboro;
+            this.rjThem.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.rjThem.BorderColor = System.Drawing.Color.Gray;
+            this.rjThem.BorderRadius = 30;
+            this.rjThem.BorderSize = 1;
+            this.rjThem.FlatAppearance.BorderSize = 0;
+            this.rjThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjThem.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjThem.ForeColor = System.Drawing.Color.Brown;
+            this.rjThem.Location = new System.Drawing.Point(410, 262);
+            this.rjThem.Name = "rjThem";
+            this.rjThem.Size = new System.Drawing.Size(96, 33);
+            this.rjThem.TabIndex = 27;
+            this.rjThem.Text = "Thêm";
+            this.rjThem.TextColor = System.Drawing.Color.Brown;
+            this.rjThem.UseVisualStyleBackColor = false;
+            this.rjThem.Click += new System.EventHandler(this.RjThem_Click);
+            // 
             // lbTenCTDT
             // 
             this.lbTenCTDT.AutoSize = true;
@@ -226,14 +338,6 @@
             this.lbTenCTDT.Size = new System.Drawing.Size(128, 18);
             this.lbTenCTDT.TabIndex = 25;
             this.lbTenCTDT.Text = "Tên Khoá Học";
-            // 
-            // txtMaLich
-            // 
-            this.txtMaLich.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaLich.Location = new System.Drawing.Point(6, 47);
-            this.txtMaLich.Name = "txtMaLich";
-            this.txtMaLich.Size = new System.Drawing.Size(148, 26);
-            this.txtMaLich.TabIndex = 24;
             // 
             // lbMaLich
             // 
@@ -245,14 +349,6 @@
             this.lbMaLich.TabIndex = 23;
             this.lbMaLich.Text = "Mã Lịch";
             // 
-            // txtTenGV
-            // 
-            this.txtTenGV.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenGV.Location = new System.Drawing.Point(160, 84);
-            this.txtTenGV.Name = "txtTenGV";
-            this.txtTenGV.Size = new System.Drawing.Size(208, 26);
-            this.txtTenGV.TabIndex = 22;
-            // 
             // lbTenGV
             // 
             this.lbTenGV.AutoSize = true;
@@ -262,38 +358,6 @@
             this.lbTenGV.Size = new System.Drawing.Size(148, 18);
             this.lbTenGV.TabIndex = 21;
             this.lbTenGV.Text = "Tên giảng viên";
-            // 
-            // btLuu
-            // 
-            this.btLuu.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLuu.ForeColor = System.Drawing.Color.Brown;
-            this.btLuu.Location = new System.Drawing.Point(528, 265);
-            this.btLuu.Name = "btLuu";
-            this.btLuu.Size = new System.Drawing.Size(109, 30);
-            this.btLuu.TabIndex = 20;
-            this.btLuu.Text = "Lưu";
-            this.btLuu.UseVisualStyleBackColor = true;
-            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
-            // 
-            // btThem
-            // 
-            this.btThem.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.ForeColor = System.Drawing.Color.Brown;
-            this.btThem.Location = new System.Drawing.Point(386, 265);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(109, 30);
-            this.btThem.TabIndex = 19;
-            this.btThem.Text = "Thêm";
-            this.btThem.UseVisualStyleBackColor = true;
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
-            // 
-            // txtPhong
-            // 
-            this.txtPhong.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhong.Location = new System.Drawing.Point(492, 209);
-            this.txtPhong.Name = "txtPhong";
-            this.txtPhong.Size = new System.Drawing.Size(137, 26);
-            this.txtPhong.TabIndex = 18;
             // 
             // lbPhong
             // 
@@ -345,24 +409,6 @@
             this.lbThu.TabIndex = 13;
             this.lbThu.Text = "Thứ";
             // 
-            // txtSLHV
-            // 
-            this.txtSLHV.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSLHV.Location = new System.Drawing.Point(501, 125);
-            this.txtSLHV.Name = "txtSLHV";
-            this.txtSLHV.Size = new System.Drawing.Size(128, 26);
-            this.txtSLHV.TabIndex = 12;
-            this.txtSLHV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoBuoiHoc_KeyPress);
-            // 
-            // txtSoBuoiHoc
-            // 
-            this.txtSoBuoiHoc.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoBuoiHoc.Location = new System.Drawing.Point(160, 125);
-            this.txtSoBuoiHoc.Name = "txtSoBuoiHoc";
-            this.txtSoBuoiHoc.Size = new System.Drawing.Size(108, 26);
-            this.txtSoBuoiHoc.TabIndex = 11;
-            this.txtSoBuoiHoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoBuoiHoc_KeyPress);
-            // 
             // lbSLHV
             // 
             this.lbSLHV.AutoSize = true;
@@ -412,7 +458,7 @@
             this.cbbCapLop.Name = "cbbCapLop";
             this.cbbCapLop.Size = new System.Drawing.Size(133, 26);
             this.cbbCapLop.TabIndex = 5;
-            this.cbbCapLop.SelectedIndexChanged += new System.EventHandler(this.cbbCapLop_SelectedIndexChanged);
+            this.cbbCapLop.SelectedIndexChanged += new System.EventHandler(this.CbbCapLop_SelectedIndexChanged);
             // 
             // lbCapLop
             // 
@@ -435,14 +481,35 @@
             this.cbbCTDT.TabIndex = 3;
             this.cbbCTDT.SelectedIndexChanged += new System.EventHandler(this.cbbCTDT_SelectedIndexChanged);
             // 
+            // rjBack
+            // 
+            this.rjBack.BackColor = System.Drawing.Color.Gainsboro;
+            this.rjBack.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.rjBack.BorderColor = System.Drawing.Color.Gray;
+            this.rjBack.BorderRadius = 15;
+            this.rjBack.BorderSize = 1;
+            this.rjBack.FlatAppearance.BorderSize = 0;
+            this.rjBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjBack.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjBack.ForeColor = System.Drawing.Color.Brown;
+            this.rjBack.Location = new System.Drawing.Point(510, 626);
+            this.rjBack.Name = "rjBack";
+            this.rjBack.Size = new System.Drawing.Size(147, 33);
+            this.rjBack.TabIndex = 9;
+            this.rjBack.Text = "Trở lại";
+            this.rjBack.TextColor = System.Drawing.Color.Brown;
+            this.rjBack.UseVisualStyleBackColor = false;
+            this.rjBack.Click += new System.EventHandler(this.RjBack_Click);
+            // 
             // ThemTKB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.PaleGreen;
             this.ClientSize = new System.Drawing.Size(676, 671);
+            this.Controls.Add(this.rjBack);
             this.Controls.Add(this.gbThemTKB);
-            this.Controls.Add(this.btBack);
             this.Controls.Add(this.lvDSKH);
             this.Controls.Add(this.lbContent1);
             this.Controls.Add(this.lbTieuDe);
@@ -464,7 +531,6 @@
         private System.Windows.Forms.Label lbTieuDe;
         private System.Windows.Forms.ListView lvDSKH;
         private System.Windows.Forms.Label lbContent1;
-        private System.Windows.Forms.Button btBack;
         private System.Windows.Forms.GroupBox gbThemTKB;
         private System.Windows.Forms.ComboBox cbbCapLop;
         private System.Windows.Forms.Label lbCapLop;
@@ -473,16 +539,11 @@
         private System.Windows.Forms.Label lbLop;
         private System.Windows.Forms.Label lbSLHV;
         private System.Windows.Forms.Label lbSoBuoiHoc;
-        private System.Windows.Forms.TextBox txtSLHV;
-        private System.Windows.Forms.TextBox txtSoBuoiHoc;
-        private System.Windows.Forms.TextBox txtPhong;
         private System.Windows.Forms.Label lbPhong;
         private System.Windows.Forms.ComboBox cbbKhungGioHoc;
         private System.Windows.Forms.Label lbGioHoc;
         private System.Windows.Forms.ComboBox cbbThu;
         private System.Windows.Forms.Label lbThu;
-        private System.Windows.Forms.Button btLuu;
-        private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.ColumnHeader colMaLich;
         private System.Windows.Forms.ColumnHeader colTenKH;
         private System.Windows.Forms.ColumnHeader colCap;
@@ -493,10 +554,18 @@
         private System.Windows.Forms.ColumnHeader colKhungGioHoc;
         private System.Windows.Forms.ColumnHeader colPhong;
         private System.Windows.Forms.ColumnHeader colGV;
-        private System.Windows.Forms.TextBox txtTenGV;
         private System.Windows.Forms.Label lbTenGV;
-        private System.Windows.Forms.TextBox txtMaLich;
         private System.Windows.Forms.Label lbMaLich;
         private System.Windows.Forms.Label lbTenCTDT;
+        private RJButton rjLuu;
+        private RJButton rjThem;
+        private RJButton rjBack;
+        private RJTextBox rjMaLich;
+        private RJTextBox rjTenGV;
+        private RJTextBox rjSoBuoi;
+        private RJTextBox rjSLHV;
+        private RJTextBox rjPhong;
+
+        public KeyPressEventHandler TxtSoBuoiHoc_KeyPress { get; private set; }
     }
 }

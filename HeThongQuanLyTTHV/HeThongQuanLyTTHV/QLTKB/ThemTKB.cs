@@ -63,7 +63,7 @@ namespace HeThongQuanLyTTHV.QLTKB
                             attributes = line.Split(new string[] { "#" }, StringSplitOptions.None);
                             ThoiKhoaBieu t = new ThoiKhoaBieu(attributes[0], attributes[1], attributes[2],
                                 attributes[3], attributes[4], attributes[5], attributes[6],
-                                attributes[7], Int32.Parse(attributes[8]), Int32.Parse(attributes[9]));
+                                attributes[7], attributes[8], attributes[9]);
                             listTKB.Add(t);
                         }
                     }
@@ -78,7 +78,7 @@ namespace HeThongQuanLyTTHV.QLTKB
 
         private void ThemTKB_Load(object sender, EventArgs e)
         {
-            txtMaLich.Focus();
+            rjMaLich.Focus();
             DocFileDSTKB();
 
             path = Application.StartupPath + @"\Data\SubjectList.txt";
@@ -153,7 +153,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             }
         }
 
-        private void cbbCapLop_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbbCapLop_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbbCapLop.SelectedIndex != 0)
             {
@@ -167,27 +167,27 @@ namespace HeThongQuanLyTTHV.QLTKB
             }
         }        
 
-        private void btThem_Click(object sender, EventArgs e)
+        private void RjThem_Click(object sender, EventArgs e)
         {
             if (cbbCTDT.Text!="")
             {
                 ListViewItem item = new ListViewItem();
-                ThoiKhoaBieu tkb = new ThoiKhoaBieu();                
-                tkb.MaLich = txtMaLich.Text;
-                tkb.TenKH = cbbCTDT.Text;
-                tkb.TenGV = txtTenGV.Text;
-                tkb.CapLop = cbbCapLop.Text;
-                tkb.Lop = cbbLop.Text;
-                tkb.SoBuoi = Int32.Parse(txtSoBuoiHoc.Text);
-                tkb.SoLuongHV = Int32.Parse(txtSLHV.Text);
-                tkb.Thu = cbbThu.Text;
-                tkb.KhungGioHoc = cbbKhungGioHoc.Text;
-                tkb.Phong = txtPhong.Text;
+                ThoiKhoaBieu t = new ThoiKhoaBieu();
+                t.MaLich = rjMaLich.Text;
+                t.TenGV = rjTenGV.Text;
+                t.SoBuoi = Convert.ToInt32(rjSoBuoi.Text);
+                t.SoLuongHV = Convert.ToInt32(rjSLHV.Text);
+                t.Phong = rjPhong.Text;
+                t.TenKH = cbbCTDT.Text;
+                t.CapLop = cbbCapLop.Text;
+                t.Lop = cbbLop.Text;
+                t.Thu = cbbThu.Text;
+                t.KhungGioHoc = cbbKhungGioHoc.Text;
 
                 try
                 {
-                    if (txtMaLich.Text == "" || txtTenGV.Text == "" || txtSoBuoiHoc.Text == ""
-                        || txtSLHV.Text == "" || txtPhong.Text == "" || cbbCTDT.SelectedIndex == 0
+                    if (rjMaLich.Text == "" || rjTenGV.Text == "" || rjSoBuoi.Text == ""
+                        || rjSLHV.Text == "" || rjPhong.Text == "" || cbbCTDT.SelectedIndex == 0
                         || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
                         || cbbKhungGioHoc.SelectedIndex == 0)
                     {
@@ -195,20 +195,20 @@ namespace HeThongQuanLyTTHV.QLTKB
                     }
                     else
                     {
-                        item = new ListViewItem(txtMaLich.Text);
-                        item.SubItems.Add(tkb.TenKH);
-                        item.SubItems.Add(tkb.CapLop);
-                        item.SubItems.Add(tkb.Lop);
-                        item.SubItems.Add(tkb.SoBuoi.ToString());
-                        item.SubItems.Add(tkb.SoLuongHV.ToString());
-                        item.SubItems.Add(tkb.Thu);
-                        item.SubItems.Add(tkb.KhungGioHoc);
-                        item.SubItems.Add(tkb.Phong);
-                        item.SubItems.Add(tkb.TenGV);
+                        item = new ListViewItem(rjMaLich.Text);
+                        item.SubItems.Add(t.TenKH);
+                        item.SubItems.Add(t.CapLop);
+                        item.SubItems.Add(t.Lop);
+                        item.SubItems.Add(t.SoBuoi.ToString());
+                        item.SubItems.Add(t.SoLuongHV.ToString());
+                        item.SubItems.Add(t.Thu);
+                        item.SubItems.Add(t.KhungGioHoc);
+                        item.SubItems.Add(t.Phong);
+                        item.SubItems.Add(t.TenGV);
 
                         lvDSKH.Items.Add(item);
-                        txtMaLich.Text = "";
-                        txtMaLich.Focus();
+                        rjMaLich.Text = "";
+                        rjMaLich.Focus();
                     } 
                         
                 }
@@ -219,7 +219,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             }    
         }
 
-        private void txtSoBuoiHoc_KeyPress(object sender, KeyPressEventArgs e)
+        private void RjSoBuoi_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
@@ -228,13 +228,13 @@ namespace HeThongQuanLyTTHV.QLTKB
             }
         }
 
-        private void btLuu_Click(object sender, EventArgs e)
+        private void RjLuu_Click(object sender, EventArgs e)
         {
             //Xử lý không điền đủ thông tin
             try
             {
-                if (txtMaLich.Text == "" || txtTenGV.Text == "" || txtSoBuoiHoc.Text == ""
-                    || txtSLHV.Text == "" || txtPhong.Text == "" || cbbCTDT.SelectedIndex == 0
+                if (rjMaLich.Text == "" || rjTenGV.Text == "" || rjSoBuoi.Text == ""
+                    || rjSLHV.Text == "" || rjPhong.Text == "" || cbbCTDT.SelectedIndex == 0
                     || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
                     || cbbKhungGioHoc.SelectedIndex == 0)
                 {
@@ -242,8 +242,8 @@ namespace HeThongQuanLyTTHV.QLTKB
                 }
                 else
                 { 
-                    string[] item = {txtMaLich.Text, txtTenGV.Text, txtSoBuoiHoc.Text, txtSLHV.Text,
-                            txtPhong.Text, cbbCTDT.SelectedItem.ToString(), cbbCapLop.SelectedItem.ToString(),
+                    string[] item = {rjMaLich.Text, rjTenGV.Text, rjSoBuoi.Text, rjSLHV.Text,
+                            rjPhong.Text, cbbCTDT.SelectedItem.ToString(), cbbCapLop.SelectedItem.ToString(),
                             cbbLop.SelectedItem.ToString(), cbbThu.SelectedItem.ToString(), cbbKhungGioHoc.SelectedItem.ToString()};
                     ThoiKhoaBieu t = new ThoiKhoaBieu();
                     t.MaLich = item[0];
@@ -264,7 +264,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             }
         }
 
-        private void btBack_Click(object sender, EventArgs e)
+        private void RjBack_Click(object sender, EventArgs e)
         {
             path = Application.StartupPath + @"\Data\DSTKB.txt";
             GhiFileDSTKB(path, listTKB);

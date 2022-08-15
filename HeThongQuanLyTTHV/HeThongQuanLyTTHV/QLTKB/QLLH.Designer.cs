@@ -31,11 +31,11 @@ namespace HeThongQuanLyTTHV.QLTKB
         {
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.gbChucNang = new System.Windows.Forms.GroupBox();
-            this.btThongBaoTKB = new System.Windows.Forms.Button();
-            this.btChinhTKB = new System.Windows.Forms.Button();
-            this.btXemTKB = new System.Windows.Forms.Button();
-            this.btThemTKB = new System.Windows.Forms.Button();
-            this.btThoat = new System.Windows.Forms.Button();
+            this.rjXemTKB = new HeThongQuanLyTTHV.QLTKB.RJButton();
+            this.rjThongBaoTKB = new HeThongQuanLyTTHV.QLTKB.RJButton();
+            this.rjChinhTKB = new HeThongQuanLyTTHV.QLTKB.RJButton();
+            this.rjThemTKB = new HeThongQuanLyTTHV.QLTKB.RJButton();
+            this.rjThoat = new HeThongQuanLyTTHV.QLTKB.RJButton();
             this.gbChucNang.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,106 +46,146 @@ namespace HeThongQuanLyTTHV.QLTKB
             this.lbTieuDe.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTieuDe.Location = new System.Drawing.Point(0, 0);
             this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.Size = new System.Drawing.Size(868, 111);
+            this.lbTieuDe.Size = new System.Drawing.Size(582, 111);
             this.lbTieuDe.TabIndex = 0;
             this.lbTieuDe.Text = "QUẢN LÝ LỊCH HỌC";
             this.lbTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gbChucNang
             // 
-            this.gbChucNang.Controls.Add(this.btThongBaoTKB);
-            this.gbChucNang.Controls.Add(this.btChinhTKB);
-            this.gbChucNang.Controls.Add(this.btXemTKB);
-            this.gbChucNang.Controls.Add(this.btThemTKB);
-            this.gbChucNang.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbChucNang.Controls.Add(this.rjXemTKB);
+            this.gbChucNang.Controls.Add(this.rjThongBaoTKB);
+            this.gbChucNang.Controls.Add(this.rjChinhTKB);
+            this.gbChucNang.Controls.Add(this.rjThemTKB);
+            this.gbChucNang.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbChucNang.Location = new System.Drawing.Point(13, 118);
             this.gbChucNang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbChucNang.Name = "gbChucNang";
             this.gbChucNang.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbChucNang.Size = new System.Drawing.Size(838, 234);
+            this.gbChucNang.Size = new System.Drawing.Size(556, 309);
             this.gbChucNang.TabIndex = 1;
             this.gbChucNang.TabStop = false;
             this.gbChucNang.Text = "Chọn Chức Năng";
             // 
-            // btThongBaoTKB
+            // rjXemTKB
             // 
-            this.btThongBaoTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btThongBaoTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThongBaoTKB.Location = new System.Drawing.Point(632, 74);
-            this.btThongBaoTKB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btThongBaoTKB.Name = "btThongBaoTKB";
-            this.btThongBaoTKB.Size = new System.Drawing.Size(189, 106);
-            this.btThongBaoTKB.TabIndex = 0;
-            this.btThongBaoTKB.Text = "Thông báo TKB";
-            this.btThongBaoTKB.UseVisualStyleBackColor = false;
-            this.btThongBaoTKB.Click += new System.EventHandler(this.btThemTKB_Click);
+            this.rjXemTKB.BackColor = System.Drawing.Color.LightPink;
+            this.rjXemTKB.BackgroundColor = System.Drawing.Color.LightPink;
+            this.rjXemTKB.BorderColor = System.Drawing.Color.IndianRed;
+            this.rjXemTKB.BorderRadius = 40;
+            this.rjXemTKB.BorderSize = 1;
+            this.rjXemTKB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjXemTKB.FlatAppearance.BorderSize = 0;
+            this.rjXemTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjXemTKB.ForeColor = System.Drawing.Color.Brown;
+            this.rjXemTKB.Location = new System.Drawing.Point(86, 115);
+            this.rjXemTKB.Name = "rjXemTKB";
+            this.rjXemTKB.Size = new System.Drawing.Size(382, 40);
+            this.rjXemTKB.TabIndex = 0;
+            this.rjXemTKB.Text = "Xem TKB";
+            this.rjXemTKB.TextColor = System.Drawing.Color.Brown;
+            this.rjXemTKB.UseVisualStyleBackColor = false;
+            this.rjXemTKB.Click += new System.EventHandler(this.RjThemTKB_Click);
             // 
-            // btChinhTKB
+            // rjThongBaoTKB
             // 
-            this.btChinhTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btChinhTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btChinhTKB.Location = new System.Drawing.Point(424, 74);
-            this.btChinhTKB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btChinhTKB.Name = "btChinhTKB";
-            this.btChinhTKB.Size = new System.Drawing.Size(189, 106);
-            this.btChinhTKB.TabIndex = 0;
-            this.btChinhTKB.Text = "Chỉnh sửa TKB";
-            this.btChinhTKB.UseVisualStyleBackColor = false;
-            this.btChinhTKB.Click += new System.EventHandler(this.btThemTKB_Click);
+            this.rjThongBaoTKB.AutoSize = true;
+            this.rjThongBaoTKB.BackColor = System.Drawing.Color.LightPink;
+            this.rjThongBaoTKB.BackgroundColor = System.Drawing.Color.LightPink;
+            this.rjThongBaoTKB.BorderColor = System.Drawing.Color.IndianRed;
+            this.rjThongBaoTKB.BorderRadius = 40;
+            this.rjThongBaoTKB.BorderSize = 1;
+            this.rjThongBaoTKB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjThongBaoTKB.FlatAppearance.BorderSize = 0;
+            this.rjThongBaoTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjThongBaoTKB.ForeColor = System.Drawing.Color.Brown;
+            this.rjThongBaoTKB.Location = new System.Drawing.Point(86, 228);
+            this.rjThongBaoTKB.Name = "rjThongBaoTKB";
+            this.rjThongBaoTKB.Size = new System.Drawing.Size(382, 40);
+            this.rjThongBaoTKB.TabIndex = 0;
+            this.rjThongBaoTKB.Text = "Thông báo TKB";
+            this.rjThongBaoTKB.TextColor = System.Drawing.Color.Brown;
+            this.rjThongBaoTKB.UseVisualStyleBackColor = false;
+            this.rjThongBaoTKB.Click += new System.EventHandler(this.RjThemTKB_Click);
             // 
-            // btXemTKB
+            // rjChinhTKB
             // 
-            this.btXemTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btXemTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXemTKB.Location = new System.Drawing.Point(216, 74);
-            this.btXemTKB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btXemTKB.Name = "btXemTKB";
-            this.btXemTKB.Size = new System.Drawing.Size(189, 106);
-            this.btXemTKB.TabIndex = 0;
-            this.btXemTKB.Text = "Xem TKB";
-            this.btXemTKB.UseVisualStyleBackColor = false;
-            this.btXemTKB.Click += new System.EventHandler(this.btThemTKB_Click);
+            this.rjChinhTKB.AutoSize = true;
+            this.rjChinhTKB.BackColor = System.Drawing.Color.LightPink;
+            this.rjChinhTKB.BackgroundColor = System.Drawing.Color.LightPink;
+            this.rjChinhTKB.BorderColor = System.Drawing.Color.IndianRed;
+            this.rjChinhTKB.BorderRadius = 40;
+            this.rjChinhTKB.BorderSize = 1;
+            this.rjChinhTKB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjChinhTKB.FlatAppearance.BorderSize = 0;
+            this.rjChinhTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjChinhTKB.ForeColor = System.Drawing.Color.Brown;
+            this.rjChinhTKB.Location = new System.Drawing.Point(86, 173);
+            this.rjChinhTKB.Name = "rjChinhTKB";
+            this.rjChinhTKB.Size = new System.Drawing.Size(382, 40);
+            this.rjChinhTKB.TabIndex = 0;
+            this.rjChinhTKB.Text = "Chỉnh sửa TKB";
+            this.rjChinhTKB.TextColor = System.Drawing.Color.Brown;
+            this.rjChinhTKB.UseVisualStyleBackColor = false;
+            this.rjChinhTKB.Click += new System.EventHandler(this.RjThemTKB_Click);
             // 
-            // btThemTKB
+            // rjThemTKB
             // 
-            this.btThemTKB.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btThemTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btThemTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThemTKB.Location = new System.Drawing.Point(8, 74);
-            this.btThemTKB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btThemTKB.Name = "btThemTKB";
-            this.btThemTKB.Size = new System.Drawing.Size(189, 106);
-            this.btThemTKB.TabIndex = 0;
-            this.btThemTKB.Text = "Thêm TKB";
-            this.btThemTKB.UseVisualStyleBackColor = false;
-            this.btThemTKB.Click += new System.EventHandler(this.btThemTKB_Click);
+            this.rjThemTKB.BackColor = System.Drawing.Color.LightPink;
+            this.rjThemTKB.BackgroundColor = System.Drawing.Color.LightPink;
+            this.rjThemTKB.BorderColor = System.Drawing.Color.IndianRed;
+            this.rjThemTKB.BorderRadius = 40;
+            this.rjThemTKB.BorderSize = 1;
+            this.rjThemTKB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjThemTKB.FlatAppearance.BorderSize = 0;
+            this.rjThemTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjThemTKB.ForeColor = System.Drawing.Color.Brown;
+            this.rjThemTKB.Location = new System.Drawing.Point(86, 59);
+            this.rjThemTKB.Name = "rjThemTKB";
+            this.rjThemTKB.Size = new System.Drawing.Size(382, 40);
+            this.rjThemTKB.TabIndex = 0;
+            this.rjThemTKB.Text = "Thêm TKB";
+            this.rjThemTKB.TextColor = System.Drawing.Color.Brown;
+            this.rjThemTKB.UseVisualStyleBackColor = false;
+            this.rjThemTKB.Click += new System.EventHandler(this.RjThemTKB_Click);
             // 
-            // btThoat
+            // rjThoat
             // 
-            this.btThoat.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.Location = new System.Drawing.Point(715, 374);
-            this.btThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(136, 63);
-            this.btThoat.TabIndex = 3;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.UseVisualStyleBackColor = true;
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            this.rjThoat.BackColor = System.Drawing.Color.Gainsboro;
+            this.rjThoat.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.rjThoat.BorderColor = System.Drawing.Color.Gray;
+            this.rjThoat.BorderRadius = 15;
+            this.rjThoat.BorderSize = 1;
+            this.rjThoat.FlatAppearance.BorderSize = 0;
+            this.rjThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjThoat.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjThoat.ForeColor = System.Drawing.Color.Brown;
+            this.rjThoat.Location = new System.Drawing.Point(418, 458);
+            this.rjThoat.Name = "rjThoat";
+            this.rjThoat.Size = new System.Drawing.Size(150, 40);
+            this.rjThoat.TabIndex = 2;
+            this.rjThoat.Text = "Thoát";
+            this.rjThoat.TextColor = System.Drawing.Color.Brown;
+            this.rjThoat.UseVisualStyleBackColor = false;
+            this.rjThoat.Click += new System.EventHandler(this.RjThoat_Click);
             // 
             // QLLH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 450);
-            this.Controls.Add(this.btThoat);
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.ClientSize = new System.Drawing.Size(582, 509);
+            this.Controls.Add(this.rjThoat);
             this.Controls.Add(this.gbChucNang);
             this.Controls.Add(this.lbTieuDe);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Brown;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QLLH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý lịch học";
             this.gbChucNang.ResumeLayout(false);
+            this.gbChucNang.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -154,11 +194,11 @@ namespace HeThongQuanLyTTHV.QLTKB
 
         private System.Windows.Forms.Label lbTieuDe;
         private System.Windows.Forms.GroupBox gbChucNang;
-        private System.Windows.Forms.Button btChinhTKB;
-        private System.Windows.Forms.Button btXemTKB;
-        private System.Windows.Forms.Button btThemTKB;
-        private System.Windows.Forms.Button btThongBaoTKB;
-        private System.Windows.Forms.Button btThoat;
+        private RJButton rjXemTKB;
+        private RJButton rjThongBaoTKB;
+        private RJButton rjChinhTKB;
+        private RJButton rjThemTKB;
+        private RJButton rjThoat;
     }
 }
 

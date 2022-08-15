@@ -14,7 +14,7 @@ namespace HeThongQuanLyTTHV.QLTKB
         List<ThoiKhoaBieu> dstkb = new List<ThoiKhoaBieu>();
         public static QLLH frmQLLH;
 
-        private void btThemTKB_Click(object sender, EventArgs e)
+        private void RjThemTKB_Click(object sender, EventArgs e)
         {
             frmQLLH = this;
             frmQLLH.Hide();
@@ -39,14 +39,12 @@ namespace HeThongQuanLyTTHV.QLTKB
                     ThongBaoTKB frmThongBaoTKB = new ThongBaoTKB();
                     frmThongBaoTKB.ShowDialog();
                     break;
-                case "Thông báo lịch nghỉ":
-                    ThongBaoLichNghi frmThongBaoLichNghi = new ThongBaoLichNghi();
-                    frmThongBaoLichNghi.ShowDialog();
+                default:
                     break;
             }
         }
 
-        private void btThoat_Click(object sender, EventArgs e)
+        private void RjThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }

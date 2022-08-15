@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HeThongQuanLyTTHV.QLTKB
 {
@@ -28,7 +29,7 @@ namespace HeThongQuanLyTTHV.QLTKB
         public int SoBuoi { get => soBuoi; set => soBuoi = value; }
         public int SoLuongHV { get => soLuongHV; set => soLuongHV = value; }
 
-        public ThoiKhoaBieu(string maLich, string tenKH, string capLop, string lop, string thu, string khungGioHoc, string phong, string tenGV, int soBuoi, int soLuongHV)
+        public ThoiKhoaBieu(string maLich, string tenKH, string capLop, string lop, string thu, string khungGioHoc, string phong, string tenGV, string soBuoi, string soLuongHV)
         {
             this.MaLich = maLich;
             this.TenKH = tenKH;
@@ -38,22 +39,29 @@ namespace HeThongQuanLyTTHV.QLTKB
             this.KhungGioHoc = khungGioHoc;
             this.Phong = phong;
             this.TenGV = tenGV;
-            this.SoBuoi = soBuoi;
-            this.SoLuongHV = soLuongHV;
+            try
+            {
+                this.SoBuoi = Int32.Parse(soBuoi);
+                this.SoLuongHV = Int32.Parse(soLuongHV);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public ThoiKhoaBieu(ThoiKhoaBieu t)
         {
-            this.MaLich = t.maLich;
-            this.TenKH = t.tenKH;
-            this.CapLop = t.capLop;
-            this.Lop = t.lop;
-            this.Thu = t.thu;
-            this.KhungGioHoc = t.khungGioHoc;
-            this.Phong = t.phong;
-            this.TenGV = t.tenGV;
-            this.SoBuoi = t.soBuoi;
-            this.SoLuongHV = t.soLuongHV;
+            this.maLich = t.maLich;
+            this.tenKH = t.tenKH;
+            this.capLop = t.capLop;
+            this.lop = t.lop;
+            this.thu = t.thu;
+            this.khungGioHoc = t.khungGioHoc;
+            this.phong = t.phong;
+            this.tenGV = t.tenGV;
+            this.soBuoi = t.soBuoi;
+            this.soLuongHV = t.soLuongHV;
         }
     }
 }
