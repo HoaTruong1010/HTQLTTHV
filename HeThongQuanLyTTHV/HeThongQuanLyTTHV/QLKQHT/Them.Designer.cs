@@ -162,13 +162,13 @@
             this.lbMaPhieu.Location = new System.Drawing.Point(82, 30);
             this.lbMaPhieu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaPhieu.Name = "lbMaPhieu";
-<<<<<<< HEAD
+
             this.lbMaPhieu.Size = new System.Drawing.Size(99, 20);
             this.lbMaPhieu.TabIndex = 9;
-=======
+
             this.lbMaPhieu.Size = new System.Drawing.Size(80, 17);
             this.lbMaPhieu.TabIndex = 35;
->>>>>>> main
+
             this.lbMaPhieu.Text = "Mã phiếu:";
             // 
             // txtSDT
@@ -176,13 +176,13 @@
             this.txtSDT.Location = new System.Drawing.Point(900, 55);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
-<<<<<<< HEAD
+
             this.txtSDT.Size = new System.Drawing.Size(211, 27);
             this.txtSDT.TabIndex = 6;
-=======
+
             this.txtSDT.Size = new System.Drawing.Size(211, 23);
             this.txtSDT.TabIndex = 33;
->>>>>>> main
+
             this.txtSDT.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
@@ -191,13 +191,13 @@
             this.txtCCCD.Location = new System.Drawing.Point(651, 55);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(2);
             this.txtCCCD.Name = "txtCCCD";
-<<<<<<< HEAD
+ 
             this.txtCCCD.Size = new System.Drawing.Size(209, 27);
             this.txtCCCD.TabIndex = 5;
-=======
+
             this.txtCCCD.Size = new System.Drawing.Size(209, 23);
             this.txtCCCD.TabIndex = 29;
->>>>>>> main
+
             this.txtCCCD.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
@@ -206,13 +206,13 @@
             this.txtHoTen.Location = new System.Drawing.Point(352, 55);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoTen.Name = "txtHoTen";
-<<<<<<< HEAD
+
             this.txtHoTen.Size = new System.Drawing.Size(241, 27);
             this.txtHoTen.TabIndex = 4;
-=======
+
             this.txtHoTen.Size = new System.Drawing.Size(241, 23);
             this.txtHoTen.TabIndex = 34;
->>>>>>> main
+
             this.txtHoTen.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtMaPhieu
@@ -220,13 +220,13 @@
             this.txtMaPhieu.Location = new System.Drawing.Point(86, 55);
             this.txtMaPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaPhieu.Name = "txtMaPhieu";
-<<<<<<< HEAD
+
             this.txtMaPhieu.Size = new System.Drawing.Size(219, 27);
             this.txtMaPhieu.TabIndex = 3;
-=======
+
             this.txtMaPhieu.Size = new System.Drawing.Size(219, 23);
             this.txtMaPhieu.TabIndex = 28;
->>>>>>> main
+
             // 
             // txtGhiChu
             // 
@@ -243,13 +243,13 @@
             this.txtDiem.Location = new System.Drawing.Point(788, 117);
             this.txtDiem.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiem.Name = "txtDiem";
-<<<<<<< HEAD
+
             this.txtDiem.Size = new System.Drawing.Size(97, 27);
             this.txtDiem.TabIndex = 8;
-=======
+
             this.txtDiem.Size = new System.Drawing.Size(97, 23);
             this.txtDiem.TabIndex = 31;
->>>>>>> main
+
             this.txtDiem.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtDiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiem_KeyPress);
             // 
@@ -345,13 +345,13 @@
             this.dtNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgaySinh.Location = new System.Drawing.Point(84, 114);
             this.dtNgaySinh.Name = "dtNgaySinh";
-<<<<<<< HEAD
+
             this.dtNgaySinh.Size = new System.Drawing.Size(367, 27);
             this.dtNgaySinh.TabIndex = 7;
-=======
+
             this.dtNgaySinh.Size = new System.Drawing.Size(367, 23);
             this.dtNgaySinh.TabIndex = 75;
->>>>>>> main
+
             // 
             // groupBox3
             // 
@@ -376,13 +376,12 @@
             this.txtLop.Location = new System.Drawing.Point(790, 44);
             this.txtLop.Margin = new System.Windows.Forms.Padding(2);
             this.txtLop.Name = "txtLop";
-<<<<<<< HEAD
+
             this.txtLop.Size = new System.Drawing.Size(211, 27);
             this.txtLop.TabIndex = 4;
-=======
             this.txtLop.Size = new System.Drawing.Size(211, 23);
             this.txtLop.TabIndex = 28;
->>>>>>> main
+
             this.txtLop.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtCap
@@ -390,13 +389,12 @@
             this.txtCap.Location = new System.Drawing.Point(488, 44);
             this.txtCap.Margin = new System.Windows.Forms.Padding(2);
             this.txtCap.Name = "txtCap";
-<<<<<<< HEAD
+
             this.txtCap.Size = new System.Drawing.Size(211, 27);
             this.txtCap.TabIndex = 3;
-=======
             this.txtCap.Size = new System.Drawing.Size(211, 23);
             this.txtCap.TabIndex = 28;
->>>>>>> main
+
             this.txtCap.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtKhoa
@@ -404,13 +402,13 @@
             this.txtKhoa.Location = new System.Drawing.Point(163, 44);
             this.txtKhoa.Margin = new System.Windows.Forms.Padding(2);
             this.txtKhoa.Name = "txtKhoa";
-<<<<<<< HEAD
+
             this.txtKhoa.Size = new System.Drawing.Size(229, 27);
             this.txtKhoa.TabIndex = 2;
-=======
+
             this.txtKhoa.Size = new System.Drawing.Size(229, 23);
             this.txtKhoa.TabIndex = 28;
->>>>>>> main
+
             this.txtKhoa.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // listView1
