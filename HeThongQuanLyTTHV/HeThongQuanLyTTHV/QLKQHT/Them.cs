@@ -306,7 +306,12 @@ namespace HeThongQuanLyTTHV.QLKQHT
             }
         }
 
+<<<<<<< HEAD
         private void Xoa()
+=======
+
+        private void btXoa_Click(object sender, EventArgs e)
+>>>>>>> main
         {
             if (viTri != -1)
             {

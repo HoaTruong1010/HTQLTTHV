@@ -130,7 +130,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.MaximizeBox = false;
             this.Name = "Main_QLHV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý học viên";
+            this.Text = "Quản lý thông tin học viên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_QLHV_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
