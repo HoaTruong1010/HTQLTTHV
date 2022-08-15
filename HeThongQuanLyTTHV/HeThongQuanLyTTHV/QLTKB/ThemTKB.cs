@@ -12,6 +12,7 @@ using HeThongQuanLyTTHV.QLTKB;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using HeThongQuanLyTTHV.QLHV;
 using ComboBox = System.Windows.Forms.ComboBox;
+using ListView = System.Windows.Forms.ListView;
 
 namespace HeThongQuanLyTTHV.QLTKB
 {
@@ -40,14 +41,14 @@ namespace HeThongQuanLyTTHV.QLTKB
                     {
                         s.WriteLine("{0}#{1}#{2}#{3}#{4}#{5}#{6}#{7}#{8}#{9}",
                         t.MaLich, t.TenKH, t.CapLop, t.Lop, t.SoBuoi,
-                        t.SoLuongHV, t.Thu, t.KhungGioHoc, t.TenGV);
+                        t.SoLuongHV, t.Thu, t.KhungGioHoc, t.Phong, t.TenGV);
                     }
                 }
             else
                 return;
         }
 
-        private void DocFileDSTKB()
+        public void DocFileDSTKB()
         {
             try
             {
@@ -86,9 +87,9 @@ namespace HeThongQuanLyTTHV.QLTKB
             cbbCTDT.Items.Clear();
             CheckDataKH(path, cbbCTDT, "");
             cbbCTDT.SelectedIndex = 0;
-            cbbCapLop.Items.Add("---Chọn---");
+            cbbCapLop.Items.Add("----Chọn----");
             cbbCapLop.SelectedIndex = 0;
-            cbbLop.Items.Add("-Chọn-");
+            cbbLop.Items.Add("----Chọn----");
             cbbLop.SelectedIndex = 0;
 
             //ComboBox chọn thứ
@@ -111,7 +112,6 @@ namespace HeThongQuanLyTTHV.QLTKB
             lvDSKH.View = View.Details;
             lvDSKH.GridLines = true;
             lvDSKH.FullRowSelect = true;
-            //lvDSKH.Columns[0].Width = (int)(lvDSKH.Width * 0.09);
         }
 
         private void CheckDataKH(string path, ComboBox box, string keys)
@@ -144,7 +144,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             if (cbbCTDT.SelectedIndex != 0)
             {
                 cbbCapLop.Items.Clear();
-                cbbCapLop.Items.Add("---Chọn---");
+                cbbCapLop.Items.Add("----Chọn----");
                 cbbCapLop.SelectedIndex = 0;
                 text = cbbCTDT.SelectedItem.ToString();
                 text = "K" + text.Substring(text.Length - 2, 2);
@@ -158,104 +158,91 @@ namespace HeThongQuanLyTTHV.QLTKB
             if (cbbCapLop.SelectedIndex != 0)
             {
                 cbbLop.Items.Clear();
-                cbbLop.Items.Add("-Chọn-");
+                cbbLop.Items.Add("----Chọn----");
                 cbbLop.SelectedIndex = 0;
                 text = cbbCapLop.SelectedItem.ToString();
                 text = text.Substring(0, 5);
                 path = Application.StartupPath + @"\Data\ClassList.txt";
                 CheckDataKH(path, cbbLop, text);
             }
-        }        
+        }
 
         private void RjThem_Click(object sender, EventArgs e)
         {
-            if (cbbCTDT.Text!="")
+            if (rjMaLich.Texts == "" || rjTenGV.Texts == "" || rjSoBuoi.Texts == ""
+                || rjSLHV.Texts == "" || rjPhong.Texts == "" || cbbCTDT.SelectedIndex == 0
+                || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
+                || cbbKhungGioHoc.SelectedIndex == 0)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+            }
+            else
             {
                 ListViewItem item = new ListViewItem();
                 ThoiKhoaBieu t = new ThoiKhoaBieu();
-                t.MaLich = rjMaLich.Text;
-                t.TenGV = rjTenGV.Text;
-                t.SoBuoi = Convert.ToInt32(rjSoBuoi.Text);
-                t.SoLuongHV = Convert.ToInt32(rjSLHV.Text);
-                t.Phong = rjPhong.Text;
+                t.MaLich = rjMaLich.Texts;
+                t.TenGV = rjTenGV.Texts;
+                t.SoBuoi = Int32.Parse(rjSoBuoi.Texts);
+                t.SoLuongHV = Int32.Parse(rjSLHV.Texts);
+                t.Phong = rjPhong.Texts;
                 t.TenKH = cbbCTDT.Text;
                 t.CapLop = cbbCapLop.Text;
                 t.Lop = cbbLop.Text;
                 t.Thu = cbbThu.Text;
                 t.KhungGioHoc = cbbKhungGioHoc.Text;
 
-                try
-                {
-                    if (rjMaLich.Text == "" || rjTenGV.Text == "" || rjSoBuoi.Text == ""
-                        || rjSLHV.Text == "" || rjPhong.Text == "" || cbbCTDT.SelectedIndex == 0
-                        || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
-                        || cbbKhungGioHoc.SelectedIndex == 0)
-                    {
-                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
-                    }
-                    else
-                    {
-                        item = new ListViewItem(rjMaLich.Text);
-                        item.SubItems.Add(t.TenKH);
-                        item.SubItems.Add(t.CapLop);
-                        item.SubItems.Add(t.Lop);
-                        item.SubItems.Add(t.SoBuoi.ToString());
-                        item.SubItems.Add(t.SoLuongHV.ToString());
-                        item.SubItems.Add(t.Thu);
-                        item.SubItems.Add(t.KhungGioHoc);
-                        item.SubItems.Add(t.Phong);
-                        item.SubItems.Add(t.TenGV);
+                item = new ListViewItem(rjMaLich.Texts);
+                item.SubItems.Add(t.TenKH);
+                item.SubItems.Add(t.CapLop);
+                item.SubItems.Add(t.Lop);
+                item.SubItems.Add(t.SoBuoi.ToString());
+                item.SubItems.Add(t.SoLuongHV.ToString());
+                item.SubItems.Add(t.Thu);
+                item.SubItems.Add(t.KhungGioHoc);
+                item.SubItems.Add(t.Phong);
+                item.SubItems.Add(t.TenGV);
 
-                        lvDSKH.Items.Add(item);
-                        rjMaLich.Text = "";
-                        rjMaLich.Focus();
-                    } 
-                        
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }                                
-            }    
-        }
-
-        private void RjSoBuoi_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Vui lòng nhập vào 1 số!");
+                lvDSKH.Items.Add(item);
+                listTKB.Add(t);
+                Clear();
+                rjMaLich.Focus();                
             }
         }
 
+        public void Clear()
+        {
+            rjMaLich.Texts = "";
+            rjTenGV.Texts = "";
+            rjSoBuoi.Texts = "";
+            rjSLHV.Texts = "";
+            rjPhong.Texts = "";
+            cbbCTDT.SelectedIndex = 0;
+            cbbCapLop.SelectedIndex = 0;
+            cbbLop.SelectedIndex = 0;
+            cbbThu.SelectedIndex = 0;
+            cbbKhungGioHoc.SelectedIndex = 0;
+        }
+
+        //private void RjSoBuoi_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+        //    {
+        //        e.Handled = true;
+        //        MessageBox.Show("Vui lòng nhập vào 1 số!");
+        //    }
+        //}
+
         private void RjLuu_Click(object sender, EventArgs e)
         {
-            //Xử lý không điền đủ thông tin
             try
             {
-                if (rjMaLich.Text == "" || rjTenGV.Text == "" || rjSoBuoi.Text == ""
-                    || rjSLHV.Text == "" || rjPhong.Text == "" || cbbCTDT.SelectedIndex == 0
-                    || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
-                    || cbbKhungGioHoc.SelectedIndex == 0)
+                if (lvDSKH.Items.Count == 0)
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                    MessageBox.Show("Vui lòng thêm thông tin");
                 }
                 else
-                { 
-                    string[] item = {rjMaLich.Text, rjTenGV.Text, rjSoBuoi.Text, rjSLHV.Text,
-                            rjPhong.Text, cbbCTDT.SelectedItem.ToString(), cbbCapLop.SelectedItem.ToString(),
-                            cbbLop.SelectedItem.ToString(), cbbThu.SelectedItem.ToString(), cbbKhungGioHoc.SelectedItem.ToString()};
-                    ThoiKhoaBieu t = new ThoiKhoaBieu();
-                    t.MaLich = item[0];
-                    t.TenGV = item[1];
-                    t.SoBuoi = Int32.Parse(item[2]);
-                    t.SoLuongHV = Int32.Parse(item[3]);
-                    t.Phong = item[4];
-                    t.TenKH = item[5];
-                    t.CapLop = item[6];
-                    t.Lop = item[7];
-                    t.Thu = item[8];
-                    t.KhungGioHoc = item[9];  
+                {                    
+                    MessageBox.Show("lưu thành công");
                 }
             }
             catch (Exception ex)
