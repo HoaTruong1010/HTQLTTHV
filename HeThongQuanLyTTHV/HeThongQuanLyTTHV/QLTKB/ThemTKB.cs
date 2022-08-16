@@ -40,15 +40,15 @@ namespace HeThongQuanLyTTHV.QLTKB
                     foreach (ThoiKhoaBieu t in tkb)
                     {
                         s.WriteLine("{0}#{1}#{2}#{3}#{4}#{5}#{6}#{7}#{8}#{9}",
-                        t.MaLich, t.TenKH, t.CapLop, t.Lop, t.Thu,
-                        t.KhungGioHoc, t.Phong, t.TenGV, t.SoBuoi, t.SoLuongHV);
+                        t.MaLich, t.TenKH, t.CapLop, t.Lop, t.SoBuoi, t.SoLuongHV, t.Thu,
+                        t.KhungGioHoc, t.Phong, t.TenGV);
                     }
                 }
             else
                 return;
         }
 
-        public void DocFileDSTKB()
+        private void DocFileDSTKB()
         {
             try
             {
@@ -114,6 +114,20 @@ namespace HeThongQuanLyTTHV.QLTKB
             lvDSKH.FullRowSelect = true;
         }
 
+        private int TimTKB(String maLich)
+        {
+            if (listTKB.Count > 0)
+            {
+                for (int i = 0; i < listTKB.Count; i++)
+                {
+                    if (listTKB[i].MaLich == maLich)
+                        return i;
+                }
+                return -1;
+            }
+            return -1;
+        }
+
         private void CheckDataKH(string path, ComboBox box, string keys)
         {
             try
@@ -169,43 +183,51 @@ namespace HeThongQuanLyTTHV.QLTKB
 
         private void RjThem_Click(object sender, EventArgs e)
         {
-            if (rjMaLich.Texts == "" || rjTenGV.Texts == "" || rjSoBuoi.Texts == ""
-                || rjSLHV.Texts == "" || rjPhong.Texts == "" || cbbCTDT.SelectedIndex == 0
-                || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
-                || cbbKhungGioHoc.SelectedIndex == 0)
+            try
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                if (rjMaLich.Texts == "" || rjTenGV.Texts == "" || rjSoBuoi.Texts == ""
+                        || rjSLHV.Texts == "" || rjPhong.Texts == "" || cbbCTDT.SelectedIndex == 0
+                        || cbbCapLop.SelectedIndex == 0 || cbbLop.SelectedIndex == 0 || cbbThu.SelectedIndex == 0
+                        || cbbKhungGioHoc.SelectedIndex == 0)
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                }
+                else
+                {
+                    ListViewItem item = new ListViewItem();
+                    ThoiKhoaBieu t = new ThoiKhoaBieu();
+                    t.MaLich = rjMaLich.Texts;
+                    t.TenGV = rjTenGV.Texts;
+                    t.SoBuoi = Int32.Parse(rjSoBuoi.Texts);
+                    t.SoLuongHV = Int32.Parse(rjSLHV.Texts);
+                    t.Phong = rjPhong.Texts;
+                    t.TenKH = cbbCTDT.Text;
+                    t.CapLop = cbbCapLop.Text;
+                    t.Lop = cbbLop.Text;
+                    t.Thu = cbbThu.Text;
+                    t.KhungGioHoc = cbbKhungGioHoc.Text;
+
+                    item = new ListViewItem(rjMaLich.Texts);
+                    item.SubItems.Add(t.TenKH);
+                    item.SubItems.Add(t.CapLop);
+                    item.SubItems.Add(t.Lop);
+                    item.SubItems.Add(t.SoBuoi.ToString());
+                    item.SubItems.Add(t.SoLuongHV.ToString());
+                    item.SubItems.Add(t.Thu);
+                    item.SubItems.Add(t.KhungGioHoc);
+                    item.SubItems.Add(t.Phong);
+                    item.SubItems.Add(t.TenGV);
+
+                    lvDSKH.Items.Add(item);
+                    listTKB.Add(t);
+                    MessageBox.Show("Thêm thông tin thành công");
+                    Clear();
+                    rjMaLich.Focus();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ListViewItem item = new ListViewItem();
-                ThoiKhoaBieu t = new ThoiKhoaBieu();
-                t.MaLich = rjMaLich.Texts;
-                t.TenGV = rjTenGV.Texts;
-                t.SoBuoi = Int32.Parse(rjSoBuoi.Texts);
-                t.SoLuongHV = Int32.Parse(rjSLHV.Texts);
-                t.Phong = rjPhong.Texts;
-                t.TenKH = cbbCTDT.Text;
-                t.CapLop = cbbCapLop.Text;
-                t.Lop = cbbLop.Text;
-                t.Thu = cbbThu.Text;
-                t.KhungGioHoc = cbbKhungGioHoc.Text;
-
-                item = new ListViewItem(rjMaLich.Texts);
-                item.SubItems.Add(t.TenKH);
-                item.SubItems.Add(t.CapLop);
-                item.SubItems.Add(t.Lop);
-                item.SubItems.Add(t.SoBuoi.ToString());
-                item.SubItems.Add(t.SoLuongHV.ToString());
-                item.SubItems.Add(t.Thu);
-                item.SubItems.Add(t.KhungGioHoc);
-                item.SubItems.Add(t.Phong);
-                item.SubItems.Add(t.TenGV);
-
-                lvDSKH.Items.Add(item);
-                listTKB.Add(t);
-                Clear();
-                rjMaLich.Focus();                
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -217,10 +239,14 @@ namespace HeThongQuanLyTTHV.QLTKB
             rjSLHV.Texts = "";
             rjPhong.Texts = "";
             cbbCTDT.SelectedIndex = 0;
-            cbbCapLop.SelectedIndex = 0;
-            cbbLop.SelectedIndex = 0;
             cbbThu.SelectedIndex = 0;
             cbbKhungGioHoc.SelectedIndex = 0;
+            cbbCapLop.Items.Clear();
+            cbbCapLop.Items.Add("----Chọn----");
+            cbbCapLop.SelectedIndex = 0;
+            cbbLop.Items.Clear();
+            cbbLop.Items.Add("----Chọn----");
+            cbbLop.SelectedIndex = 0;
         }
 
         //private void RjSoBuoi_KeyPress(object sender, KeyPressEventArgs e)
@@ -230,32 +256,23 @@ namespace HeThongQuanLyTTHV.QLTKB
         //        e.Handled = true;
         //        MessageBox.Show("Vui lòng nhập vào 1 số!");
         //    }
-        //}
-
-        private void RjLuu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (lvDSKH.Items.Count == 0)
-                {
-                    MessageBox.Show("Vui lòng thêm thông tin");
-                }
-                else
-                {                    
-                    MessageBox.Show("lưu thành công");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //} 
 
         private void RjBack_Click(object sender, EventArgs e)
         {
             path = Application.StartupPath + @"\Data\DSTKB.txt";
             GhiFileDSTKB(path, listTKB);
             this.Close();            
+        }
+
+        private void cbbCapLop_Click(object sender, EventArgs e)
+        {
+            int vt = TimTKB(rjMaLich.Texts);
+            if(vt != -1)
+            {
+                MessageBox.Show("Mã lịch đã tồn tại!");
+                Clear();
+            }
         }
     }
 }

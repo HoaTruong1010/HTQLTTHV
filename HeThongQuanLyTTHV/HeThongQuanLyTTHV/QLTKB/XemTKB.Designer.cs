@@ -84,6 +84,7 @@
             this.lbChon.Size = new System.Drawing.Size(192, 23);
             this.lbChon.TabIndex = 7;
             this.lbChon.Text = "Xem theo dạng:";
+            this.lbChon.Click += new System.EventHandler(this.lbChon_Click);
             // 
             // lvTKB
             // 
@@ -103,7 +104,7 @@
             this.lvTKB.HideSelection = false;
             this.lvTKB.Location = new System.Drawing.Point(6, 28);
             this.lvTKB.Name = "lvTKB";
-            this.lvTKB.Size = new System.Drawing.Size(803, 260);
+            this.lvTKB.Size = new System.Drawing.Size(810, 260);
             this.lvTKB.TabIndex = 9;
             this.lvTKB.UseCompatibleStateImageBehavior = false;
             this.lvTKB.View = System.Windows.Forms.View.Details;
@@ -187,9 +188,9 @@
             this.gbDSTKB.Controls.Add(this.lvTKB);
             this.gbDSTKB.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDSTKB.ForeColor = System.Drawing.Color.Brown;
-            this.gbDSTKB.Location = new System.Drawing.Point(13, 241);
+            this.gbDSTKB.Location = new System.Drawing.Point(6, 241);
             this.gbDSTKB.Name = "gbDSTKB";
-            this.gbDSTKB.Size = new System.Drawing.Size(815, 362);
+            this.gbDSTKB.Size = new System.Drawing.Size(822, 362);
             this.gbDSTKB.TabIndex = 12;
             this.gbDSTKB.TabStop = false;
             this.gbDSTKB.Text = "Danh sách Thời Khoá Biểu";
@@ -249,6 +250,7 @@
             this.Controls.Add(this.lbTieuDe);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.MaximizeBox = false;
             this.Name = "XemTKB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XemTKB";

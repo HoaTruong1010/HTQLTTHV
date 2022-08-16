@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rjBack = new HeThongQuanLyTTHV.QLTKB.RJButton();
-            this.rjCapNhat = new HeThongQuanLyTTHV.QLTKB.RJButton();
-            this.rjTenGV = new HeThongQuanLyTTHV.QLTKB.RJTextBox_Str();
-            this.rjPhong = new HeThongQuanLyTTHV.QLTKB.RJTextBox_Str();
-            this.rjMaLich = new HeThongQuanLyTTHV.QLTKB.RJTextBox_Str();
-            this.rjSLHV = new HeThongQuanLyTTHV.QLTKB.RJTextBox();
             this.gbThemTKB = new System.Windows.Forms.GroupBox();
-            this.rjSoBuoi = new HeThongQuanLyTTHV.QLTKB.RJTextBox();
             this.lbTenCTDT = new System.Windows.Forms.Label();
             this.lbMaLich = new System.Windows.Forms.Label();
             this.lbTenGV = new System.Windows.Forms.Label();
@@ -51,7 +44,6 @@
             this.cbbCapLop = new System.Windows.Forms.ComboBox();
             this.lbCapLop = new System.Windows.Forms.Label();
             this.cbbCTDT = new System.Windows.Forms.ComboBox();
-            this.lbTim = new System.Windows.Forms.Label();
             this.colGV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvDSKH = new System.Windows.Forms.ListView();
             this.colMaLich = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,123 +56,18 @@
             this.colKhungGioHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbTieuDe = new System.Windows.Forms.Label();
-            this.rjXoa = new HeThongQuanLyTTHV.QLTKB.RJButton();
             this.gbChinh = new System.Windows.Forms.GroupBox();
-            this.rjTim = new HeThongQuanLyTTHV.QLTKB.RJButton();
-            this.txtMaLich = new System.Windows.Forms.TextBox();
-            this.lbDKTim = new System.Windows.Forms.Label();
+            this.rjBack = new HeThongQuanLyTTHV.QLTKB.RJButton();
+            this.rjCapNhat = new HeThongQuanLyTTHV.QLTKB.RJButton();
+            this.rjXoa = new HeThongQuanLyTTHV.QLTKB.RJButton();
+            this.rjTenGV = new HeThongQuanLyTTHV.QLTKB.RJTextBox_Str();
+            this.rjPhong = new HeThongQuanLyTTHV.QLTKB.RJTextBox_Str();
+            this.rjMaLich = new HeThongQuanLyTTHV.QLTKB.RJTextBox_Str();
+            this.rjSLHV = new HeThongQuanLyTTHV.QLTKB.RJTextBox();
+            this.rjSoBuoi = new HeThongQuanLyTTHV.QLTKB.RJTextBox();
             this.gbThemTKB.SuspendLayout();
             this.gbChinh.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // rjBack
-            // 
-            this.rjBack.BackColor = System.Drawing.Color.Gainsboro;
-            this.rjBack.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.rjBack.BorderColor = System.Drawing.Color.Gray;
-            this.rjBack.BorderRadius = 15;
-            this.rjBack.BorderSize = 1;
-            this.rjBack.FlatAppearance.BorderSize = 0;
-            this.rjBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjBack.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjBack.ForeColor = System.Drawing.Color.Brown;
-            this.rjBack.Location = new System.Drawing.Point(681, 632);
-            this.rjBack.Name = "rjBack";
-            this.rjBack.Size = new System.Drawing.Size(147, 33);
-            this.rjBack.TabIndex = 33;
-            this.rjBack.Text = "Trở lại";
-            this.rjBack.TextColor = System.Drawing.Color.Brown;
-            this.rjBack.UseVisualStyleBackColor = false;
-            this.rjBack.Click += new System.EventHandler(this.rjBack_Click);
-            // 
-            // rjCapNhat
-            // 
-            this.rjCapNhat.AutoSize = true;
-            this.rjCapNhat.BackColor = System.Drawing.Color.Gainsboro;
-            this.rjCapNhat.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.rjCapNhat.BorderColor = System.Drawing.Color.Gray;
-            this.rjCapNhat.BorderRadius = 30;
-            this.rjCapNhat.BorderSize = 1;
-            this.rjCapNhat.FlatAppearance.BorderSize = 0;
-            this.rjCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjCapNhat.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjCapNhat.ForeColor = System.Drawing.Color.Brown;
-            this.rjCapNhat.Location = new System.Drawing.Point(714, 327);
-            this.rjCapNhat.Name = "rjCapNhat";
-            this.rjCapNhat.Size = new System.Drawing.Size(98, 33);
-            this.rjCapNhat.TabIndex = 35;
-            this.rjCapNhat.Text = "Cập nhật";
-            this.rjCapNhat.TextColor = System.Drawing.Color.Brown;
-            this.rjCapNhat.UseVisualStyleBackColor = false;
-            this.rjCapNhat.Click += new System.EventHandler(this.rjCapNhat_Click);
-            // 
-            // rjTenGV
-            // 
-            this.rjTenGV.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTenGV.BorderColor = System.Drawing.Color.MediumVioletRed;
-            this.rjTenGV.BorderSize = 1;
-            this.rjTenGV.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rjTenGV.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTenGV.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rjTenGV.Location = new System.Drawing.Point(161, 200);
-            this.rjTenGV.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.rjTenGV.Name = "rjTenGV";
-            this.rjTenGV.Padding = new System.Windows.Forms.Padding(7);
-            this.rjTenGV.Size = new System.Drawing.Size(203, 31);
-            this.rjTenGV.TabIndex = 36;
-            this.rjTenGV.Texts = "";
-            this.rjTenGV.UnderlineStyle = false;
-            // 
-            // rjPhong
-            // 
-            this.rjPhong.BackColor = System.Drawing.SystemColors.Window;
-            this.rjPhong.BorderColor = System.Drawing.Color.MediumVioletRed;
-            this.rjPhong.BorderSize = 1;
-            this.rjPhong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rjPhong.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjPhong.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rjPhong.Location = new System.Drawing.Point(568, 96);
-            this.rjPhong.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.rjPhong.Name = "rjPhong";
-            this.rjPhong.Padding = new System.Windows.Forms.Padding(7);
-            this.rjPhong.Size = new System.Drawing.Size(230, 31);
-            this.rjPhong.TabIndex = 35;
-            this.rjPhong.Texts = "";
-            this.rjPhong.UnderlineStyle = false;
-            // 
-            // rjMaLich
-            // 
-            this.rjMaLich.BackColor = System.Drawing.SystemColors.Window;
-            this.rjMaLich.BorderColor = System.Drawing.Color.MediumVioletRed;
-            this.rjMaLich.BorderSize = 1;
-            this.rjMaLich.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rjMaLich.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjMaLich.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.rjMaLich.Location = new System.Drawing.Point(160, 30);
-            this.rjMaLich.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.rjMaLich.Name = "rjMaLich";
-            this.rjMaLich.Padding = new System.Windows.Forms.Padding(7);
-            this.rjMaLich.Size = new System.Drawing.Size(204, 31);
-            this.rjMaLich.TabIndex = 34;
-            this.rjMaLich.Texts = "";
-            this.rjMaLich.UnderlineStyle = false;
-            // 
-            // rjSLHV
-            // 
-            this.rjSLHV.BackColor = System.Drawing.SystemColors.Window;
-            this.rjSLHV.BorderColor = System.Drawing.Color.MediumVioletRed;
-            this.rjSLHV.BorderSize = 1;
-            this.rjSLHV.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rjSLHV.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjSLHV.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.rjSLHV.Location = new System.Drawing.Point(161, 164);
-            this.rjSLHV.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.rjSLHV.Name = "rjSLHV";
-            this.rjSLHV.Padding = new System.Windows.Forms.Padding(7);
-            this.rjSLHV.Size = new System.Drawing.Size(203, 31);
-            this.rjSLHV.TabIndex = 32;
-            this.rjSLHV.Texts = "";
-            this.rjSLHV.UnderlineStyle = false;
             // 
             // gbThemTKB
             // 
@@ -210,24 +97,7 @@
             this.gbThemTKB.Size = new System.Drawing.Size(814, 249);
             this.gbThemTKB.TabIndex = 32;
             this.gbThemTKB.TabStop = false;
-            this.gbThemTKB.Text = "Thông tin về lịch học";
-            // 
-            // rjSoBuoi
-            // 
-            this.rjSoBuoi.BackColor = System.Drawing.SystemColors.Window;
-            this.rjSoBuoi.BorderColor = System.Drawing.Color.MediumVioletRed;
-            this.rjSoBuoi.BorderSize = 1;
-            this.rjSoBuoi.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rjSoBuoi.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjSoBuoi.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.rjSoBuoi.Location = new System.Drawing.Point(161, 97);
-            this.rjSoBuoi.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.rjSoBuoi.Name = "rjSoBuoi";
-            this.rjSoBuoi.Padding = new System.Windows.Forms.Padding(7);
-            this.rjSoBuoi.Size = new System.Drawing.Size(203, 31);
-            this.rjSoBuoi.TabIndex = 31;
-            this.rjSoBuoi.Texts = "";
-            this.rjSoBuoi.UnderlineStyle = false;
+            this.gbThemTKB.Text = "Chỉnh thông tin về lịch học";
             // 
             // lbTenCTDT
             // 
@@ -278,6 +148,7 @@
             this.cbbKhungGioHoc.Name = "cbbKhungGioHoc";
             this.cbbKhungGioHoc.Size = new System.Drawing.Size(230, 26);
             this.cbbKhungGioHoc.TabIndex = 16;
+            this.cbbKhungGioHoc.Click += new System.EventHandler(this.cbbCapLop_Click);
             // 
             // lbGioHoc
             // 
@@ -298,6 +169,7 @@
             this.cbbThu.Name = "cbbThu";
             this.cbbThu.Size = new System.Drawing.Size(203, 26);
             this.cbbThu.TabIndex = 14;
+            this.cbbThu.Click += new System.EventHandler(this.cbbCapLop_Click);
             // 
             // lbThu
             // 
@@ -338,6 +210,7 @@
             this.cbbLop.Name = "cbbLop";
             this.cbbLop.Size = new System.Drawing.Size(230, 26);
             this.cbbLop.TabIndex = 7;
+            this.cbbLop.Click += new System.EventHandler(this.cbbCapLop_Click);
             // 
             // lbLop
             // 
@@ -358,6 +231,8 @@
             this.cbbCapLop.Name = "cbbCapLop";
             this.cbbCapLop.Size = new System.Drawing.Size(203, 26);
             this.cbbCapLop.TabIndex = 5;
+            this.cbbCapLop.SelectedIndexChanged += new System.EventHandler(this.CbbCapLop_SelectedIndexChanged);
+            this.cbbCapLop.Click += new System.EventHandler(this.cbbCapLop_Click);
             // 
             // lbCapLop
             // 
@@ -378,17 +253,8 @@
             this.cbbCTDT.Name = "cbbCTDT";
             this.cbbCTDT.Size = new System.Drawing.Size(230, 26);
             this.cbbCTDT.TabIndex = 3;
-            // 
-            // lbTim
-            // 
-            this.lbTim.AutoSize = true;
-            this.lbTim.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbTim.Location = new System.Drawing.Point(6, 68);
-            this.lbTim.Name = "lbTim";
-            this.lbTim.Size = new System.Drawing.Size(178, 18);
-            this.lbTim.TabIndex = 30;
-            this.lbTim.Text = "Kết quả tìm kiếm:";
+            this.cbbCTDT.SelectedIndexChanged += new System.EventHandler(this.cbbCTDT_SelectedIndexChanged);
+            this.cbbCTDT.Click += new System.EventHandler(this.cbbCapLop_Click);
             // 
             // colGV
             // 
@@ -412,11 +278,13 @@
             this.colGV});
             this.lvDSKH.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDSKH.HideSelection = false;
-            this.lvDSKH.Location = new System.Drawing.Point(12, 89);
+            this.lvDSKH.Location = new System.Drawing.Point(12, 28);
             this.lvDSKH.Name = "lvDSKH";
-            this.lvDSKH.Size = new System.Drawing.Size(774, 153);
+            this.lvDSKH.Size = new System.Drawing.Size(774, 214);
             this.lvDSKH.TabIndex = 31;
             this.lvDSKH.UseCompatibleStateImageBehavior = false;
+            this.lvDSKH.View = System.Windows.Forms.View.Details;
+            this.lvDSKH.SelectedIndexChanged += new System.EventHandler(this.lvDSKH_SelectedIndexChanged);
             // 
             // colMaLich
             // 
@@ -485,6 +353,58 @@
             this.lbTieuDe.Text = "THỜI KHOÁ BIỂU";
             this.lbTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // gbChinh
+            // 
+            this.gbChinh.Controls.Add(this.lvDSKH);
+            this.gbChinh.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbChinh.Location = new System.Drawing.Point(25, 367);
+            this.gbChinh.Name = "gbChinh";
+            this.gbChinh.Size = new System.Drawing.Size(803, 259);
+            this.gbChinh.TabIndex = 36;
+            this.gbChinh.TabStop = false;
+            this.gbChinh.Text = "Danh sách TKB";
+            // 
+            // rjBack
+            // 
+            this.rjBack.BackColor = System.Drawing.Color.Gainsboro;
+            this.rjBack.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.rjBack.BorderColor = System.Drawing.Color.Gray;
+            this.rjBack.BorderRadius = 15;
+            this.rjBack.BorderSize = 1;
+            this.rjBack.FlatAppearance.BorderSize = 0;
+            this.rjBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjBack.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjBack.ForeColor = System.Drawing.Color.Brown;
+            this.rjBack.Location = new System.Drawing.Point(681, 632);
+            this.rjBack.Name = "rjBack";
+            this.rjBack.Size = new System.Drawing.Size(147, 33);
+            this.rjBack.TabIndex = 33;
+            this.rjBack.Text = "Trở lại";
+            this.rjBack.TextColor = System.Drawing.Color.Brown;
+            this.rjBack.UseVisualStyleBackColor = false;
+            this.rjBack.Click += new System.EventHandler(this.rjBack_Click);
+            // 
+            // rjCapNhat
+            // 
+            this.rjCapNhat.AutoSize = true;
+            this.rjCapNhat.BackColor = System.Drawing.Color.Gainsboro;
+            this.rjCapNhat.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.rjCapNhat.BorderColor = System.Drawing.Color.Gray;
+            this.rjCapNhat.BorderRadius = 30;
+            this.rjCapNhat.BorderSize = 1;
+            this.rjCapNhat.FlatAppearance.BorderSize = 0;
+            this.rjCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjCapNhat.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjCapNhat.ForeColor = System.Drawing.Color.Brown;
+            this.rjCapNhat.Location = new System.Drawing.Point(714, 327);
+            this.rjCapNhat.Name = "rjCapNhat";
+            this.rjCapNhat.Size = new System.Drawing.Size(98, 33);
+            this.rjCapNhat.TabIndex = 35;
+            this.rjCapNhat.Text = "Cập nhật";
+            this.rjCapNhat.TextColor = System.Drawing.Color.Brown;
+            this.rjCapNhat.UseVisualStyleBackColor = false;
+            this.rjCapNhat.Click += new System.EventHandler(this.rjCapNhat_Click);
+            // 
             // rjXoa
             // 
             this.rjXoa.BackColor = System.Drawing.Color.Gainsboro;
@@ -505,66 +425,100 @@
             this.rjXoa.UseVisualStyleBackColor = false;
             this.rjXoa.Click += new System.EventHandler(this.rjXoa_Click);
             // 
-            // gbChinh
+            // rjTenGV
             // 
-            this.gbChinh.Controls.Add(this.rjTim);
-            this.gbChinh.Controls.Add(this.txtMaLich);
-            this.gbChinh.Controls.Add(this.lbDKTim);
-            this.gbChinh.Controls.Add(this.lvDSKH);
-            this.gbChinh.Controls.Add(this.lbTim);
-            this.gbChinh.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbChinh.Location = new System.Drawing.Point(25, 367);
-            this.gbChinh.Name = "gbChinh";
-            this.gbChinh.Size = new System.Drawing.Size(803, 259);
-            this.gbChinh.TabIndex = 36;
-            this.gbChinh.TabStop = false;
-            this.gbChinh.Text = "Danh sách TKB";
+            this.rjTenGV.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTenGV.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjTenGV.BorderSize = 1;
+            this.rjTenGV.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjTenGV.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTenGV.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rjTenGV.Location = new System.Drawing.Point(161, 200);
+            this.rjTenGV.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjTenGV.Name = "rjTenGV";
+            this.rjTenGV.Padding = new System.Windows.Forms.Padding(7);
+            this.rjTenGV.Size = new System.Drawing.Size(203, 31);
+            this.rjTenGV.TabIndex = 36;
+            this.rjTenGV.Texts = "";
+            this.rjTenGV.UnderlineStyle = false;
+            this.rjTenGV.Click += new System.EventHandler(this.cbbCapLop_Click);
             // 
-            // rjTim
+            // rjPhong
             // 
-            this.rjTim.AutoSize = true;
-            this.rjTim.BackColor = System.Drawing.Color.Gainsboro;
-            this.rjTim.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.rjTim.BackgroundImage = global::HeThongQuanLyTTHV.Properties.Resources.searchIcon;
-            this.rjTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rjTim.BorderColor = System.Drawing.Color.Maroon;
-            this.rjTim.BorderRadius = 30;
-            this.rjTim.BorderSize = 1;
-            this.rjTim.FlatAppearance.BorderSize = 0;
-            this.rjTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjTim.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTim.ForeColor = System.Drawing.Color.Brown;
-            this.rjTim.Location = new System.Drawing.Point(273, 28);
-            this.rjTim.Name = "rjTim";
-            this.rjTim.Size = new System.Drawing.Size(52, 33);
-            this.rjTim.TabIndex = 37;
-            this.rjTim.TextColor = System.Drawing.Color.Brown;
-            this.rjTim.UseVisualStyleBackColor = false;
+            this.rjPhong.BackColor = System.Drawing.SystemColors.Window;
+            this.rjPhong.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjPhong.BorderSize = 1;
+            this.rjPhong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjPhong.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjPhong.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rjPhong.Location = new System.Drawing.Point(568, 96);
+            this.rjPhong.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjPhong.Name = "rjPhong";
+            this.rjPhong.Padding = new System.Windows.Forms.Padding(7);
+            this.rjPhong.Size = new System.Drawing.Size(230, 31);
+            this.rjPhong.TabIndex = 35;
+            this.rjPhong.Texts = "";
+            this.rjPhong.UnderlineStyle = false;
+            this.rjPhong.Click += new System.EventHandler(this.cbbCapLop_Click);
             // 
-            // txtMaLich
+            // rjMaLich
             // 
-            this.txtMaLich.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMaLich.Location = new System.Drawing.Point(100, 26);
-            this.txtMaLich.Name = "txtMaLich";
-            this.txtMaLich.Size = new System.Drawing.Size(150, 29);
-            this.txtMaLich.TabIndex = 33;
-            this.txtMaLich.Click += new System.EventHandler(this.txtMaLich_Click);
+            this.rjMaLich.BackColor = System.Drawing.SystemColors.Window;
+            this.rjMaLich.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjMaLich.BorderSize = 1;
+            this.rjMaLich.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjMaLich.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjMaLich.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.rjMaLich.Location = new System.Drawing.Point(160, 30);
+            this.rjMaLich.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjMaLich.Name = "rjMaLich";
+            this.rjMaLich.Padding = new System.Windows.Forms.Padding(7);
+            this.rjMaLich.Size = new System.Drawing.Size(204, 31);
+            this.rjMaLich.TabIndex = 34;
+            this.rjMaLich.Texts = "";
+            this.rjMaLich.UnderlineStyle = false;
             // 
-            // lbDKTim
+            // rjSLHV
             // 
-            this.lbDKTim.AutoSize = true;
-            this.lbDKTim.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDKTim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbDKTim.Location = new System.Drawing.Point(6, 31);
-            this.lbDKTim.Name = "lbDKTim";
-            this.lbDKTim.Size = new System.Drawing.Size(88, 18);
-            this.lbDKTim.TabIndex = 32;
-            this.lbDKTim.Text = "Mã lịch:";
+            this.rjSLHV.BackColor = System.Drawing.SystemColors.Window;
+            this.rjSLHV.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjSLHV.BorderSize = 1;
+            this.rjSLHV.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjSLHV.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjSLHV.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.rjSLHV.Location = new System.Drawing.Point(161, 164);
+            this.rjSLHV.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjSLHV.Name = "rjSLHV";
+            this.rjSLHV.Padding = new System.Windows.Forms.Padding(7);
+            this.rjSLHV.Size = new System.Drawing.Size(203, 31);
+            this.rjSLHV.TabIndex = 32;
+            this.rjSLHV.Texts = "";
+            this.rjSLHV.UnderlineStyle = false;
+            this.rjSLHV.Click += new System.EventHandler(this.cbbCapLop_Click);
+            // 
+            // rjSoBuoi
+            // 
+            this.rjSoBuoi.BackColor = System.Drawing.SystemColors.Window;
+            this.rjSoBuoi.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.rjSoBuoi.BorderSize = 1;
+            this.rjSoBuoi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjSoBuoi.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjSoBuoi.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.rjSoBuoi.Location = new System.Drawing.Point(161, 97);
+            this.rjSoBuoi.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.rjSoBuoi.Name = "rjSoBuoi";
+            this.rjSoBuoi.Padding = new System.Windows.Forms.Padding(7);
+            this.rjSoBuoi.Size = new System.Drawing.Size(203, 31);
+            this.rjSoBuoi.TabIndex = 31;
+            this.rjSoBuoi.Texts = "";
+            this.rjSoBuoi.UnderlineStyle = false;
+            this.rjSoBuoi.Click += new System.EventHandler(this.cbbCapLop_Click);
             // 
             // ChinhSuaTKB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(840, 671);
             this.Controls.Add(this.gbChinh);
             this.Controls.Add(this.rjBack);
@@ -581,7 +535,6 @@
             this.gbThemTKB.ResumeLayout(false);
             this.gbThemTKB.PerformLayout();
             this.gbChinh.ResumeLayout(false);
-            this.gbChinh.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,7 +565,6 @@
         private System.Windows.Forms.ComboBox cbbCapLop;
         private System.Windows.Forms.Label lbCapLop;
         private System.Windows.Forms.ComboBox cbbCTDT;
-        private System.Windows.Forms.Label lbTim;
         private System.Windows.Forms.ColumnHeader colGV;
         private System.Windows.Forms.ListView lvDSKH;
         private System.Windows.Forms.ColumnHeader colMaLich;
@@ -627,8 +579,5 @@
         private System.Windows.Forms.Label lbTieuDe;
         private RJButton rjXoa;
         private System.Windows.Forms.GroupBox gbChinh;
-        private RJButton rjTim;
-        private System.Windows.Forms.TextBox txtMaLich;
-        private System.Windows.Forms.Label lbDKTim;
     }
 }
