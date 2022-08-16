@@ -32,7 +32,6 @@ namespace HeThongQuanLyTTHV.QLTKB
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.gbChucNang = new System.Windows.Forms.GroupBox();
             this.rjXemTKB = new HeThongQuanLyTTHV.QLTKB.RJButton();
-            this.rjThongBaoTKB = new HeThongQuanLyTTHV.QLTKB.RJButton();
             this.rjChinhTKB = new HeThongQuanLyTTHV.QLTKB.RJButton();
             this.rjThemTKB = new HeThongQuanLyTTHV.QLTKB.RJButton();
             this.rjThoat = new HeThongQuanLyTTHV.QLTKB.RJButton();
@@ -54,7 +53,6 @@ namespace HeThongQuanLyTTHV.QLTKB
             // gbChucNang
             // 
             this.gbChucNang.Controls.Add(this.rjXemTKB);
-            this.gbChucNang.Controls.Add(this.rjThongBaoTKB);
             this.gbChucNang.Controls.Add(this.rjChinhTKB);
             this.gbChucNang.Controls.Add(this.rjThemTKB);
             this.gbChucNang.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,7 +76,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             this.rjXemTKB.FlatAppearance.BorderSize = 0;
             this.rjXemTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjXemTKB.ForeColor = System.Drawing.Color.Brown;
-            this.rjXemTKB.Location = new System.Drawing.Point(86, 115);
+            this.rjXemTKB.Location = new System.Drawing.Point(86, 140);
             this.rjXemTKB.Name = "rjXemTKB";
             this.rjXemTKB.Size = new System.Drawing.Size(382, 40);
             this.rjXemTKB.TabIndex = 0;
@@ -86,27 +84,6 @@ namespace HeThongQuanLyTTHV.QLTKB
             this.rjXemTKB.TextColor = System.Drawing.Color.Brown;
             this.rjXemTKB.UseVisualStyleBackColor = false;
             this.rjXemTKB.Click += new System.EventHandler(this.RjThemTKB_Click);
-            // 
-            // rjThongBaoTKB
-            // 
-            this.rjThongBaoTKB.AutoSize = true;
-            this.rjThongBaoTKB.BackColor = System.Drawing.Color.LightPink;
-            this.rjThongBaoTKB.BackgroundColor = System.Drawing.Color.LightPink;
-            this.rjThongBaoTKB.BorderColor = System.Drawing.Color.IndianRed;
-            this.rjThongBaoTKB.BorderRadius = 40;
-            this.rjThongBaoTKB.BorderSize = 1;
-            this.rjThongBaoTKB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rjThongBaoTKB.FlatAppearance.BorderSize = 0;
-            this.rjThongBaoTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjThongBaoTKB.ForeColor = System.Drawing.Color.Brown;
-            this.rjThongBaoTKB.Location = new System.Drawing.Point(86, 228);
-            this.rjThongBaoTKB.Name = "rjThongBaoTKB";
-            this.rjThongBaoTKB.Size = new System.Drawing.Size(382, 40);
-            this.rjThongBaoTKB.TabIndex = 0;
-            this.rjThongBaoTKB.Text = "Thông báo TKB";
-            this.rjThongBaoTKB.TextColor = System.Drawing.Color.Brown;
-            this.rjThongBaoTKB.UseVisualStyleBackColor = false;
-            this.rjThongBaoTKB.Click += new System.EventHandler(this.RjThemTKB_Click);
             // 
             // rjChinhTKB
             // 
@@ -120,7 +97,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             this.rjChinhTKB.FlatAppearance.BorderSize = 0;
             this.rjChinhTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjChinhTKB.ForeColor = System.Drawing.Color.Brown;
-            this.rjChinhTKB.Location = new System.Drawing.Point(86, 173);
+            this.rjChinhTKB.Location = new System.Drawing.Point(86, 198);
             this.rjChinhTKB.Name = "rjChinhTKB";
             this.rjChinhTKB.Size = new System.Drawing.Size(382, 40);
             this.rjChinhTKB.TabIndex = 0;
@@ -140,7 +117,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             this.rjThemTKB.FlatAppearance.BorderSize = 0;
             this.rjThemTKB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjThemTKB.ForeColor = System.Drawing.Color.Brown;
-            this.rjThemTKB.Location = new System.Drawing.Point(86, 59);
+            this.rjThemTKB.Location = new System.Drawing.Point(86, 84);
             this.rjThemTKB.Name = "rjThemTKB";
             this.rjThemTKB.Size = new System.Drawing.Size(382, 40);
             this.rjThemTKB.TabIndex = 0;
@@ -195,7 +172,6 @@ namespace HeThongQuanLyTTHV.QLTKB
         private System.Windows.Forms.Label lbTieuDe;
         private System.Windows.Forms.GroupBox gbChucNang;
         private RJButton rjXemTKB;
-        private RJButton rjThongBaoTKB;
         private RJButton rjChinhTKB;
         private RJButton rjThemTKB;
         private RJButton rjThoat;

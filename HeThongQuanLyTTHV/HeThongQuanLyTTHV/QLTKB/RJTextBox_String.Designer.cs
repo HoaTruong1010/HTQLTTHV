@@ -1,6 +1,6 @@
 ﻿namespace HeThongQuanLyTTHV.QLTKB
 {
-    partial class RJTextBox
+    partial class RJTextBox_Str
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,29 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxDigit = new System.Windows.Forms.TextBox();
+            this.textBoxStr = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBoxDigit
+            // textBoxStr
             // 
-            this.textBoxDigit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxDigit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDigit.Location = new System.Drawing.Point(7, 7);
-            this.textBoxDigit.Name = "textBoxDigit";
-            this.textBoxDigit.Size = new System.Drawing.Size(119, 15);
-            this.textBoxDigit.TabIndex = 0;
-            this.textBoxDigit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxDigit_KeyPress);
+            this.textBoxStr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxStr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxStr.Location = new System.Drawing.Point(7, 7);
+            this.textBoxStr.Name = "textBoxStr";
+            this.textBoxStr.Size = new System.Drawing.Size(119, 15);
+            this.textBoxStr.TabIndex = 0;
             // 
-            // RJTextBox
+            // RJTextBox_Str
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.textBoxDigit);
+            this.Controls.Add(this.textBoxStr);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.GrayText;
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.Name = "RJTextBox";
+            this.Name = "RJTextBox_Str";
             this.Padding = new System.Windows.Forms.Padding(7);
             this.Size = new System.Drawing.Size(133, 26);
             this.ResumeLayout(false);
@@ -60,6 +59,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxDigit;
+        private System.Windows.Forms.TextBox textBoxStr;
     }
 }

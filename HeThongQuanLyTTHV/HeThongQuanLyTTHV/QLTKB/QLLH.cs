@@ -17,7 +17,7 @@ namespace HeThongQuanLyTTHV.QLTKB
         private void RjThemTKB_Click(object sender, EventArgs e)
         {
             frmQLLH = this;
-            frmQLLH.Hide();
+            this.Hide();
 
             Button bt = (Button)sender;
             string chon = bt.Text;
@@ -34,14 +34,11 @@ namespace HeThongQuanLyTTHV.QLTKB
                 case "Chỉnh sửa TKB":
                     ChinhSuaTKB frmChinhSuaTKB = new ChinhSuaTKB();
                     frmChinhSuaTKB.ShowDialog();
-                    break;
-                case "Thông báo TKB":
-                    ThongBaoTKB frmThongBaoTKB = new ThongBaoTKB();
-                    frmThongBaoTKB.ShowDialog();
-                    break;
+                    break;                
                 default:
                     break;
             }
+            this.Show();
         }
 
         private void RjThoat_Click(object sender, EventArgs e)
