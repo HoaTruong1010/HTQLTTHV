@@ -26,6 +26,7 @@ namespace HeThongQuanLyTTHV.QLTKB
         }
 
         List<ThoiKhoaBieu> listTKB = new List<ThoiKhoaBieu>(1000);
+        List<ThoiKhoaBieu> listTKB_tam = new List<ThoiKhoaBieu>(1000);
         //Để sắp xếp vào đây
 
         string pathKhoa;
@@ -83,37 +84,14 @@ namespace HeThongQuanLyTTHV.QLTKB
             //ListView - xem tkb các khoá học
             lvTKB.View = View.Details;
             lvTKB.GridLines = true;
-            lvTKB.FullRowSelect = true;            
-        }
+            lvTKB.FullRowSelect = true;
 
-        private void Check(string path, ComboBox box, string keys)
-        {
-            try
-            {
-                if (File.Exists(path))
-                    using (StreamReader s = new StreamReader(path))
-                    {
-                        string line;
-                        while (s.Peek() >= 0)
-                        {
-                            line = s.ReadLine();
-                            if (line.StartsWith(keys))
-                                box.Items.Add(line);
-                        }
-                    }
-                else
-                    MessageBox.Show("Không có dữ liệu cho khóa học", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+            gbDSTKB.Width = ClientRectangle.Width - 10;
+            lvTKB.Width = gbDSTKB.Width -10;
         }
 
         private void cbbDang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string path = Application.StartupPath + @"\Data\DSTKB.txt";
             if (cbbDang.SelectedIndex != 0)
             {
                 lvTKB.Items.Clear();
@@ -209,6 +187,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             if (cbbChon.SelectedIndex != 0)
             {
                 lvTKB.Items.Clear();
+                listTKB_tam.Clear();
                 text = cbbChon.SelectedItem.ToString();
                 switch (cbbDang.Text)
                 {
@@ -221,6 +200,7 @@ namespace HeThongQuanLyTTHV.QLTKB
                                 {item.MaLich, item.TenKH, item.CapLop, item.Lop, item.SoBuoi.ToString(),
                                     item.SoLuongHV.ToString(), item.Thu, item.KhungGioHoc, item.Phong, item.TenGV};
                                 lvTKB.Items.Add(new ListViewItem(attributes));
+                                listTKB_tam.Add(item);
                             }
                         }
                         break;
@@ -233,6 +213,7 @@ namespace HeThongQuanLyTTHV.QLTKB
                                 {item.MaLich, item.TenKH, item.CapLop, item.Lop, item.SoBuoi.ToString(),
                                     item.SoLuongHV.ToString(), item.Thu, item.KhungGioHoc, item.Phong, item.TenGV};
                                 lvTKB.Items.Add(new ListViewItem(attributes));
+                                listTKB_tam.Add(item);
                             }
                         }
                         break;
@@ -245,6 +226,7 @@ namespace HeThongQuanLyTTHV.QLTKB
                                 {item.MaLich, item.TenKH, item.CapLop, item.Lop, item.SoBuoi.ToString(),
                                     item.SoLuongHV.ToString(), item.Thu, item.KhungGioHoc, item.Phong, item.TenGV};
                                 lvTKB.Items.Add(new ListViewItem(attributes));
+                                listTKB_tam.Add(item);
                             }
                         }
                         break;
@@ -257,29 +239,80 @@ namespace HeThongQuanLyTTHV.QLTKB
 
         private void rjSapXep_Click(object sender, EventArgs e)
         {
-            //Sắp xếp theo tên khoá học
-            ListViewItem item;
-            string[] attributes;
-            lvTKB.Items.Clear();
-            foreach (ThoiKhoaBieu t in listTKB)
+            switch (cbbDang.Text)
             {
-                listTKB.Sort((x1, x2) =>
-                {
-                    return x1.TenKH.CompareTo(x2.TenKH);
-                });
-            }
-            foreach (ThoiKhoaBieu t in listTKB)
-            {
-                attributes = new string[] { t.MaLich, t.TenKH, t.CapLop, t.Lop, t.Thu,
+                case "Xem theo khoá học":
+                    //Sắp xếp theo tên khoá học
+                    ListViewItem item;
+                    string[] attributes;
+                    lvTKB.Items.Clear();
+                    foreach (ThoiKhoaBieu t in listTKB_tam)
+                    {
+                        listTKB_tam.Sort((x1, x2) =>
+                        {
+                            return x1.CapLop.CompareTo(x2.CapLop);
+                        });
+                    }
+                    foreach (ThoiKhoaBieu t in listTKB_tam)
+                    {
+                        attributes = new string[] { t.MaLich, t.TenKH, t.CapLop, t.Lop, t.Thu,
                                             t.KhungGioHoc, t.Phong, t.TenGV};
-                item = new ListViewItem(attributes);
-                lvTKB.Items.Add(item);
-            }
+                        item = new ListViewItem(attributes);
+                        lvTKB.Items.Add(item);
+                    }
+                    break;
+                case "Xem theo cấp học":
+                    //Sắp xếp theo tên khoá học
+                    ListViewItem item1;
+                    string[] attributes1;
+                    lvTKB.Items.Clear();
+                    foreach (ThoiKhoaBieu t in listTKB_tam)
+                    {
+                        listTKB_tam.Sort((x1, x2) =>
+                        {
+                            return x1.TenKH.CompareTo(x2.TenKH);
+                        });
+                    }
+                    foreach (ThoiKhoaBieu t in listTKB_tam)
+                    {
+                        attributes1 = new string[] { t.MaLich, t.TenKH, t.CapLop, t.Lop, t.Thu,
+                                            t.KhungGioHoc, t.Phong, t.TenGV};
+                        item1 = new ListViewItem(attributes1);
+                        lvTKB.Items.Add(item1);
+                    }
+                    break;
+                case "Xem theo lớp học":
+                    ListViewItem item2;
+                    string[] attributes2;
+                    lvTKB.Items.Clear();
+                    foreach (ThoiKhoaBieu t in listTKB_tam)
+                    {
+                        listTKB_tam.Sort((x1, x2) =>
+                        {
+                            return x1.TenKH.CompareTo(x2.TenKH);
+                        });
+                    }
+                    foreach (ThoiKhoaBieu t in listTKB_tam)
+                    {
+                        attributes2 = new string[] { t.MaLich, t.TenKH, t.CapLop, t.Lop, t.Thu,
+                                            t.KhungGioHoc, t.Phong, t.TenGV};
+                        item2 = new ListViewItem(attributes2);
+                        lvTKB.Items.Add(item2);
+                    }
+                    break;
+                default:
+                    break;
+            }            
         }
 
         private void rjBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lbChon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
