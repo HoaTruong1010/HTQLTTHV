@@ -91,6 +91,7 @@
             this.rjBack.Text = "Trở lại";
             this.rjBack.TextColor = System.Drawing.Color.Brown;
             this.rjBack.UseVisualStyleBackColor = false;
+            this.rjBack.Click += new System.EventHandler(this.rjBack_Click);
             // 
             // rjCapNhat
             // 
@@ -388,7 +389,6 @@
             this.lbTim.Size = new System.Drawing.Size(178, 18);
             this.lbTim.TabIndex = 30;
             this.lbTim.Text = "Kết quả tìm kiếm:";
-            this.lbTim.Click += new System.EventHandler(this.lbContent_Click);
             // 
             // colGV
             // 
@@ -417,7 +417,6 @@
             this.lvDSKH.Size = new System.Drawing.Size(774, 153);
             this.lvDSKH.TabIndex = 31;
             this.lvDSKH.UseCompatibleStateImageBehavior = false;
-            this.lvDSKH.SelectedIndexChanged += new System.EventHandler(this.lvDSKH_SelectedIndexChanged);
             // 
             // colMaLich
             // 
@@ -550,7 +549,6 @@
             this.txtMaLich.Size = new System.Drawing.Size(150, 29);
             this.txtMaLich.TabIndex = 33;
             this.txtMaLich.Click += new System.EventHandler(this.txtMaLich_Click);
-            this.txtMaLich.TextChanged += new System.EventHandler(this.lvDSKH_SelectedIndexChanged);
             // 
             // lbDKTim
             // 
@@ -577,6 +575,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ChinhSuaTKB";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh Sửa TKB";
             this.Load += new System.EventHandler(this.ChinhSuaTKB_Load);
             this.gbThemTKB.ResumeLayout(false);

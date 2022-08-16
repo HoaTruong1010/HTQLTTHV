@@ -53,16 +53,6 @@ namespace HeThongQuanLyTTHV.QLTKB
             cbbKhungGioHoc.SelectedIndex = 0;
         }
 
-        private void lbContent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lvDSKH_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void rjXoa_Click(object sender, EventArgs e)
         {
             string maLich = rjMaLich.Texts;
@@ -110,7 +100,12 @@ namespace HeThongQuanLyTTHV.QLTKB
                                 rjMaLich.Texts, cbbCTDT.Text, cbbCapLop.Text, cbbLop.Text, rjSoBuoi.Texts,
                                 rjSLHV.Texts, cbbThu.Text, cbbKhungGioHoc.Text, rjPhong.Texts, rjTenGV.Texts});
             //Thêm đối tượng
-            this.lvDSKH.Items.AddRange(new System.Windows.Forms.ListViewItem[] {item});
+            this.lvDSKH.Items.Add(item);
+        }
+
+        private void rjBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void txtMaLich_Click(object sender, EventArgs e)

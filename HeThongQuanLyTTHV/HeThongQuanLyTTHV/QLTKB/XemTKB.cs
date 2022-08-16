@@ -33,15 +33,40 @@ namespace HeThongQuanLyTTHV.QLTKB
         string pathLop;
         string text;
 
+        private void DocFileDSTKB()
+        {
+            try
+            {
+                string path = Application.StartupPath + @"\Data\DSTKB.txt";
+                if (File.Exists(path))
+                    using (StreamReader s = new StreamReader(path))
+                    {
+                        string line;
+                        string[] attributes;
+                        while (s.Peek() >= 0)
+                        {
+                            line = s.ReadLine();
+                            attributes = line.Split(new string[] { "#" }, StringSplitOptions.None);
+                            ThoiKhoaBieu t = new ThoiKhoaBieu(attributes[0], attributes[1], attributes[2],
+                                attributes[3], attributes[4], attributes[5], attributes[6],
+                                attributes[7], attributes[8], attributes[9]);
+                            listTKB.Add(t);
+                        }
+                    }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void XemTKB_Load(object sender, EventArgs e)
         {
-            ThemTKB f = new ThemTKB();
             cbbDang.Focus();
-            f.DocFileDSTKB();
+            DocFileDSTKB();
 
-            
-            
-            
+            //cbbDang.Height = cbbChon.Height = 50;
 
             //ComboBox chọn dạng xem TKB
             cbbDang.Items.Add("----Chọn----");
@@ -90,42 +115,29 @@ namespace HeThongQuanLyTTHV.QLTKB
         {
             string path = Application.StartupPath + @"\Data\DSTKB.txt";
             if (cbbDang.SelectedIndex != 0)
-            {                
+            {
+                lvTKB.Items.Clear();
                 cbbChon.Items.Clear();
-                Check(path, cbbChon, "");
+                cbbChon.Items.Add("-----Chọn-----");
                 cbbChon.SelectedIndex = 0;
                 text = cbbDang.SelectedItem.ToString();
                 switch (cbbDang.Text)
                 {
                     case "Xem theo khoá học":
                         pathKhoa = Application.StartupPath + @"\Data\SubjectList.txt";
-                        text = "K" + text.Substring(text.Length - 2, 2);
-                        //duyệt qua từng dòng trong file dstkb
-                        // kiểm tra dòng đó có bắt đầu bằng "K" + text
-                        //nếu có thì thêm dòng đó vào list view
                         try
                         {
-                            if (File.Exists(path))
+                            if (File.Exists(pathKhoa))
                             {
-                                using (StreamReader s = new StreamReader(path))
+                                using (StreamReader s = new StreamReader(pathKhoa))
                                 {
-                                    string line;
-                                    string[] attributes;
-                                    ListViewItem item;
                                     while (s.Peek() >= 0)
                                     {
-                                        line = s.ReadLine();
-                                        attributes = line.Split(new string[] { "#" }, StringSplitOptions.None);
-                                        item = new ListViewItem(attributes);
-                                        lvTKB.Items.Add(item);
-                                        ThoiKhoaBieu t = new ThoiKhoaBieu(attributes[0], attributes[1], attributes[2],
-                                                                          attributes[3], attributes[4], attributes[5], attributes[6],
-                                                                          attributes[7], attributes[8], attributes[9]);
-                                        Check(pathKhoa, cbbChon, "");
-                                        listTKB.Add(t);
+                                        cbbChon.Items.Add(s.ReadLine());
                                     }
+                                    cbbChon.Items.RemoveAt(1);
                                 }
-                            }
+                            }                            
                             else
                                 MessageBox.Show("Danh sách rỗng!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -137,27 +149,16 @@ namespace HeThongQuanLyTTHV.QLTKB
                         break;
                     case "Xem theo cấp học":
                         pathCap = Application.StartupPath + @"\Data\LevelList.txt";
-                        text = "C" + text.Substring(3, 2);
                         try
                         {
-                            if (File.Exists(path))
+                            if (File.Exists(pathCap))
                             {
-                                using (StreamReader s = new StreamReader(path))
+                                using (StreamReader s = new StreamReader(pathCap))
                                 {
                                     string line;
-                                    string[] attributes;
-                                    ListViewItem item;
                                     while (s.Peek() >= 0)
                                     {
-                                        line = s.ReadLine();
-                                        attributes = line.Split(new string[] { "#" }, StringSplitOptions.None);
-                                        item = new ListViewItem(attributes);
-                                        lvTKB.Items.Add(item);
-                                        ThoiKhoaBieu t = new ThoiKhoaBieu(attributes[0], attributes[1], attributes[2],
-                                                                          attributes[3], attributes[4], attributes[5], attributes[6],
-                                                                          attributes[7], attributes[8], attributes[9]);
-                                        Check(pathCap, cbbChon, text);
-                                        listTKB.Add(t);
+                                        cbbChon.Items.Add(s.ReadLine());
                                     }
                                 }
                             }
@@ -172,27 +173,16 @@ namespace HeThongQuanLyTTHV.QLTKB
                         break;
                     case "Xem theo lớp học":
                         pathLop = Application.StartupPath + @"\Data\ClassList.txt";
-                        text = "2" + text.Substring(1, 6);
                         try
                         {
-                            if (File.Exists(path))
+                            if (File.Exists(pathLop))
                             {
-                                using (StreamReader s = new StreamReader(path))
+                                using (StreamReader s = new StreamReader(pathLop))
                                 {
                                     string line;
-                                    string[] attributes;
-                                    ListViewItem item;
                                     while (s.Peek() >= 0)
                                     {
-                                        line = s.ReadLine();
-                                        attributes = line.Split(new string[] { "#" }, StringSplitOptions.None);
-                                        item = new ListViewItem(attributes);
-                                        lvTKB.Items.Add(item);
-                                        ThoiKhoaBieu t = new ThoiKhoaBieu(attributes[0], attributes[1], attributes[2],
-                                                                          attributes[3], attributes[4], attributes[5], attributes[6],
-                                                                          attributes[7], attributes[8], attributes[9]);
-                                        Check(pathLop, cbbChon, text);
-                                        listTKB.Add(t);
+                                        cbbChon.Items.Add(s.ReadLine());
                                     }
                                 }
                             }
@@ -207,10 +197,62 @@ namespace HeThongQuanLyTTHV.QLTKB
                         break;
                     default:
                         break;
-                }    
-                
-            }    
-            
+                }
+
+            }
+
+        }
+
+        private void cbbChon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string path = Application.StartupPath + @"\Data\DSTKB.txt";
+            if (cbbChon.SelectedIndex != 0)
+            {
+                lvTKB.Items.Clear();
+                text = cbbChon.SelectedItem.ToString();
+                switch (cbbDang.Text)
+                {
+                    case "Xem theo khoá học":
+                        foreach (ThoiKhoaBieu item in listTKB)
+                        {
+                            if (item.TenKH == text)
+                            {
+                                string[] attributes = new string[]
+                                {item.MaLich, item.TenKH, item.CapLop, item.Lop, item.SoBuoi.ToString(),
+                                    item.SoLuongHV.ToString(), item.Thu, item.KhungGioHoc, item.Phong, item.TenGV};
+                                lvTKB.Items.Add(new ListViewItem(attributes));
+                            }
+                        }
+                        break;
+                    case "Xem theo cấp học":
+                        foreach (ThoiKhoaBieu item in listTKB)
+                        {
+                            if (item.CapLop == text)
+                            {
+                                string[] attributes = new string[]
+                                {item.MaLich, item.TenKH, item.CapLop, item.Lop, item.SoBuoi.ToString(),
+                                    item.SoLuongHV.ToString(), item.Thu, item.KhungGioHoc, item.Phong, item.TenGV};
+                                lvTKB.Items.Add(new ListViewItem(attributes));
+                            }
+                        }
+                        break;
+                    case "Xem theo lớp học":
+                        foreach (ThoiKhoaBieu item in listTKB)
+                        {
+                            if (item.Lop == text)
+                            {
+                                string[] attributes = new string[]
+                                {item.MaLich, item.TenKH, item.CapLop, item.Lop, item.SoBuoi.ToString(),
+                                    item.SoLuongHV.ToString(), item.Thu, item.KhungGioHoc, item.Phong, item.TenGV};
+                                lvTKB.Items.Add(new ListViewItem(attributes));
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+            }
         }
 
         private void rjSapXep_Click(object sender, EventArgs e)

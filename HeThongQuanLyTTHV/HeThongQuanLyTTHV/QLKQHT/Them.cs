@@ -142,13 +142,19 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 listView1.Visible=false;
                 groupBox4.Visible = false;
             }
+            
         }
 
-        private void btTroLai_Click(object sender, EventArgs e)
+        private void Thoat()
         {
             path = Application.StartupPath + @"\Data\DSP.txt";
             GhiFile(path, listDSP);
             this.Close();
+        }
+
+        private void btTroLai_Click(object sender, EventArgs e)
+        {
+            Thoat();
         }
 
         private void txtCCCD_KeyPress(object sender, KeyPressEventArgs e)
@@ -167,38 +173,38 @@ namespace HeThongQuanLyTTHV.QLKQHT
             {
                 if (viTri != -1)
                 {
-                    if (chucnang == "add")
-                    {
-                        MessageBox.Show("Phiếu kết quả đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
-                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Reset();
-                       
-                    }
+                        if (chucnang == "add")
+                        {
+                            MessageBox.Show("Phiếu kết quả đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Reset();
 
-                    if (chucnang == "chinh" || chucnang == "xoa")
-                    {
-                        idVT = viTri;
-                        txtHoTen.Text = listDSP[viTri].HoTen;
-                        txtKhoa.Text = listDSP[viTri].KhoaHoc;
-                        txtLop.Text = listDSP[viTri].Lop;
-                        txtSDT.Text = listDSP[viTri].Sdt;
-                        txtCap.Text = listDSP[viTri].CapHoc;
-                        txtMaPhieu.Text = listDSP[viTri].MaPhieu;
-                        txtGhiChu.Text = listDSP[viTri].GhiChu;
-                        txtDiem.Text = listDSP[viTri].Diem.ToString();
-                        dtNgaySinh.Value = DateTime.Parse(listDSP[viTri].Ngaysinh);
-                        txtCCCD.Text = listDSP[viTri].Cccd;
-                        if (listDSP[viTri].GioiTinh == "Nam")
-                        {
-                            rbNam.Checked = true;
-                            rbNu.Checked = false;
                         }
-                        else
+
+                        if (chucnang == "chinh" || chucnang == "xoa")
                         {
-                            rbNam.Checked = false;
-                            rbNu.Checked = true;
-                        }
-                    }
+                            idVT = viTri;
+                            txtHoTen.Text = listDSP[viTri].HoTen;
+                            txtKhoa.Text = listDSP[viTri].KhoaHoc;
+                            txtLop.Text = listDSP[viTri].Lop;
+                            txtSDT.Text = listDSP[viTri].Sdt;
+                            txtCap.Text = listDSP[viTri].CapHoc;
+                            txtMaPhieu.Text = listDSP[viTri].MaPhieu;
+                            txtGhiChu.Text = listDSP[viTri].GhiChu;
+                            txtDiem.Text = listDSP[viTri].Diem.ToString();
+                            dtNgaySinh.Value = DateTime.Parse(listDSP[viTri].Ngaysinh);
+                            txtCCCD.Text = listDSP[viTri].Cccd;
+                            if (listDSP[viTri].GioiTinh == "Nam")
+                            {
+                                rbNam.Checked = true;
+                                rbNu.Checked = false;
+                            }
+                            else
+                            {
+                                rbNam.Checked = false;
+                                rbNu.Checked = true;
+                            }
+                        } 
                 }
                 if(txtDiem.Text != String.Empty)
                 {
@@ -218,7 +224,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             }
         }
 
-        private void btLuu_Click(object sender, EventArgs e)
+        private void Luu()
         {
             //Xử lý không điền đủ thông tin
             try
@@ -266,12 +272,12 @@ namespace HeThongQuanLyTTHV.QLKQHT
                         Reset();
                         MessageBox.Show("lưu thành công");
                     }
-                    if (chucnang=="chinh")
+                    if (chucnang == "chinh")
                     {
-
-                        listDSP.RemoveAt(idVT);  
-                        listDSP.Add(p);
-                        MessageBox.Show("Sửa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            listDSP.RemoveAt(idVT);
+                            listDSP.Add(p);
+                            MessageBox.Show("Sửa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Reset();
                     }
                 }
             }
@@ -279,6 +285,11 @@ namespace HeThongQuanLyTTHV.QLKQHT
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btLuu_Click(object sender, EventArgs e)
+        {
+            Luu();
         }
 
         private void txtDiem_KeyPress(object sender, KeyPressEventArgs e)
@@ -291,8 +302,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             }
         }
 
-
-        private void btXoa_Click(object sender, EventArgs e)
+        private void Xoa()
         {
             if (viTri != -1)
             {
@@ -306,6 +316,42 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 txtMaPhieu.SelectionStart = txtMaPhieu.Text.Length;
                 MessageBox.Show("Phiếu kết quả không tồn tại!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
+        }
+
+        private void Them_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            path = Application.StartupPath + @"\Data\DSP.txt";
+            GhiFile(path, listDSP);
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            switch (keyData)
+            {
+                
+                case Keys.Enter: // enter là lưu file thì ở đây có rồi nè. thêm nữa để lam dì v?
+                    if (chucnang=="add"||chucnang=="chinh")
+                    {
+                        Luu();
+                    }
+                    if (chucnang=="xoa")
+                    {
+                        Xoa();
+                    }
+                    return true;
+                case Keys.Escape:
+                    Thoat();    
+                    return true;
+                case Keys.Delete:
+                    Reset();
+                    return true;
+            }
+            return base.ProcessDialogKey(keyData);
         }
     }  
 }

@@ -191,11 +191,38 @@ namespace HeThongQuanLyTTHV.QLHV
 
         private void txtID_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            TextBox obj = (TextBox)sender;
+            switch (obj.Name)
             {
-                e.Handled = true;
-                MessageBox.Show("Vui lòng nhập vào 1 số!");
-            }    
+                case "txtID":
+                    if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                        MessageBox.Show("Vui lòng nhập vào 1 số!");
+                    }
+                    if (e.KeyChar == (char)Keys.Enter && txtID.Text != "")
+                        txtName.Focus();
+                    break;
+                case "txtName":
+                    if (e.KeyChar == (char)Keys.Enter && txtName.Text != "")
+                        txtEmail.Focus();
+                    break;
+                case "txtEmail":
+                    if (e.KeyChar == (char)Keys.Enter && txtEmail.Text != "")
+                        txtPhone.Focus();
+                    break;
+                case "txtPhone":
+                    if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                        MessageBox.Show("Vui lòng nhập vào 1 số!");
+                    }
+                    if (e.KeyChar == (char)Keys.Enter && txtPhone.Text != "")
+                        txtAdress.Focus();
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void txtName_Click(object sender, EventArgs e)

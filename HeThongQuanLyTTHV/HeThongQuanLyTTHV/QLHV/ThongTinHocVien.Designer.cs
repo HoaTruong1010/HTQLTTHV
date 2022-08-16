@@ -141,7 +141,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtAdress.Size = new System.Drawing.Size(529, 32);
             this.txtAdress.TabIndex = 7;
             this.txtAdress.TabStop = false;
-            this.txtAdress.Click += new System.EventHandler(this.txtName_Click);
+            this.txtAdress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtPhone
             // 
@@ -151,7 +151,6 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtPhone.Size = new System.Drawing.Size(529, 32);
             this.txtPhone.TabIndex = 6;
             this.txtPhone.TabStop = false;
-            this.txtPhone.Click += new System.EventHandler(this.txtName_Click);
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtName
@@ -162,7 +161,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtName.Size = new System.Drawing.Size(529, 32);
             this.txtName.TabIndex = 1;
             this.txtName.TabStop = false;
-            this.txtName.Click += new System.EventHandler(this.txtName_Click);
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // lbName
             // 
@@ -183,7 +182,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtEmail.Size = new System.Drawing.Size(529, 32);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TabStop = false;
-            this.txtEmail.Click += new System.EventHandler(this.txtName_Click);
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtID
             // 

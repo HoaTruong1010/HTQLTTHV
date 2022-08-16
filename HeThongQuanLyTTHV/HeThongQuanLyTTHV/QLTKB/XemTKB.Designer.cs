@@ -42,10 +42,10 @@
             this.colKhungGioHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colGV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rjBack = new HeThongQuanLyTTHV.QLTKB.RJButton();
             this.cbbChon = new System.Windows.Forms.ComboBox();
             this.gbDSTKB = new System.Windows.Forms.GroupBox();
             this.rjSapXep = new HeThongQuanLyTTHV.QLTKB.RJButton();
+            this.rjBack = new HeThongQuanLyTTHV.QLTKB.RJButton();
             this.gbDSTKB.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,12 +66,12 @@
             // cbbDang
             // 
             this.cbbDang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbDang.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDang.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDang.FormattingEnabled = true;
             this.cbbDang.Location = new System.Drawing.Point(19, 122);
-            this.cbbDang.Margin = new System.Windows.Forms.Padding(6);
+            this.cbbDang.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.cbbDang.Name = "cbbDang";
-            this.cbbDang.Size = new System.Drawing.Size(356, 33);
+            this.cbbDang.Size = new System.Drawing.Size(356, 26);
             this.cbbDang.TabIndex = 3;
             this.cbbDang.SelectedIndexChanged += new System.EventHandler(this.cbbDang_SelectedIndexChanged);
             // 
@@ -106,6 +106,7 @@
             this.lvTKB.Size = new System.Drawing.Size(803, 260);
             this.lvTKB.TabIndex = 9;
             this.lvTKB.UseCompatibleStateImageBehavior = false;
+            this.lvTKB.View = System.Windows.Forms.View.Details;
             // 
             // colMaLich
             // 
@@ -166,36 +167,19 @@
             this.colGV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colGV.Width = 250;
             // 
-            // rjBack
-            // 
-            this.rjBack.BackColor = System.Drawing.Color.Gainsboro;
-            this.rjBack.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.rjBack.BorderColor = System.Drawing.Color.Gray;
-            this.rjBack.BorderRadius = 15;
-            this.rjBack.BorderSize = 1;
-            this.rjBack.FlatAppearance.BorderSize = 0;
-            this.rjBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjBack.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjBack.ForeColor = System.Drawing.Color.Brown;
-            this.rjBack.Location = new System.Drawing.Point(682, 622);
-            this.rjBack.Name = "rjBack";
-            this.rjBack.Size = new System.Drawing.Size(146, 37);
-            this.rjBack.TabIndex = 10;
-            this.rjBack.Text = "Trở lại";
-            this.rjBack.TextColor = System.Drawing.Color.Brown;
-            this.rjBack.UseVisualStyleBackColor = false;
-            this.rjBack.Click += new System.EventHandler(this.rjBack_Click);
-            // 
             // cbbChon
             // 
+            this.cbbChon.DropDownHeight = 80;
             this.cbbChon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbChon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbChon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbChon.FormattingEnabled = true;
+            this.cbbChon.IntegralHeight = false;
             this.cbbChon.Location = new System.Drawing.Point(19, 167);
-            this.cbbChon.Margin = new System.Windows.Forms.Padding(6);
+            this.cbbChon.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.cbbChon.Name = "cbbChon";
-            this.cbbChon.Size = new System.Drawing.Size(356, 33);
+            this.cbbChon.Size = new System.Drawing.Size(356, 26);
             this.cbbChon.TabIndex = 11;
+            this.cbbChon.SelectedIndexChanged += new System.EventHandler(this.cbbChon_SelectedIndexChanged);
             // 
             // gbDSTKB
             // 
@@ -222,7 +206,7 @@
             this.rjSapXep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjSapXep.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjSapXep.ForeColor = System.Drawing.Color.Brown;
-            this.rjSapXep.Location = new System.Drawing.Point(706, 306);
+            this.rjSapXep.Location = new System.Drawing.Point(706, 307);
             this.rjSapXep.Name = "rjSapXep";
             this.rjSapXep.Size = new System.Drawing.Size(103, 36);
             this.rjSapXep.TabIndex = 36;
@@ -230,6 +214,26 @@
             this.rjSapXep.TextColor = System.Drawing.Color.Brown;
             this.rjSapXep.UseVisualStyleBackColor = false;
             this.rjSapXep.Click += new System.EventHandler(this.rjSapXep_Click);
+            // 
+            // rjBack
+            // 
+            this.rjBack.BackColor = System.Drawing.Color.Gainsboro;
+            this.rjBack.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.rjBack.BorderColor = System.Drawing.Color.Gray;
+            this.rjBack.BorderRadius = 15;
+            this.rjBack.BorderSize = 1;
+            this.rjBack.FlatAppearance.BorderSize = 0;
+            this.rjBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjBack.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjBack.ForeColor = System.Drawing.Color.Brown;
+            this.rjBack.Location = new System.Drawing.Point(682, 622);
+            this.rjBack.Name = "rjBack";
+            this.rjBack.Size = new System.Drawing.Size(146, 37);
+            this.rjBack.TabIndex = 10;
+            this.rjBack.Text = "Trở lại";
+            this.rjBack.TextColor = System.Drawing.Color.Brown;
+            this.rjBack.UseVisualStyleBackColor = false;
+            this.rjBack.Click += new System.EventHandler(this.rjBack_Click);
             // 
             // XemTKB
             // 
@@ -244,8 +248,9 @@
             this.Controls.Add(this.cbbDang);
             this.Controls.Add(this.lbTieuDe);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "XemTKB";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XemTKB";
             this.Load += new System.EventHandler(this.XemTKB_Load);
             this.gbDSTKB.ResumeLayout(false);

@@ -4,6 +4,8 @@ D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\bin\Debug\HeThongQuanLyTTHV
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.AssemblyReference.cache
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.SuggestedBindingRedirects.cache
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.ChinhSuaTKB.resources
+D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.RJTextBox_Str.resources
+D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.RJTextBox.resources
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.ThemTKB.resources
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.frmMain.resources
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLKQHT.DSKQHT.resources
@@ -19,5 +21,3 @@ D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.csproj.CoreCompileInputs.cache
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.exe
 D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.pdb
-D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.RJTextBox.resources
-D:\CNTT\HTQLTTHV\HeThongQuanLyTTHV\HeThongQuanLyTTHV\obj\Debug\HeThongQuanLyTTHV.QLTKB.RJTextBox_Str.resources
