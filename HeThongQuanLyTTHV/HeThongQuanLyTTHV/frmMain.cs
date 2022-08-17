@@ -19,7 +19,7 @@ namespace HeThongQuanLyTTHV
 
         private void quanLyTTHV_Click(object sender, EventArgs e)
         {
-            QLHV.Main_QLHV main = new QLHV.Main_QLHV();
+            QLHV.DanhSachHocVien main = new QLHV.DanhSachHocVien();
             main.Show();
         }
 
@@ -45,6 +45,15 @@ namespace HeThongQuanLyTTHV
         {
             QLTKB.QLLH main = new QLTKB.QLLH();
             main.Show();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            FontFamily f = new FontFamily("Courier New");
+            labelTitle.Width = ClientRectangle.Width;
+            labelTitle.Height = ClientRectangle.Height - menuMain.Height;
+            labelTitle.Font = new Font(f,40);
+            menuMain.Font = new Font(f, 13);
         }
     }
 }

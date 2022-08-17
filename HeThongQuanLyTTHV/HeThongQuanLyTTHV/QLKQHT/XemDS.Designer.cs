@@ -141,7 +141,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(248, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(890, 50);
+            this.label1.Size = new System.Drawing.Size(730, 40);
             this.label1.TabIndex = 76;
             this.label1.Text = "Danh Sách Phiếu Kết Quả Học Tập";
             // 
@@ -157,7 +157,7 @@
             // 
             // XemDS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1551, 752);
             this.Controls.Add(this.label1);
@@ -169,7 +169,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "XemDS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "XemDS";
+            this.Text = "Danh sách phiếu kết quả";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.XemDS_Load);
             this.ResumeLayout(false);

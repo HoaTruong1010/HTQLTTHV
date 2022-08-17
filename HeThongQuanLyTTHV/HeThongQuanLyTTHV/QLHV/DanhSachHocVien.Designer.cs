@@ -45,13 +45,16 @@ namespace HeThongQuanLyTTHV.QLHV
             this.btExit = new System.Windows.Forms.Button();
             this.lbSum = new System.Windows.Forms.Label();
             this.txtSum = new System.Windows.Forms.TextBox();
+            this.btEdit = new System.Windows.Forms.Button();
+            this.btDel = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTitle
             // 
             this.lbTitle.Font = new System.Drawing.Font("Courier New", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.Brown;
-            this.lbTitle.Location = new System.Drawing.Point(-41, 3);
+            this.lbTitle.Location = new System.Drawing.Point(2, 1);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(1372, 81);
@@ -74,12 +77,13 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lop});
             this.listHV.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listHV.HideSelection = false;
-            this.listHV.Location = new System.Drawing.Point(4, 87);
+            this.listHV.Location = new System.Drawing.Point(4, 85);
             this.listHV.Name = "listHV";
             this.listHV.Size = new System.Drawing.Size(1365, 624);
-            this.listHV.TabIndex = 1;
+            this.listHV.TabIndex = 9;
             this.listHV.UseCompatibleStateImageBehavior = false;
             this.listHV.View = System.Windows.Forms.View.Details;
+            this.listHV.SelectedIndexChanged += new System.EventHandler(this.listHV_SelectedIndexChanged);
             // 
             // ID
             // 
@@ -135,9 +139,9 @@ namespace HeThongQuanLyTTHV.QLHV
             // 
             this.btSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btSort.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSort.Location = new System.Drawing.Point(1135, 745);
+            this.btSort.Location = new System.Drawing.Point(997, 727);
             this.btSort.Name = "btSort";
-            this.btSort.Size = new System.Drawing.Size(221, 55);
+            this.btSort.Size = new System.Drawing.Size(187, 55);
             this.btSort.TabIndex = 5;
             this.btSort.Text = "Sắp xếp (A-Z)";
             this.btSort.UseVisualStyleBackColor = true;
@@ -147,7 +151,7 @@ namespace HeThongQuanLyTTHV.QLHV
             // 
             this.btExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btExit.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExit.Location = new System.Drawing.Point(952, 745);
+            this.btExit.Location = new System.Drawing.Point(1228, 727);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(107, 55);
             this.btExit.TabIndex = 6;
@@ -159,9 +163,9 @@ namespace HeThongQuanLyTTHV.QLHV
             // 
             this.lbSum.AutoSize = true;
             this.lbSum.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSum.Location = new System.Drawing.Point(153, 760);
+            this.lbSum.Location = new System.Drawing.Point(32, 744);
             this.lbSum.Name = "lbSum";
-            this.lbSum.Size = new System.Drawing.Size(322, 24);
+            this.lbSum.Size = new System.Drawing.Size(273, 20);
             this.lbSum.TabIndex = 7;
             this.lbSum.Text = "Tổng số lượng học viên: ";
             // 
@@ -170,17 +174,53 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtSum.BackColor = System.Drawing.Color.White;
             this.txtSum.Enabled = false;
             this.txtSum.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSum.Location = new System.Drawing.Point(494, 757);
+            this.txtSum.Location = new System.Drawing.Point(315, 741);
             this.txtSum.Name = "txtSum";
-            this.txtSum.Size = new System.Drawing.Size(100, 32);
+            this.txtSum.Size = new System.Drawing.Size(100, 27);
             this.txtSum.TabIndex = 8;
+            // 
+            // btEdit
+            // 
+            this.btEdit.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEdit.Location = new System.Drawing.Point(633, 727);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(90, 55);
+            this.btEdit.TabIndex = 11;
+            this.btEdit.Text = "Sửa";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            // 
+            // btDel
+            // 
+            this.btDel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDel.Location = new System.Drawing.Point(752, 727);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(90, 55);
+            this.btDel.TabIndex = 11;
+            this.btDel.Text = "Xóa";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
+            // btAdd
+            // 
+            this.btAdd.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Location = new System.Drawing.Point(872, 727);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(90, 55);
+            this.btAdd.TabIndex = 11;
+            this.btAdd.Text = "Thêm";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // DanhSachHocVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1373, 800);
+            this.ClientSize = new System.Drawing.Size(1373, 805);
+            this.Controls.Add(this.btDel);
+            this.Controls.Add(this.btAdd);
+            this.Controls.Add(this.btEdit);
             this.Controls.Add(this.txtSum);
             this.Controls.Add(this.lbSum);
             this.Controls.Add(this.btSort);
@@ -193,7 +233,6 @@ namespace HeThongQuanLyTTHV.QLHV
             this.Name = "DanhSachHocVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Học Viên";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DanhSachHocVien_FormClosing);
             this.Load += new System.EventHandler(this.DanhSachHocVien_Load);
             this.ResumeLayout(false);
@@ -219,5 +258,8 @@ namespace HeThongQuanLyTTHV.QLHV
         private System.Windows.Forms.ColumnHeader khoaHoc;
         private System.Windows.Forms.ColumnHeader capHoc;
         private System.Windows.Forms.ColumnHeader lop;
+        private System.Windows.Forms.Button btEdit;
+        private System.Windows.Forms.Button btDel;
+        private System.Windows.Forms.Button btAdd;
     }
 }

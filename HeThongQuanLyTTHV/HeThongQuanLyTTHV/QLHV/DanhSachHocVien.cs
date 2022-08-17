@@ -19,35 +19,19 @@ namespace HeThongQuanLyTTHV.QLHV
         }
 
         List<HocVien> hocViens = new List<HocVien>(1000);
+        HocVien h;
+        bool trangThai;
 
-        private void btExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        internal List<HocVien> HocViens { get => hocViens; set => hocViens = value; }
+        public bool TrangThai { get => trangThai; set => trangThai = value; }
 
-        protected override bool ProcessDialogKey(Keys keyData)
-        {
-            if (keyData == Keys.Escape)
-            {
-                this.Close();
-                return true;
-            }
-            return base.ProcessDialogKey(keyData);
-        }
-
-        private void DanhSachHocVien_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Question",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                e.Cancel = true;
-        }
-
-        private void DanhSachHocVien_Load(object sender, EventArgs e)
+        private void StudentListFromFile()
         {
             string path = Application.StartupPath + @"\Data\StudentList.txt";
+            hocViens.Clear();
+            listHV.Items.Clear();
             try
             {
-                listHV.Width = lbTitle.Width = Screen.PrimaryScreen.WorkingArea.Width;
                 foreach (ColumnHeader item in listHV.Columns)
                 {
                     item.Width = (int)(listHV.Width * (0.1));
@@ -68,10 +52,10 @@ namespace HeThongQuanLyTTHV.QLHV
                             HocVien h = new HocVien(attributes[0], attributes[1], attributes[2],
                             attributes[3], attributes[4], attributes[5], attributes[6], attributes[7],
                             attributes[8], attributes[9]);
-                            hocViens.Add(h);
+                            HocViens.Add(h);
                         }
                     }
-                    txtSum.Text = hocViens.Count.ToString();
+                    txtSum.Text = HocViens.Count.ToString();
                 }
                 else
                     MessageBox.Show("Danh sách rỗng!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,19 +67,49 @@ namespace HeThongQuanLyTTHV.QLHV
             }
         }
 
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            trangThai = true;
+            this.Close();
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
+        }
+
+        private void DanhSachHocVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (trangThai && MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Question",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                e.Cancel = true;
+        }
+
+        private void DanhSachHocVien_Load(object sender, EventArgs e)
+        {
+            StudentListFromFile();
+            btDel.Visible = btEdit.Visible = false;
+            trangThai = false;
+        }
+
         private void btSort_Click(object sender, EventArgs e)
         {
             ListViewItem item;
             string[] attributes;
             listHV.Items.Clear();
-            foreach (HocVien h in hocViens)
+            foreach (HocVien h in HocViens)
             {
-                hocViens.Sort((x1, x2) =>
+                HocViens.Sort((x1, x2) =>
                 {
                     return x1.Name.CompareTo(x2.Name);
                 });
             }
-            foreach (HocVien h in hocViens)
+            foreach (HocVien h in HocViens)
             {
                 attributes = new string[] { h.Id, h.Name, h.Dob, h.Gender, h.Email, h.PhoneNumber,
                     h.Adress, h.KhoaHoc, h.CapHoc, h.Lop };
@@ -103,6 +117,55 @@ namespace HeThongQuanLyTTHV.QLHV
                 listHV.Items.Add(item);
             }
             
+        }
+
+        private void listHV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listHV.SelectedItems.Count > 0)
+            {
+                btEdit.Visible = btDel.Visible = true;
+                h = new HocVien(listHV.SelectedItems[0].SubItems[0].Text, listHV.SelectedItems[0].SubItems[1].Text,
+                listHV.SelectedItems[0].SubItems[2].Text, listHV.SelectedItems[0].SubItems[3].Text, listHV.SelectedItems[0].SubItems[4].Text,
+                listHV.SelectedItems[0].SubItems[5].Text, listHV.SelectedItems[0].SubItems[6].Text, listHV.SelectedItems[0].SubItems[7].Text,
+                listHV.SelectedItems[0].SubItems[8].Text, listHV.SelectedItems[0].SubItems[9].Text);
+            }
+            else
+            {
+                btEdit.Visible = btDel.Visible = false;
+            }    
+                
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            if(listHV.SelectedItems.Count > 0)
+            {
+                ThongTinHocVien fTTHV = new ThongTinHocVien();
+                fTTHV.ChucNang = "Edit";
+                fTTHV.HvSelected = new HocVien(h);
+                this.Close();
+                fTTHV.Show();
+            }
+        }
+
+        private void btDel_Click(object sender, EventArgs e)
+        {
+            if (listHV.SelectedItems.Count > 0)
+            {
+                ThongTinHocVien fTTHV = new ThongTinHocVien();
+                fTTHV.ChucNang = "Delete";
+                fTTHV.HvSelected = new HocVien(h);
+                this.Close();
+                fTTHV.Show();
+            }
+        }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            ThongTinHocVien fTTHV = new ThongTinHocVien();
+            fTTHV.ChucNang = "Add";
+            this.Close();
+            fTTHV.Show();
         }
     }
 }

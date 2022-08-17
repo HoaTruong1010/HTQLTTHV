@@ -103,7 +103,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDOB.Location = new System.Drawing.Point(232, 135);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(191, 32);
+            this.dtpDOB.Size = new System.Drawing.Size(191, 27);
             this.dtpDOB.TabIndex = 2;
             this.dtpDOB.ValueChanged += new System.EventHandler(this.txtName_Click);
             // 
@@ -113,7 +113,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.rdFemale.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdFemale.Location = new System.Drawing.Point(707, 137);
             this.rdFemale.Name = "rdFemale";
-            this.rdFemale.Size = new System.Drawing.Size(57, 28);
+            this.rdFemale.Size = new System.Drawing.Size(49, 24);
             this.rdFemale.TabIndex = 4;
             this.rdFemale.TabStop = true;
             this.rdFemale.Text = "Nữ";
@@ -126,7 +126,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.rdMale.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdMale.Location = new System.Drawing.Point(626, 138);
             this.rdMale.Name = "rdMale";
-            this.rdMale.Size = new System.Drawing.Size(70, 28);
+            this.rdMale.Size = new System.Drawing.Size(60, 24);
             this.rdMale.TabIndex = 3;
             this.rdMale.TabStop = true;
             this.rdMale.Text = "Nam";
@@ -138,9 +138,10 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtAdress.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdress.Location = new System.Drawing.Point(232, 293);
             this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(529, 32);
+            this.txtAdress.Size = new System.Drawing.Size(529, 27);
             this.txtAdress.TabIndex = 7;
             this.txtAdress.TabStop = false;
+            this.txtAdress.Click += new System.EventHandler(this.txtName_Click);
             this.txtAdress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtPhone
@@ -148,9 +149,10 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtPhone.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(232, 241);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(529, 32);
+            this.txtPhone.Size = new System.Drawing.Size(529, 27);
             this.txtPhone.TabIndex = 6;
             this.txtPhone.TabStop = false;
+            this.txtPhone.Click += new System.EventHandler(this.txtName_Click);
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtName
@@ -158,9 +160,10 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtName.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(232, 88);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(529, 32);
+            this.txtName.Size = new System.Drawing.Size(529, 27);
             this.txtName.TabIndex = 1;
             this.txtName.TabStop = false;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // lbName
@@ -169,7 +172,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbName.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.Location = new System.Drawing.Point(35, 94);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(140, 24);
+            this.lbName.Size = new System.Drawing.Size(119, 20);
             this.lbName.TabIndex = 11;
             this.lbName.Text = "Họ và tên:";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,9 +182,10 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtEmail.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(232, 190);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(529, 32);
+            this.txtEmail.Size = new System.Drawing.Size(529, 27);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TabStop = false;
+            this.txtEmail.Click += new System.EventHandler(this.txtName_Click);
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtID
@@ -189,7 +193,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.txtID.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(232, 41);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(529, 32);
+            this.txtID.Size = new System.Drawing.Size(529, 27);
             this.txtID.TabIndex = 0;
             this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
@@ -199,7 +203,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbPhone.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhone.Location = new System.Drawing.Point(35, 247);
             this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(192, 24);
+            this.lbPhone.Size = new System.Drawing.Size(163, 20);
             this.lbPhone.TabIndex = 14;
             this.lbPhone.Text = "Số điện thoại:";
             this.lbPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -210,7 +214,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbGender.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGender.Location = new System.Drawing.Point(474, 139);
             this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(140, 24);
+            this.lbGender.Size = new System.Drawing.Size(119, 20);
             this.lbGender.TabIndex = 10;
             this.lbGender.Text = "Giới tính:";
             // 
@@ -220,7 +224,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbEmail.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.Location = new System.Drawing.Point(35, 196);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(88, 24);
+            this.lbEmail.Size = new System.Drawing.Size(75, 20);
             this.lbEmail.TabIndex = 13;
             this.lbEmail.Text = "Email:";
             this.lbEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,7 +235,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbAdress.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAdress.Location = new System.Drawing.Point(35, 297);
             this.lbAdress.Name = "lbAdress";
-            this.lbAdress.Size = new System.Drawing.Size(114, 24);
+            this.lbAdress.Size = new System.Drawing.Size(97, 20);
             this.lbAdress.TabIndex = 14;
             this.lbAdress.Text = "Địa chỉ:";
             this.lbAdress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,7 +246,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbID.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbID.Location = new System.Drawing.Point(35, 47);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(140, 24);
+            this.lbID.Size = new System.Drawing.Size(119, 20);
             this.lbID.TabIndex = 10;
             this.lbID.Text = "CMND/CCCD:";
             this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -253,7 +257,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbDOB.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDOB.Location = new System.Drawing.Point(35, 141);
             this.lbDOB.Name = "lbDOB";
-            this.lbDOB.Size = new System.Drawing.Size(140, 24);
+            this.lbDOB.Size = new System.Drawing.Size(119, 20);
             this.lbDOB.TabIndex = 12;
             this.lbDOB.Text = "Ngày sinh:";
             this.lbDOB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -285,8 +289,9 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbLop.IntegralHeight = false;
             this.cbLop.Location = new System.Drawing.Point(223, 149);
             this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(244, 32);
+            this.cbLop.Size = new System.Drawing.Size(244, 28);
             this.cbLop.TabIndex = 2;
+            this.cbLop.Click += new System.EventHandler(this.txtName_Click);
             // 
             // cbCapHoc
             // 
@@ -298,9 +303,10 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbCapHoc.IntegralHeight = false;
             this.cbCapHoc.Location = new System.Drawing.Point(223, 98);
             this.cbCapHoc.Name = "cbCapHoc";
-            this.cbCapHoc.Size = new System.Drawing.Size(244, 32);
+            this.cbCapHoc.Size = new System.Drawing.Size(244, 28);
             this.cbCapHoc.TabIndex = 1;
             this.cbCapHoc.SelectedIndexChanged += new System.EventHandler(this.cbCapHoc_SelectedIndexChanged);
+            this.cbCapHoc.Click += new System.EventHandler(this.txtName_Click);
             // 
             // cbKhoaHoc
             // 
@@ -312,9 +318,10 @@ namespace HeThongQuanLyTTHV.QLHV
             this.cbKhoaHoc.IntegralHeight = false;
             this.cbKhoaHoc.Location = new System.Drawing.Point(223, 49);
             this.cbKhoaHoc.Name = "cbKhoaHoc";
-            this.cbKhoaHoc.Size = new System.Drawing.Size(244, 32);
+            this.cbKhoaHoc.Size = new System.Drawing.Size(244, 28);
             this.cbKhoaHoc.TabIndex = 0;
             this.cbKhoaHoc.SelectedIndexChanged += new System.EventHandler(this.cbKhoaHoc_SelectedIndexChanged);
+            this.cbKhoaHoc.Click += new System.EventHandler(this.txtName_Click);
             // 
             // lbLop
             // 
@@ -322,7 +329,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbLop.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLop.Location = new System.Drawing.Point(64, 157);
             this.lbLop.Name = "lbLop";
-            this.lbLop.Size = new System.Drawing.Size(114, 24);
+            this.lbLop.Size = new System.Drawing.Size(97, 20);
             this.lbLop.TabIndex = 1;
             this.lbLop.Text = "Lớp học:";
             this.lbLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -333,7 +340,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbCapHoc.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCapHoc.Location = new System.Drawing.Point(64, 106);
             this.lbCapHoc.Name = "lbCapHoc";
-            this.lbCapHoc.Size = new System.Drawing.Size(114, 24);
+            this.lbCapHoc.Size = new System.Drawing.Size(97, 20);
             this.lbCapHoc.TabIndex = 1;
             this.lbCapHoc.Text = "Cấp học:";
             this.lbCapHoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -344,7 +351,7 @@ namespace HeThongQuanLyTTHV.QLHV
             this.lbKhoaHoc.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbKhoaHoc.Location = new System.Drawing.Point(64, 57);
             this.lbKhoaHoc.Name = "lbKhoaHoc";
-            this.lbKhoaHoc.Size = new System.Drawing.Size(127, 24);
+            this.lbKhoaHoc.Size = new System.Drawing.Size(108, 20);
             this.lbKhoaHoc.TabIndex = 1;
             this.lbKhoaHoc.Text = "Khóa học:";
             this.lbKhoaHoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -387,7 +394,7 @@ namespace HeThongQuanLyTTHV.QLHV
             // 
             // ThongTinHocVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(962, 810);
