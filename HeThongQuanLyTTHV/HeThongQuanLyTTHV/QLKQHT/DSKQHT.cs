@@ -56,7 +56,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 case Keys.Escape:
                     this.Close();
                     return true;
-                    case Keys.D1:
+                case Keys.D1:
                     Them f = new Them();
                     f.Chucnang = "add";
                     f.Show();
