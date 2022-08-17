@@ -31,6 +31,10 @@ namespace HeThongQuanLyTTHV.QLKQHT
             f.Chucnang = "chinh";
             f.Show();
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -55,7 +59,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 case Keys.Escape:
                     this.Close();
                     return true;
-                    case Keys.D1:
+                case Keys.D1:
                     Them f = new Them();
                     f.Chucnang = "add";
                     f.Show();

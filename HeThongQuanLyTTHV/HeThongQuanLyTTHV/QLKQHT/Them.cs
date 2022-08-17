@@ -53,6 +53,11 @@ namespace HeThongQuanLyTTHV.QLKQHT
             dtNgaySinh.Value = DateTime.Now;
             txtMaPhieu.Focus();
         }
+
+        private void ResetListView()
+        {
+            //có còn làm dì nữa k? đg làm lúc mk bấm lưu thì ds cũng đổi theo lun
+        }
       
         private void GhiFile(string path, List<PhieuKetQua> phieuKetQua)
         {
@@ -84,12 +89,13 @@ namespace HeThongQuanLyTTHV.QLKQHT
                     {
                         string line;
                         string[] att;
-                        
+                        ListViewItem item;
                         while (s.Peek() >= 0)
                         {
                             line = s.ReadLine();
                             att = line.Split(new string[] { "#" }, StringSplitOptions.None);
-                            //p=line.Split(new double, do.None);  
+                            item = new ListViewItem(att);
+                            listView1.Items.Add(item);
                             PhieuKetQua p = new PhieuKetQua(att[0], att[1], att[2],att[3], att[4], 
                                 att[5], att[6], att[7],att[8], att[9], att[10]);
                             listDSP.Add(p);
@@ -105,42 +111,36 @@ namespace HeThongQuanLyTTHV.QLKQHT
 
         private void Them_Load(object sender, EventArgs e)
         {
+            listView1.View = View.Details;
+            listView1.GridLines = true;
+            listView1.FullRowSelect = true;
+
+            listView1.Columns[0].Width = (int)(listView1.Width * 0.09);
+            listView1.Columns[1].Width = (int)(listView1.Width * 0.12);
+            listView1.Columns[2].Width = (int)(listView1.Width * 0.1);
+            listView1.Columns[3].Width = (int)(listView1.Width * 0.1);
+            listView1.Columns[4].Width = (int)(listView1.Width * 0.1);
+            listView1.Columns[5].Width = (int)(listView1.Width * 0.1);
+            listView1.Columns[6].Width = (int)(listView1.Width * 0.1);
+            listView1.Columns[7].Width = (int)(listView1.Width * 0.1);
+            listView1.Columns[8].Width = (int)(listView1.Width * 0.08);
+            listView1.Columns[9].Width = (int)(listView1.Width * 0.1);
+            listView1.Columns[10].Width = (int)(listView1.Width * 0.1);
             DocFile();
             if (chucnang == "add")
             {
                 btXoa.Visible = false;
                 btLuu.Visible = true;
-                listView1.Visible=true;
-                //ĐN columns listview
-                listView1.View = View.Details;
-                listView1.GridLines = true;
-                listView1.FullRowSelect = true;
-
-                listView1.Columns[0].Width = (int)(listView1.Width * 0.09);
-                listView1.Columns[1].Width = (int)(listView1.Width * 0.12);
-                listView1.Columns[2].Width = (int)(listView1.Width * 0.1);
-                listView1.Columns[3].Width = (int)(listView1.Width * 0.1);
-                listView1.Columns[4].Width = (int)(listView1.Width * 0.1);
-                listView1.Columns[5].Width = (int)(listView1.Width * 0.1);
-                listView1.Columns[6].Width = (int)(listView1.Width * 0.1);
-                listView1.Columns[7].Width = (int)(listView1.Width * 0.1);
-                listView1.Columns[8].Width = (int)(listView1.Width * 0.08);
-                listView1.Columns[9].Width = (int)(listView1.Width * 0.1);
-                listView1.Columns[10].Width = (int)(listView1.Width * 0.1);
             }
             if (chucnang =="xoa")
             {
                 btLuu.Visible = false;
                 btXoa.Visible = true;
-                listView1.Visible = false;
-                groupBox4.Visible= false;   
             }
             if (chucnang=="chinh")
             {
                 btLuu.Visible = true;
                 btXoa.Visible = false;
-                listView1.Visible=false;
-                groupBox4.Visible = false;
             }
             
         }
@@ -271,15 +271,32 @@ namespace HeThongQuanLyTTHV.QLKQHT
                         listDSP.Add(p);
                         Reset();
                         MessageBox.Show("lưu thành công");
+                       
                     }
                     if (chucnang == "chinh")
                     {
-                            listDSP.RemoveAt(idVT);
-                            listDSP.Add(p);
-                            MessageBox.Show("Sửa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Reset();
-                    }
+                        listDSP.RemoveAt(idVT);
+                        listDSP.Add(p);
+                        if(listView1.SelectedItems.Count > 0)
+                        {
+                            listView1.SelectedItems[0].SubItems[0].Text = txtMaPhieu.Text;
+                            listView1.SelectedItems[0].SubItems[1].Text = txtHoTen.Text;
+                            listView1.SelectedItems[0].SubItems[2].Text = txtCCCD.Text;
+                            listView1.SelectedItems[0].SubItems[3].Text = txtCap.Text;
+                            listView1.SelectedItems[0].SubItems[4].Text = txtKhoa.Text;
+                            listView1.SelectedItems[0].SubItems[5].Text = txtLop.Text;
+                            listView1.SelectedItems[0].SubItems[6].Text =txtSDT.Text;
+                            listView1.SelectedItems[0].SubItems[7].Text = dtNgaySinh.Value.ToString();
+                            listView1.SelectedItems[0].SubItems[8].Text = txtDiem.Text;
+                            listView1.SelectedItems[0].SubItems[9].Text = (rbNam.Checked) ? "nam" : "nữ";
+                            listView1.SelectedItems[0].SubItems[10].Text = txtGhiChu.Text;
+                            //tuong tu nef lafm di
+                        }
+                        MessageBox.Show("Sửa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Reset();
+                    }      
                 }
+               
             }
             catch (Exception ex)
             {
@@ -289,7 +306,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            Luu();
+            Luu(); 
         }
 
         private void txtDiem_KeyPress(object sender, KeyPressEventArgs e)
@@ -327,6 +344,31 @@ namespace HeThongQuanLyTTHV.QLKQHT
         {
             path = Application.StartupPath + @"\Data\DSP.txt";
             GhiFile(path, listDSP);
+        }
+
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int i;
+            i = listView1.FocusedItem.Index;
+            txtMaPhieu.Text = listDSP[i].MaPhieu;
+            txtHoTen.Text = listDSP[i].HoTen;
+            txtCCCD.Text = listDSP[i].Cccd;
+            txtCap.Text = listDSP[i].CapHoc;
+            txtKhoa.Text = listDSP[i].KhoaHoc;
+            txtLop.Text = listDSP[i].Lop;
+            txtSDT.Text = listDSP[i].Sdt;
+            dtNgaySinh.Value = DateTime.Parse(listDSP[i].Ngaysinh);
+            txtDiem.Text = listDSP[i].Diem.ToString();
+            txtGhiChu.Text = listDSP[i].GhiChu;
+            if (listDSP[i].GioiTinh =="nam")
+            {
+                rbNam.Checked = true;
+            }
+            else
+            {
+                rbNu.Checked = true;
+            }
+            txtHoTen.Focus();
         }
 
         protected override bool ProcessDialogKey(Keys keyData)
