@@ -100,7 +100,6 @@
             this.rbNu.TabStop = true;
             this.rbNu.Text = "Nữ";
             this.rbNu.UseVisualStyleBackColor = true;
-            this.rbNu.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // rbNam
             // 
@@ -114,7 +113,6 @@
             this.rbNam.TabStop = true;
             this.rbNam.Text = "Nam";
             this.rbNam.UseVisualStyleBackColor = true;
-            this.rbNam.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // lbSDT
             // 
@@ -173,7 +171,6 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(211, 27);
             this.txtSDT.TabIndex = 33;
-            this.txtSDT.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
             // txtCCCD
@@ -183,7 +180,6 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(209, 27);
             this.txtCCCD.TabIndex = 29;
-            this.txtCCCD.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
             // txtHoTen
@@ -205,11 +201,11 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(95, 328);
+            this.txtGhiChu.Location = new System.Drawing.Point(100, 319);
             this.txtGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(1118, 120);
+            this.txtGhiChu.Size = new System.Drawing.Size(1118, 93);
             this.txtGhiChu.TabIndex = 1;
             this.txtGhiChu.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
@@ -220,14 +216,13 @@
             this.txtDiem.Name = "txtDiem";
             this.txtDiem.Size = new System.Drawing.Size(97, 27);
             this.txtDiem.TabIndex = 31;
-            this.txtDiem.Click += new System.EventHandler(this.txtHoTen_Click);
             this.txtDiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiem_KeyPress);
             // 
             // lbGhiChu
             // 
             this.lbGhiChu.AutoSize = true;
             this.lbGhiChu.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGhiChu.Location = new System.Drawing.Point(91, 306);
+            this.lbGhiChu.Location = new System.Drawing.Point(96, 297);
             this.lbGhiChu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbGhiChu.Name = "lbGhiChu";
             this.lbGhiChu.Size = new System.Drawing.Size(79, 20);
@@ -247,7 +242,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Courier New", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(372, 9);
+            this.label1.Location = new System.Drawing.Point(377, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(600, 43);
@@ -301,7 +296,7 @@
             this.groupBox2.Controls.Add(this.lbMaPhieu);
             this.groupBox2.Controls.Add(this.txtMaPhieu);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(95, 54);
+            this.groupBox2.Location = new System.Drawing.Point(100, 45);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -327,7 +322,7 @@
             this.groupBox3.Controls.Add(this.txtCap);
             this.groupBox3.Controls.Add(this.txtKhoa);
             this.groupBox3.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(95, 221);
+            this.groupBox3.Location = new System.Drawing.Point(100, 212);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -343,7 +338,6 @@
             this.txtLop.Name = "txtLop";
             this.txtLop.Size = new System.Drawing.Size(211, 27);
             this.txtLop.TabIndex = 28;
-            this.txtLop.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtCap
             // 
@@ -352,7 +346,6 @@
             this.txtCap.Name = "txtCap";
             this.txtCap.Size = new System.Drawing.Size(211, 27);
             this.txtCap.TabIndex = 28;
-            this.txtCap.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // txtKhoa
             // 
@@ -361,7 +354,6 @@
             this.txtKhoa.Name = "txtKhoa";
             this.txtKhoa.Size = new System.Drawing.Size(229, 27);
             this.txtKhoa.TabIndex = 28;
-            this.txtKhoa.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // listView1
             // 
@@ -379,13 +371,14 @@
             this.GhiChu});
             this.listView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(15, 26);
+            this.listView1.Location = new System.Drawing.Point(10, 27);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1101, 199);
+            this.listView1.Size = new System.Drawing.Size(1101, 237);
             this.listView1.TabIndex = 73;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // ma
             // 
@@ -444,11 +437,11 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.listView1);
-            this.groupBox4.Location = new System.Drawing.Point(95, 452);
+            this.groupBox4.Location = new System.Drawing.Point(100, 416);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(1141, 241);
+            this.groupBox4.Size = new System.Drawing.Size(1118, 268);
             this.groupBox4.TabIndex = 74;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách";
@@ -456,10 +449,10 @@
             // btThoat
             // 
             this.btThoat.BackColor = System.Drawing.Color.LightCyan;
-            this.btThoat.Location = new System.Drawing.Point(1114, 707);
+            this.btThoat.Location = new System.Drawing.Point(1096, 688);
             this.btThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(122, 69);
+            this.btThoat.Size = new System.Drawing.Size(122, 57);
             this.btThoat.TabIndex = 3;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = false;
@@ -468,10 +461,10 @@
             // btXoa
             // 
             this.btXoa.BackColor = System.Drawing.Color.LightCyan;
-            this.btXoa.Location = new System.Drawing.Point(974, 707);
+            this.btXoa.Location = new System.Drawing.Point(956, 688);
             this.btXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(122, 69);
+            this.btXoa.Size = new System.Drawing.Size(122, 57);
             this.btXoa.TabIndex = 49;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = false;
@@ -480,10 +473,10 @@
             // btLuu
             // 
             this.btLuu.BackColor = System.Drawing.Color.LightCyan;
-            this.btLuu.Location = new System.Drawing.Point(974, 707);
+            this.btLuu.Location = new System.Drawing.Point(956, 688);
             this.btLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btLuu.Name = "btLuu";
-            this.btLuu.Size = new System.Drawing.Size(122, 69);
+            this.btLuu.Size = new System.Drawing.Size(122, 57);
             this.btLuu.TabIndex = 2;
             this.btLuu.Text = "Lưu";
             this.btLuu.UseVisualStyleBackColor = false;
