@@ -53,6 +53,11 @@ namespace HeThongQuanLyTTHV.QLKQHT
             dtNgaySinh.Value = DateTime.Now;
             txtMaPhieu.Focus();
         }
+
+        private void ResetListView()
+        {
+            //có còn làm dì nữa k? đg làm lúc mk bấm lưu thì ds cũng đổi theo lun
+        }
       
         private void GhiFile(string path, List<PhieuKetQua> phieuKetQua)
         {
@@ -272,6 +277,21 @@ namespace HeThongQuanLyTTHV.QLKQHT
                     {
                         listDSP.RemoveAt(idVT);
                         listDSP.Add(p);
+                        if(listView1.SelectedItems.Count > 0)
+                        {
+                            listView1.SelectedItems[0].SubItems[0].Text = txtMaPhieu.Text;
+                            listView1.SelectedItems[0].SubItems[1].Text = txtHoTen.Text;
+                            listView1.SelectedItems[0].SubItems[2].Text = txtCCCD.Text;
+                            listView1.SelectedItems[0].SubItems[3].Text = txtCap.Text;
+                            listView1.SelectedItems[0].SubItems[4].Text = txtKhoa.Text;
+                            listView1.SelectedItems[0].SubItems[5].Text = txtLop.Text;
+                            listView1.SelectedItems[0].SubItems[6].Text =txtSDT.Text;
+                            listView1.SelectedItems[0].SubItems[7].Text = dtNgaySinh.Value.ToString();
+                            listView1.SelectedItems[0].SubItems[8].Text = txtDiem.Text;
+                            listView1.SelectedItems[0].SubItems[9].Text = (rbNam.Checked) ? "nam" : "nữ";
+                            listView1.SelectedItems[0].SubItems[10].Text = txtGhiChu.Text;
+                            //tuong tu nef lafm di
+                        }
                         MessageBox.Show("Sửa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Reset();
                     }      
@@ -329,7 +349,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int i;
-            string gtinh ="";
             i = listView1.FocusedItem.Index;
             txtMaPhieu.Text = listDSP[i].MaPhieu;
             txtHoTen.Text = listDSP[i].HoTen;
@@ -341,7 +360,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             dtNgaySinh.Value = DateTime.Parse(listDSP[i].Ngaysinh);
             txtDiem.Text = listDSP[i].Diem.ToString();
             txtGhiChu.Text = listDSP[i].GhiChu;
-            if (gtinh=="nam")
+            if (listDSP[i].GioiTinh =="nam")
             {
                 rbNam.Checked = true;
             }
