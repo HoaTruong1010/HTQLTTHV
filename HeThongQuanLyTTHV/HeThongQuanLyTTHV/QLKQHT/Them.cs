@@ -28,7 +28,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             InitializeComponent();
         }
 
-        string path;
+        string path, click;
         int viTri = -1, idVT;
         
         private int TimKiem(String x)
@@ -54,11 +54,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
             txtMaPhieu.Focus();
         }
 
-        private void ResetListView()
-        {
-            //có còn làm dì nữa k? đg làm lúc mk bấm lưu thì ds cũng đổi theo lun
-        }
-      
         private void GhiFile(string path, List<PhieuKetQua> phieuKetQua)
         {
             if (File.Exists(path))
@@ -168,11 +163,11 @@ namespace HeThongQuanLyTTHV.QLKQHT
 
         private void txtHoTen_Click(object sender, EventArgs e)
         {
-            viTri = TimKiem(txtMaPhieu.Text);
-            try
-            {
-                if (viTri != -1)
+          viTri = TimKiem(txtMaPhieu.Text);
+                try
                 {
+                    if (viTri != -1)
+                    {
                         if (chucnang == "add")
                         {
                             MessageBox.Show("Phiếu kết quả đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
@@ -204,24 +199,25 @@ namespace HeThongQuanLyTTHV.QLKQHT
                                 rbNam.Checked = false;
                                 rbNu.Checked = true;
                             }
-                        } 
-                }
-                if(txtDiem.Text != String.Empty)
-                {
-                    double score = double.Parse(txtDiem.Text);
-                    if(score > 10)
+                        }
+                    }
+                    if (txtDiem.Text != String.Empty)
                     {
-                        MessageBox.Show("Vui lòng nhập giá trị từ 0 đến 10!", "Notification",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtDiem.Text = String.Empty;
-                        txtDiem.Focus();
+                        double score = double.Parse(txtDiem.Text);
+                        if (score > 10)
+                        {
+                            MessageBox.Show("Vui lòng nhập giá trị từ 0 đến 10!", "Notification",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtDiem.Text = String.Empty;
+                            txtDiem.Focus();
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                } 
+            
         }
 
         private void Luu()
@@ -290,7 +286,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
                             listView1.SelectedItems[0].SubItems[8].Text = txtDiem.Text;
                             listView1.SelectedItems[0].SubItems[9].Text = (rbNam.Checked) ? "nam" : "nữ";
                             listView1.SelectedItems[0].SubItems[10].Text = txtGhiChu.Text;
-                            //tuong tu nef lafm di
                         }
                         MessageBox.Show("Sửa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Reset();
@@ -321,11 +316,13 @@ namespace HeThongQuanLyTTHV.QLKQHT
 
         private void Xoa()
         {
-            if (viTri != -1)
+            if (viTri != -1||click=="true")
             {
                 listDSP.RemoveAt(idVT);
                 MessageBox.Show("Xóa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Reset();
+                listView1.Items.RemoveAt(idVT);
+                click = "";
             }
             else
             {
@@ -350,17 +347,17 @@ namespace HeThongQuanLyTTHV.QLKQHT
         {
             int i;
             i = listView1.FocusedItem.Index;
-            txtMaPhieu.Text = listDSP[i].MaPhieu;
-            txtHoTen.Text = listDSP[i].HoTen;
-            txtCCCD.Text = listDSP[i].Cccd;
-            txtCap.Text = listDSP[i].CapHoc;
-            txtKhoa.Text = listDSP[i].KhoaHoc;
-            txtLop.Text = listDSP[i].Lop;
-            txtSDT.Text = listDSP[i].Sdt;
-            dtNgaySinh.Value = DateTime.Parse(listDSP[i].Ngaysinh);
-            txtDiem.Text = listDSP[i].Diem.ToString();
-            txtGhiChu.Text = listDSP[i].GhiChu;
-            if (listDSP[i].GioiTinh =="nam")
+            txtMaPhieu.Text = listView1.Items[i].SubItems[0].Text;
+            txtHoTen.Text = listView1.Items[i].SubItems[1].Text;
+            txtCCCD.Text = listView1.Items[i].SubItems[2].Text;
+            txtCap.Text = listView1.Items[i].SubItems[3].Text;
+            txtKhoa.Text = listView1.Items[i].SubItems[4].Text;
+            txtLop.Text = listView1.Items[i].SubItems[5].Text;
+            txtSDT.Text = listView1.Items[i].SubItems[6].Text;
+            dtNgaySinh.Text = listView1.Items[i].SubItems[7].Text;
+            txtDiem.Text = listView1.Items[i].SubItems[8].Text;
+            txtGhiChu.Text = listView1.Items[i].SubItems[10].Text;
+            if (listView1.Items[i].SubItems[9].Text =="nam")
             {
                 rbNam.Checked = true;
             }
@@ -368,7 +365,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             {
                 rbNu.Checked = true;
             }
-            txtHoTen.Focus();
+            click = "true";
         }
 
         protected override bool ProcessDialogKey(Keys keyData)
