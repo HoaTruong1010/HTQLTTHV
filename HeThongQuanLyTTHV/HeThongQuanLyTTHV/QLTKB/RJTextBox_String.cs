@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace HeThongQuanLyTTHV.QLTKB
 {
-    public partial class RJTextBox : UserControl
+    public partial class RJTextBox_Str : UserControl
     {
         private int borderSize = 1;
         private Color borderColor = Color.MediumVioletRed;
         private bool underlineStyle = false;
 
-        public RJTextBox()
+        public RJTextBox_Str()
         {
             InitializeComponent();
         }
 
-        [Category("Custom TextBox_Digit")]
+        [Category("Custom TextBox_String")]
         public int BorderSize
         {
             get => borderSize;
@@ -33,7 +33,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             }
         }
 
-        [Category("Custom TextBox_Digit")]
+        [Category("Custom TextBox_String")]
         public Color BorderColor
         {
             get => borderColor;
@@ -44,7 +44,7 @@ namespace HeThongQuanLyTTHV.QLTKB
             }
         }
 
-        [Category("Custom TextBox_Digit")]
+        [Category("Custom TextBox_String")]
         public bool UnderlineStyle 
         { 
             get => underlineStyle;
@@ -55,11 +55,11 @@ namespace HeThongQuanLyTTHV.QLTKB
             }
         }
 
-        [Category("Custom TextBox_Digit")]
+        [Category("Custom TextBox_String")]
         public string Texts
         {
-            get => textBoxDigit.Text;
-            set => textBoxDigit.Text = value;
+            get => textBoxStr.Text;
+            set => textBoxStr.Text = value;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -92,23 +92,14 @@ namespace HeThongQuanLyTTHV.QLTKB
 
         private void UpdateHeight()
         {
-            if(textBoxDigit.Multiline == false)
+            if(textBoxStr.Multiline == false)
             {
                 int txtHeight = TextRenderer.MeasureText("Text", this.Font).Height + 1;
-                textBoxDigit.Multiline = true;
-                textBoxDigit.MinimumSize = new Size(0, txtHeight);
-                textBoxDigit.Multiline = false;
-                this.Height = textBoxDigit.Height + this.Padding.Top + this.Padding.Bottom;
+                textBoxStr.Multiline = true;
+                textBoxStr.MinimumSize = new Size(0, txtHeight);
+                textBoxStr.Multiline = false;
+                this.Height = textBoxStr.Height + this.Padding.Top + this.Padding.Bottom;
             }    
-        }
-
-        private void TextBoxDigit_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Vui lòng nhập vào 1 số!");
-            }
         }
     }
 }

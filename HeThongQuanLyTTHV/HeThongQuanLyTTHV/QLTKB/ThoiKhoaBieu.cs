@@ -29,7 +29,7 @@ namespace HeThongQuanLyTTHV.QLTKB
         public int SoBuoi { get => soBuoi; set => soBuoi = value; }
         public int SoLuongHV { get => soLuongHV; set => soLuongHV = value; }
 
-        public ThoiKhoaBieu(string maLich, string tenKH, string capLop, string lop, string thu, string khungGioHoc, string phong, string tenGV, string soBuoi, string soLuongHV)
+        public ThoiKhoaBieu(string maLich, string tenKH, string capLop, string lop, string soBuoi, string soLuongHV, string thu, string khungGioHoc, string phong, string tenGV)
         {
             this.MaLich = maLich;
             this.TenKH = tenKH;
