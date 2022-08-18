@@ -93,13 +93,14 @@ namespace HeThongQuanLyTTHV
             // 
             // labelTitle
             // 
+            this.labelTitle.BackColor = System.Drawing.SystemColors.Control;
             this.labelTitle.Font = new System.Drawing.Font("Courier New", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.Brown;
-            this.labelTitle.Location = new System.Drawing.Point(0, 31);
+            this.labelTitle.Location = new System.Drawing.Point(0, 27);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(644, 441);
-            this.labelTitle.TabIndex = 1;
+            this.labelTitle.TabIndex = 3;
             this.labelTitle.Text = "Hệ thống quản lý học viên";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -111,6 +112,7 @@ namespace HeThongQuanLyTTHV
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.menuMain);
             this.Font = new System.Drawing.Font("Courier New", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuMain;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmMain";

@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-1a#xyz#345#c1#k21#l1#01235#8/14/2022 6:57:31 PM#9#nam#None
-1b#yqz#2310#c1#k23#l1#01455#8/14/2022 8:23:52 PM#8.2#nữ#None
-sgdf#fdg#98895#yjy#hujyu#thyt#7887#8/14/2022 9:09:02 PM#1.3#nam#None
-ds#gfd#544#dfd#fdafc#dasf#45#8/14/2022 10:33:45 PM#4.6#nam#dsf
-bvj#hjk#415#yjt#ytj#ytuj#515#8/14/2022 11:19:42 PM#2.23#nam#ytj
-fdsfd#fdfdsvsfd#5454#đsfdfff#sds#sffs#5545#8/5/2022 2:24:44 PM#5#nữ#fffd f f
-sdcs#đá#525#fdsfs#grff#dgfds#5665#8/15/2022 10:19:46 PM#5#nam#None
-fgsdg#getg5#5454#thr#retgr#rgtr#554#8/15/2022 10:50:13 PM#4#nam#None
-vhf#cnh5#8787#gfdf#dtht#tdht#5757#8/15/2022 10:33:15 PM#5#nữ#hgdh
-1u#ád#123#uioj#jhgj#bnn #0245#8/15/2022 11:03:22 PM#9#nữ#None
-1r#dsvd#64#4#4#4#4#8/15/2022 11:52:51 PM#4#nam#None
-12344#123#243#2245#5433#333#444444#8/17/2022 7:58:29 PM#5#nữ#3333
-=======
-1a#io#342#bnc#nvnf#gn#3243#8/17/2022 10:06:40 PM#2#nữ#hgmhg
->>>>>>> main
+1b#dfd#1#de#dfds#dfd#2#7/31/2022 10:57:35 PM#1#nam#None
+1c#dfd#1#de#dfds#dfd#2#7/31/2022 10:57:35 PM#1#nam#None
+1a#fvsf#2#sdfds#dsfsd#dsf#3#8/12/2022 10:57:21 PM#2#nữ#khong

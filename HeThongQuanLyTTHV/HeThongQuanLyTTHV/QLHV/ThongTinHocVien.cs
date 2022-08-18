@@ -166,7 +166,7 @@ namespace HeThongQuanLyTTHV.QLHV
             index = idTemp = -1;
             exit = false;
             txtID.Focus();
-            StudentListFromFile();
+            StudentListFromFile();            
 
             path = Application.StartupPath + @"\Data\SubjectList.txt";
 
@@ -230,7 +230,8 @@ namespace HeThongQuanLyTTHV.QLHV
                         case "Edit":
                             if(idTemp > -1)
                             {
-                                if(SearchStudent(h.Id) > -1)
+                                string oldID = hvSelected.Id;
+                                if(SearchStudent(h.Id) > -1 && oldID != txtID.Text)
                                 {
                                     MessageBox.Show("Số CCCD/CMND đã tồn tại!",
                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -283,22 +284,31 @@ namespace HeThongQuanLyTTHV.QLHV
                     }
                     if (e.KeyChar == (char)Keys.Enter && txtID.Text != "")
                     {
-                        index = SearchStudent(txtID.Text);
-                        if (chucNang == "Edit" || chucNang == "Delete")
+                        if(txtID.Text.Length == 9 || txtID.Text.Length == 12)
                         {
-                            idTemp = index;
-                            if(index > -1)
+                            index = SearchStudent(txtID.Text);
+                            if (chucNang == "Edit" || chucNang == "Delete")
                             {
-                                hvSelected = listHV[index];
-                                FillInfomations(hvSelected);
-                            }    
-                            else
-                            {
-                                MessageBox.Show("Học viên không tồn tại!",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                Reset();
+                                idTemp = index;
+                                if (index > -1)
+                                {
+                                    hvSelected = listHV[index];
+                                    FillInfomations(hvSelected);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Học viên không tồn tại!",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    Reset();
+                                }
                             }
+                            txtName.Focus();
                         }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng nhập đúng 9 hoặc 12 số!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        
                     }
                     break;
                 case "txtName":
@@ -316,7 +326,13 @@ namespace HeThongQuanLyTTHV.QLHV
                         MessageBox.Show("Vui lòng nhập vào 1 số!");
                     }
                     if (e.KeyChar == (char)Keys.Enter && txtPhone.Text != "")
-                        txtAdress.Focus();
+                    {
+                        if(txtPhone.Text.Length == 10 || txtPhone.Text.Length == 9)
+                            txtAdress.Focus();
+                        else
+                            MessageBox.Show("Vui lòng nhập đúng 9 hoặc 10 số!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }    
+                        
                     break;
                 default:
                     break;
@@ -326,16 +342,25 @@ namespace HeThongQuanLyTTHV.QLHV
         private void txtName_Click(object sender, EventArgs e)
         {
             if(txtID.Text != "")
-            {
-                index = SearchStudent(txtID.Text);
-                if (index > -1)
+            { 
+                if(txtID.Text.Length == 9 || txtID.Text.Length == 12)
                 {
-                    if (chucNang == "Add")
+                    index = SearchStudent(txtID.Text);
+                    if (index > -1)
                     {
-                        MessageBox.Show("Học viên đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
-                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Reset();
+                        if (chucNang == "Add")
+                        {
+                            MessageBox.Show("Học viên đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Reset();
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng 9 hoặc 12 số!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtID.Focus();
+                    txtID.SelectionStart = txtID.Text.Length;
                 }
             }
         }

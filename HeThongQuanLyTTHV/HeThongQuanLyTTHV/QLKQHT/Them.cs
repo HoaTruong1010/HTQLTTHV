@@ -28,7 +28,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             InitializeComponent();
         }
 
-        string path;
+        string path, click;
         int viTri = -1, idVT;
         
         private int TimKiem(String x)
@@ -52,11 +52,6 @@ namespace HeThongQuanLyTTHV.QLKQHT
                 = txtLop.Text = txtMaPhieu.Text = txtSDT.Text = "";
             dtNgaySinh.Value = DateTime.Now;
             txtMaPhieu.Focus();
-        }
-
-        private void ResetListView()
-        {
-            //có còn làm dì nữa k? đg làm lúc mk bấm lưu thì ds cũng đổi theo lun
         }
       
         private void GhiFile(string path, List<PhieuKetQua> phieuKetQua)
@@ -173,38 +168,38 @@ namespace HeThongQuanLyTTHV.QLKQHT
             {
                 if (viTri != -1)
                 {
-                        if (chucnang == "add")
-                        {
-                            MessageBox.Show("Phiếu kết quả đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Reset();
+                    if (chucnang == "add")
+                    {
+                        MessageBox.Show("Phiếu kết quả đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Reset();
 
+                    }
+
+                    if (chucnang == "chinh" || chucnang == "xoa")
+                    {
+                        idVT = viTri;
+                        txtHoTen.Text = listDSP[viTri].HoTen;
+                        txtKhoa.Text = listDSP[viTri].KhoaHoc;
+                        txtLop.Text = listDSP[viTri].Lop;
+                        txtSDT.Text = listDSP[viTri].Sdt;
+                        txtCap.Text = listDSP[viTri].CapHoc;
+                        txtMaPhieu.Text = listDSP[viTri].MaPhieu;
+                        txtGhiChu.Text = listDSP[viTri].GhiChu;
+                        txtDiem.Text = listDSP[viTri].Diem.ToString();
+                        dtNgaySinh.Value = DateTime.Parse(listDSP[viTri].Ngaysinh);
+                        txtCCCD.Text = listDSP[viTri].Cccd;
+                        if (listDSP[viTri].GioiTinh == "Nam")
+                        {
+                            rbNam.Checked = true;
+                            rbNu.Checked = false;
                         }
-
-                        if (chucnang == "chinh" || chucnang == "xoa")
+                        else
                         {
-                            idVT = viTri;
-                            txtHoTen.Text = listDSP[viTri].HoTen;
-                            txtKhoa.Text = listDSP[viTri].KhoaHoc;
-                            txtLop.Text = listDSP[viTri].Lop;
-                            txtSDT.Text = listDSP[viTri].Sdt;
-                            txtCap.Text = listDSP[viTri].CapHoc;
-                            txtMaPhieu.Text = listDSP[viTri].MaPhieu;
-                            txtGhiChu.Text = listDSP[viTri].GhiChu;
-                            txtDiem.Text = listDSP[viTri].Diem.ToString();
-                            dtNgaySinh.Value = DateTime.Parse(listDSP[viTri].Ngaysinh);
-                            txtCCCD.Text = listDSP[viTri].Cccd;
-                            if (listDSP[viTri].GioiTinh == "Nam")
-                            {
-                                rbNam.Checked = true;
-                                rbNu.Checked = false;
-                            }
-                            else
-                            {
-                                rbNam.Checked = false;
-                                rbNu.Checked = true;
-                            }
-                        } 
+                            rbNam.Checked = false;
+                            rbNu.Checked = true;
+                        }
+                    } 
                 }
                 if(txtDiem.Text != String.Empty)
                 {
@@ -321,11 +316,13 @@ namespace HeThongQuanLyTTHV.QLKQHT
 
         private void Xoa()
         {
-            if (viTri != -1)
+            if (viTri != -1 || click == "true")
             {
                 listDSP.RemoveAt(idVT);
                 MessageBox.Show("Xóa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Reset();
+                listView1.Items.RemoveAt(idVT);
+                click = "";
             }
             else
             {
@@ -350,17 +347,17 @@ namespace HeThongQuanLyTTHV.QLKQHT
         {
             int i;
             i = listView1.FocusedItem.Index;
-            txtMaPhieu.Text = listDSP[i].MaPhieu;
-            txtHoTen.Text = listDSP[i].HoTen;
-            txtCCCD.Text = listDSP[i].Cccd;
-            txtCap.Text = listDSP[i].CapHoc;
-            txtKhoa.Text = listDSP[i].KhoaHoc;
-            txtLop.Text = listDSP[i].Lop;
-            txtSDT.Text = listDSP[i].Sdt;
-            dtNgaySinh.Value = DateTime.Parse(listDSP[i].Ngaysinh);
-            txtDiem.Text = listDSP[i].Diem.ToString();
-            txtGhiChu.Text = listDSP[i].GhiChu;
-            if (listDSP[i].GioiTinh =="nam")
+            txtMaPhieu.Text = listView1.Items[i].SubItems[0].Text;
+            txtHoTen.Text = listView1.Items[i].SubItems[1].Text;
+            txtCCCD.Text = listView1.Items[i].SubItems[2].Text;
+            txtCap.Text = listView1.Items[i].SubItems[3].Text;
+            txtKhoa.Text = listView1.Items[i].SubItems[4].Text;
+            txtLop.Text = listView1.Items[i].SubItems[5].Text;
+            txtSDT.Text = listView1.Items[i].SubItems[6].Text;
+            dtNgaySinh.Text = listView1.Items[i].SubItems[7].Text;
+            txtDiem.Text = listView1.Items[i].SubItems[8].Text;
+            txtGhiChu.Text = listView1.Items[i].SubItems[10].Text;
+            if (listView1.Items[i].SubItems[9].Text == "nam")
             {
                 rbNam.Checked = true;
             }
@@ -368,7 +365,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             {
                 rbNu.Checked = true;
             }
-            txtHoTen.Focus();
+            click = "true";
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

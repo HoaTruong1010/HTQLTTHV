@@ -34,7 +34,7 @@ namespace HeThongQuanLyTTHV.QLHV
             {
                 foreach (ColumnHeader item in listHV.Columns)
                 {
-                    item.Width = (int)(listHV.Width * (0.1));
+                    item.Width = (int)(ClientRectangle.Width * (0.1));
                 }
                 if (File.Exists(path))
                 {
@@ -95,6 +95,7 @@ namespace HeThongQuanLyTTHV.QLHV
             StudentListFromFile();
             btDel.Visible = btEdit.Visible = false;
             trangThai = false;
+            listHV.Width = ClientRectangle.Width - 10;
         }
 
         private void btSort_Click(object sender, EventArgs e)

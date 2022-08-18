@@ -17,18 +17,39 @@ namespace HeThongQuanLyTTHV
             InitializeComponent();
         }
 
+       
+
         private void quanLyTTHV_Click(object sender, EventArgs e)
         {
-            QLHV.DanhSachHocVien main = new QLHV.DanhSachHocVien();
-            main.Show();
+            QLHV.DanhSachHocVien mainQLHV = new QLHV.DanhSachHocVien();
+            mainQLHV.MdiParent = this;
+            labelTitle.SendToBack();
+            mainQLHV.Show();
         }
 
         private void quanLyKQHT_Click(object sender, EventArgs e)
         {
             QLKQHT.DSKQHT main = new QLKQHT.DSKQHT();
+            main.MdiParent = this;
+            labelTitle.SendToBack();
+            main.Show();
+        }
+        private void quanLyTKB_Click(object sender, EventArgs e)
+        {
+            QLTKB.QLLH main = new QLTKB.QLLH();
+            main.MdiParent = this;
+            labelTitle.SendToBack();
             main.Show();
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            FontFamily f = new FontFamily("Courier New");
+            labelTitle.Width = ClientRectangle.Width;
+            labelTitle.Height = ClientRectangle.Height - menuMain.Height;
+            labelTitle.Font = new Font(f, 40);
+            menuMain.Font = new Font(f, 13);
+        }
         private void exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -41,19 +62,5 @@ namespace HeThongQuanLyTTHV
                 e.Cancel = true;
         }
 
-        private void quanLyTKB_Click(object sender, EventArgs e)
-        {
-            QLTKB.QLLH main = new QLTKB.QLLH();
-            main.Show();
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            FontFamily f = new FontFamily("Courier New");
-            labelTitle.Width = ClientRectangle.Width;
-            labelTitle.Height = ClientRectangle.Height - menuMain.Height;
-            labelTitle.Font = new Font(f,40);
-            menuMain.Font = new Font(f, 13);
-        }
     }
 }

@@ -31,10 +31,7 @@ namespace HeThongQuanLyTTHV.QLKQHT
             f.Chucnang = "chinh";
             f.Show();
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> main
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
