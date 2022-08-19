@@ -8,14 +8,12 @@ namespace HeThongQuanLyTTHV.QLHV
     public partial class ThongTinHocVien : Form
     {
         private string chucNang;
-        private HocVien hvSelected;
-        private bool exit; 
+        private HocVien hvSelected = new HocVien();
         private List<HocVien> listHV = new List<HocVien>(1000);
 
         public string ChucNang { get => chucNang; set => chucNang = value; }
         internal List<HocVien> ListHV { get => listHV; set => listHV = value; }
         internal HocVien HvSelected { get => hvSelected; set => hvSelected = value; }
-        public bool Exit { get => exit; set => exit = value; }
 
         public ThongTinHocVien()
         {
@@ -23,7 +21,7 @@ namespace HeThongQuanLyTTHV.QLHV
         }
 
         string path;
-        int index, idTemp ;
+        int index, idTemp, trangThai = 0;
         string selectedText;
 
         private void GhiFileStudentList(string path, List<HocVien> ts)
@@ -164,7 +162,6 @@ namespace HeThongQuanLyTTHV.QLHV
         private void ThongTinHocVien_Load(object sender, EventArgs e)
         {
             index = idTemp = -1;
-            exit = false;
             txtID.Focus();
             StudentListFromFile();            
 
@@ -194,6 +191,8 @@ namespace HeThongQuanLyTTHV.QLHV
                 default:
                     btDel.Visible = false;
                     btSave.Visible = true;
+                    if(hvSelected.Id != null)
+                        FillInfomations(hvSelected);
                     break;
             }      
         }
@@ -203,8 +202,6 @@ namespace HeThongQuanLyTTHV.QLHV
             path = Application.StartupPath + @"\Data\StudentList.txt";
             GhiFileStudentList(path, ListHV);
             this.Close();
-            DanhSachHocVien fDS = new DanhSachHocVien();
-            fDS.Show();
         }
 
         private void btSave_Click(object sender, EventArgs e)
@@ -225,42 +222,62 @@ namespace HeThongQuanLyTTHV.QLHV
                     HocVien h = new HocVien(txtID.Text, txtName.Text, dtpDOB.Value.ToString(), gender, txtEmail.Text,
                         txtPhone.Text, txtAdress.Text, cbKhoaHoc.SelectedItem.ToString(), cbCapHoc.SelectedItem.ToString(),
                          cbLop.SelectedItem.ToString());
-                    switch (chucNang)
+                    if (h.Id.Length == 9 || h.Id.Length == 12)
                     {
-                        case "Edit":
-                            if(idTemp > -1)
+                        if (h.PhoneNumber.Length == 9 || h.PhoneNumber.Length == 10)
+                        {
+                            switch (chucNang)
                             {
-                                string oldID = hvSelected.Id;
-                                if(SearchStudent(h.Id) > -1 && oldID != txtID.Text)
-                                {
-                                    MessageBox.Show("Số CCCD/CMND đã tồn tại!",
-                                   "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    txtID.Focus();
-                                    txtID.SelectionStart = txtID.Text.Length;
-                                }
-                                else
-                                {
-                                    listHV.RemoveAt(idTemp);
-                                    listHV.Add(h);
-                                    MessageBox.Show("Lưu thành công!");
-                                    Reset();
-                                    Exit = true;
-                                }
+                                case "Edit":
+                                    if(idTemp > -1)
+                                    {                                
+                                        string oldID = hvSelected.Id;
+                                        if (SearchStudent(h.Id) > -1 && oldID != txtID.Text)
+                                        {
+                                            MessageBox.Show("Số CCCD/CMND đã tồn tại!",
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            txtID.Focus();
+                                            txtID.SelectionStart = txtID.Text.Length;
+                                        }
+                                        else
+                                        {
+                                            listHV.RemoveAt(idTemp);
+                                            listHV.Add(h);
+                                            MessageBox.Show("Lưu thành công!");
+                                            trangThai = 1;
+                                            path = Application.StartupPath + @"\Data\StudentList.txt";
+                                            GhiFileStudentList(path, ListHV);
+                                            this.Close();
+                                        }
+                                    
+                                    }
+                                    break;
+                                case "Add":
+                                    if (index > -1 && listHV[index].KhoaHoc == cbKhoaHoc.SelectedItem.ToString() &&
+                                        listHV[index].CapHoc == cbCapHoc.SelectedItem.ToString() &&
+                                        listHV[index].Lop == cbLop.SelectedItem.ToString())
+                                    {
+                                        MessageBox.Show("Học viên đã tồn tại!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    else
+                                    {
+                                        listHV.Add(h);
+                                        MessageBox.Show("Lưu thành công!");
+                                        Reset();
+                                    }
+                                    break;
+                                default:
+                                    break;
                             }
-                            else
-                            {
-                                MessageBox.Show("Học viên không tồn tại!",
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                Reset();
-                            }
-                            break;
-                        case "Add":
-                            listHV.Add(h);
-                            MessageBox.Show("Lưu thành công!");
-                            Reset();
-                            break;
-                        default:
-                            break;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng nhập đúng SĐT 9 hoặc 10 số!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng nhập đúng số CMND/CCCC 9 hoặc 12 số!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -287,21 +304,6 @@ namespace HeThongQuanLyTTHV.QLHV
                         if(txtID.Text.Length == 9 || txtID.Text.Length == 12)
                         {
                             index = SearchStudent(txtID.Text);
-                            if (chucNang == "Edit" || chucNang == "Delete")
-                            {
-                                idTemp = index;
-                                if (index > -1)
-                                {
-                                    hvSelected = listHV[index];
-                                    FillInfomations(hvSelected);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Học viên không tồn tại!",
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    Reset();
-                                }
-                            }
                             txtName.Focus();
                         }
                         else
@@ -346,19 +348,10 @@ namespace HeThongQuanLyTTHV.QLHV
                 if(txtID.Text.Length == 9 || txtID.Text.Length == 12)
                 {
                     index = SearchStudent(txtID.Text);
-                    if (index > -1)
-                    {
-                        if (chucNang == "Add")
-                        {
-                            MessageBox.Show("Học viên đã tồn tại!\nVui lòng chọn chức năng chỉnh sửa!",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Reset();
-                        }
-                    }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập đúng 9 hoặc 12 số!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng nhập đúng số CCCD/CMND 9 hoặc 12 số!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtID.Focus();
                     txtID.SelectionStart = txtID.Text.Length;
                 }
@@ -377,10 +370,14 @@ namespace HeThongQuanLyTTHV.QLHV
 
         private void ThongTinHocVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (chucNang != "Watch" && MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Question",
+            if (trangThai == 0 && MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Question",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 e.Cancel = true;
-
+            else
+            {
+                DanhSachHocVien fDS = new DanhSachHocVien();
+                fDS.Show();
+            }    
         }
 
         private void cbKhoaHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -417,8 +414,10 @@ namespace HeThongQuanLyTTHV.QLHV
             {
                 listHV.RemoveAt(index);
                 MessageBox.Show("Xóa thành công!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Reset();
-                Exit = true;
+                trangThai = 1;
+                path = Application.StartupPath + @"\Data\StudentList.txt";
+                GhiFileStudentList(path, ListHV);
+                this.Close();
             }  
         }
     }

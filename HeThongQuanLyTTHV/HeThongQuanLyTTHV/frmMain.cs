@@ -17,28 +17,30 @@ namespace HeThongQuanLyTTHV
             InitializeComponent();
         }
 
-       
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
+        }
 
         private void quanLyTTHV_Click(object sender, EventArgs e)
         {
             QLHV.DanhSachHocVien mainQLHV = new QLHV.DanhSachHocVien();
-            mainQLHV.MdiParent = this;
-            labelTitle.SendToBack();
             mainQLHV.Show();
         }
 
         private void quanLyKQHT_Click(object sender, EventArgs e)
         {
             QLKQHT.DSKQHT main = new QLKQHT.DSKQHT();
-            main.MdiParent = this;
-            labelTitle.SendToBack();
             main.Show();
         }
         private void quanLyTKB_Click(object sender, EventArgs e)
         {
             QLTKB.QLLH main = new QLTKB.QLLH();
-            main.MdiParent = this;
-            labelTitle.SendToBack();
             main.Show();
         }
 
