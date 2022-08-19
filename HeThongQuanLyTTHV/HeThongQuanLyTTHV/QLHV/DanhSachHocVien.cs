@@ -32,10 +32,6 @@ namespace HeThongQuanLyTTHV.QLHV
             listHV.Items.Clear();
             try
             {
-                foreach (ColumnHeader item in listHV.Columns)
-                {
-                    item.Width = (int)(ClientRectangle.Width * (0.1));
-                }
                 if (File.Exists(path))
                 {
                     using (StreamReader s = new StreamReader(path))
@@ -95,7 +91,25 @@ namespace HeThongQuanLyTTHV.QLHV
             StudentListFromFile();
             btDel.Visible = btEdit.Visible = false;
             trangThai = false;
-            listHV.Width = ClientRectangle.Width - 10;
+            foreach (ColumnHeader item in listHV.Columns)
+            {
+                switch (item.Index)
+                {
+                    case 0:
+                    case 5:
+                    case 2:
+                        item.Width = (int)(listHV.Width * (0.105));
+                        break;
+                    case 1:
+                    case 4:
+                    case 6:
+                        item.Width = (int)(listHV.Width * (0.128));
+                        break;
+                    default:
+                        item.Width = (int)(listHV.Width * (0.075));
+                        break;
+                }                    
+            }
         }
 
         private void btSort_Click(object sender, EventArgs e)
@@ -139,32 +153,26 @@ namespace HeThongQuanLyTTHV.QLHV
 
         private void btEdit_Click(object sender, EventArgs e)
         {
-            if(listHV.SelectedItems.Count > 0)
-            {
-                ThongTinHocVien fTTHV = new ThongTinHocVien();
-                fTTHV.ChucNang = "Edit";
-                fTTHV.HvSelected = new HocVien(h);
-                this.Close();
-                fTTHV.Show();
-            }
-        }
-
-        private void btDel_Click(object sender, EventArgs e)
-        {
+            ThongTinHocVien fTTHV = new ThongTinHocVien();
             if (listHV.SelectedItems.Count > 0)
             {
-                ThongTinHocVien fTTHV = new ThongTinHocVien();
-                fTTHV.ChucNang = "Delete";
+                Button ctrl = (Button)sender;
+                switch (ctrl.Name)
+                {
+                    case "btEdit":
+                        fTTHV.ChucNang = "Edit";
+                        break;
+                    case "btDel":
+                        fTTHV.ChucNang = "Delete";
+                        break;
+                    default:
+                        fTTHV.ChucNang = "Add";
+                        break;
+                }
                 fTTHV.HvSelected = new HocVien(h);
-                this.Close();
-                fTTHV.Show();
             }
-        }
-
-        private void btAdd_Click(object sender, EventArgs e)
-        {
-            ThongTinHocVien fTTHV = new ThongTinHocVien();
-            fTTHV.ChucNang = "Add";
+            else
+                fTTHV.ChucNang = "Add";
             this.Close();
             fTTHV.Show();
         }
